@@ -82,9 +82,20 @@
     });
   });
 
-  /* fila: escolher o posto abre a página dele */
-  var sel = document.getElementById("unidade");
-  if (sel) sel.addEventListener("change", function () { location.href = sel.value; });
+  /* fila: ordenar a lista de postos */
+  var lista = document.getElementById("postos");
+  document.querySelectorAll("[data-ordem]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var chave = b.dataset.ordem;
+      var itens = Array.prototype.slice.call(lista.children);
+      itens.sort(function (x, y) {
+        if (chave === "nome") return x.dataset.nome.localeCompare(y.dataset.nome, "pt-BR");
+        return (+y.dataset[chave]) - (+x.dataset[chave]);
+      });
+      itens.forEach(function (li) { lista.appendChild(li); });
+      document.querySelectorAll("[data-ordem]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+    });
+  });
 
   /* mandar no WhatsApp e copiar o link desta página */
   document.querySelectorAll("[data-zap]").forEach(function (a) {

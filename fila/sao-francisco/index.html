@@ -19,14 +19,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=a36d8ea1">
+<link rel="stylesheet" href="/estilo.css?v=fe1dfa75">
 </head>
 <body>
 <div class="app">
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo">
   <div class="topo-in">
-    <a class="marca" href="/" aria-label="Vigia Cariacica, página inicial"><img src="/marca.svg" alt="Vigia Cariacica" width="112" height="85"></a>
+    <a class="marca" href="/" aria-label="Vigia Cariacica, página inicial"><img src="/bandeira.svg" alt="" width="66" height="44"><span class="nome">Vigia Cariacica<small>Feito por moradores · sem partido</small></span></a>
     <div class="ferr">
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
@@ -39,7 +39,7 @@
 <li><a href="/fila/" aria-current="page">Fila da saúde</a></li>
 <li><a href="/perguntas/">Perguntas</a></li>
 <li><a href="/dinheiro/">Dinheiro</a></li>
-<li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
     </ul>
   </nav>
 </header>
@@ -47,67 +47,223 @@
 <section class="bloco" aria-labelledby="h1">
   <p class="prot"><b>Fila da saúde</b> · setembro de 2026</p>
   <h1 id="h1" tabindex="-1">US São Francisco</h1>
-  <label for="unidade"><strong>Escolha o seu posto de saúde</strong></label>
-  <select id="unidade">
-    <option value="/fila/">Toda Cariacica</option>
-<option value="/fila/caps-infantojuvenil/">CAPS Infantojuvenil</option>
-<option value="/fila/ist-aids/">Centro de Referência em IST/Aids</option>
-<option value="/fila/secretaria/">Pedidos registrados pela própria Secretaria de Saúde</option>
-<option value="/fila/retiro-saudoso/">UBS Retiro Saudoso (Durval Inácio da Silva)</option>
-<option value="/fila/alto-lage/">US Alto Lage</option>
-<option value="/fila/bairro-operario/">US Bairro Operário</option>
-<option value="/fila/bela-aurora/">US Bela Aurora</option>
-<option value="/fila/bela-vista/">US Bela Vista</option>
-<option value="/fila/campo-verde/">US Campo Verde</option>
-<option value="/fila/cariacica-sede/">US Cariacica Sede</option>
-<option value="/fila/itapemirim/">US de Itapemirim</option>
-<option value="/fila/flexal-1/">US Flexal I (Nova Canaã)</option>
-<option value="/fila/flexal-2/">US Flexal II</option>
-<option value="/fila/jardim-america/">US Jardim América</option>
-<option value="/fila/jardim-botanico/">US Jardim Botânico (Jarbas Cypreste de Sá)</option>
-<option value="/fila/mucuri/">US Mucuri (Alice Coutinho Santos)</option>
-<option value="/fila/nova-brasilia/">US Nova Brasília</option>
-<option value="/fila/nova-rosa-da-penha-2/">US Nova Rosa da Penha II (Sebastião Gonçalves)</option>
-<option value="/fila/novo-brasil/">US Novo Brasil</option>
-<option value="/fila/oriente/">US Oriente</option>
-<option value="/fila/porto-de-santana/">US Porto de Santana</option>
-<option value="/fila/rio-marinho/">US Rio Marinho</option>
-<option value="/fila/santa-barbara/">US Santa Bárbara</option>
-<option value="/fila/santa-fe/">US Santa Fé (Joaquim Lovati)</option>
-<option value="/fila/santa-luzia/">US Santa Luzia</option>
-<option value="/fila/santana/">US Santana</option>
-<option value="/fila/sao-francisco/" selected>US São Francisco</option>
-<option value="/fila/sao-geraldo/">US São Geraldo (Dario Paiva)</option>
-<option value="/fila/sao-joao-batista/">US São João Batista</option>
-<option value="/fila/sotelandia/">US Sotelândia</option>
-<option value="/fila/valparaiso/">US Valparaíso</option>
-<option value="/fila/vila-grauna/">US Vila Graúna</option>
-<option value="/fila/itaquari/">USF Itaquari (Dalmácia Pestana de Almeida)</option>
-<option value="/fila/padre-gabriel/">USF Padre Gabriel</option>
-  </select>
-</section>
+<p><a href="/fila/">← Ver todos os postos</a></p></section>
 
-<section class="folha" aria-label="Números da fila">
-  <p class="prot">Seu posto</p>
-  <p class="numero num"><span class="mk">1.297</span></p>
-  <p><strong>consultas e exames com especialista esperam vaga.</strong></p>
-  <p>Metade espera há mais de 7 meses.</p>
-  <p>Há mais de 1 ano: 470.</p>
-<p class="miuda">Este posto fica no bairro <a href="/bairros/sao-francisco/">São Francisco</a>.</p>  <p class="meta">Espera contada até 30 de setembro de 2026. Metade espera mais de 219 dias.</p>
-</section>
+<div class="grade-2">
+  <section class="folha" aria-label="Números da fila">
+    <p class="prot">Neste posto</p>
+    <p class="numero num">1.297</p>
+    <p><strong>consultas e exames com especialista esperam vaga.</strong></p>
+    <div class="barras">
+      <div class="barra"><div class="cab"><strong>Metade espera há</strong><span class="v">mais de 7 meses</span></div></div>
+      <div class="barra"><div class="cab"><strong>Esperam há mais de 1 ano</strong><span class="v num">470</span></div>
+        <div class="trilho" aria-hidden="true"><i style="width:36.2%"></i></div>
+        <small>São 4 de cada 10 pedidos deste posto.</small></div>
+    </div>
+<p class="miuda">Este posto fica no bairro <a href="/bairros/sao-francisco/">São Francisco</a>. Veja como está o bairro.</p>    <p class="meta">Espera contada até 30 de setembro de 2026. Metade espera mais de 219 dias.</p>
+  </section>
 
-<section class="outro" aria-labelledby="h-outro">
-  <p class="prot" id="h-outro">O outro lado</p>
-  <p>A Secretaria de Saúde diz que a fila <strong>não anda por ordem de chegada</strong>. Ela vai pela gravidade de cada caso. E quem marca a consulta é o <strong>governo do Estado</strong>.</p>
-  <p class="meta">Secretaria Municipal de Saúde, Nota Técnica 02/2026, de 16/04/2026.</p>
-</section>
+  <div class="bloco">
+    <section class="outro" aria-labelledby="h-outro">
+      <p class="prot" id="h-outro">O outro lado</p>
+      <p>A Secretaria de Saúde diz que a fila <strong>não anda por ordem de chegada</strong>. Ela vai pela gravidade de cada caso. E quem marca a consulta é o <strong>governo do Estado</strong>.</p>
+      <p class="meta">Secretaria Municipal de Saúde, Nota Técnica 02/2026, de 16/04/2026.</p>
+    </section>
+    <section class="bloco" aria-labelledby="h-faca">
+      <h2 id="h-faca">O que você pode fazer</h2>
+      <ol class="faca">
+        <li><p><strong>Pergunte na recepção</strong> do seu posto como está o seu pedido.</p></li>
+        <li><p><strong>Espera há mais de 1 ano?</strong> Reclame na Ouvidoria da Saúde. Ligue <span class="fone">162</span> (prefeitura) ou <span class="fone">136</span> (Disque Saúde). Ou pela internet: <a href="https://transparencia.cariacica.es.gov.br/Pedido.Cadastro.aspx?tipoId=34">Ouvidoria da Saúde</a>.</p></li>
+        <li><p><strong>Mande esta página</strong> para quem está esperando.</p></li>
+      </ol>
+    </section>
+  </div>
+</div>
 
-<section class="bloco" aria-labelledby="h-faca">
-  <h2 id="h-faca">O que você pode fazer</h2>
-  <ol class="faca">
-    <li><p><strong>Pergunte na recepção</strong> do seu posto como está o seu pedido.</p></li>
-    <li><p><strong>Espera há mais de 1 ano?</strong> Reclame na Ouvidoria da Saúde. Ligue <span class="fone">162</span> (prefeitura) ou <span class="fone">136</span> (Disque Saúde). Ou pela internet: <a href="https://transparencia.cariacica.es.gov.br/Pedido.Cadastro.aspx?tipoId=34">Ouvidoria da Saúde</a>.</p></li>
-    <li><p><strong>Mande esta página</strong> para quem está esperando.</p></li>
+<section class="bloco" aria-labelledby="h-todos">
+  <h2 id="h-todos">Todos os postos</h2>
+  <form class="busca" data-busca-bairro="postos" role="search">
+    <label for="q-postos">Procure o seu posto</label>
+    <input type="search" id="q-postos" autocomplete="off" placeholder="Ex.: Santa Fé">
+    <p class="miuda" data-aviso hidden>Não achamos. Tente outra parte do nome.</p>
+  </form>
+  <div class="ordem" role="group" aria-label="Ordenar os postos">
+    <span>Ordenar por:</span>
+    <button type="button" data-ordem="pedidos" aria-pressed="true">Mais gente esperando</button>
+    <button type="button" data-ordem="mediana" aria-pressed="false">Espera mais longa</button>
+    <button type="button" data-ordem="nome" aria-pressed="false">Nome</button>
+  </div>
+  <ol class="postos" id="postos">
+    <li data-nomes="Pedidos registrados pela própria Secretaria de Saúde" data-nome="Pedidos registrados pela própria Secretaria de Saúde" data-pedidos="6232" data-mediana="285">
+      <div class="linha"><a href="/fila/secretaria/">Pedidos registrados pela própria Secretaria de Saúde</a><span class="qtd num">6.232 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:100.0%"></i></div>
+      <span class="miuda">Metade espera há mais de 9 meses · 2.719 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Santa Fé (Joaquim Lovati)" data-nome="US Santa Fé (Joaquim Lovati)" data-pedidos="2569" data-mediana="265">
+      <div class="linha"><a href="/fila/santa-fe/">US Santa Fé (Joaquim Lovati)</a><span class="qtd num">2.569 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:41.2%"></i></div>
+      <span class="miuda">Metade espera há quase 9 meses · 1.043 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Nova Rosa da Penha II (Sebastião Gonçalves)" data-nome="US Nova Rosa da Penha II (Sebastião Gonçalves)" data-pedidos="2303" data-mediana="195">
+      <div class="linha"><a href="/fila/nova-rosa-da-penha-2/">US Nova Rosa da Penha II (Sebastião Gonçalves)</a><span class="qtd num">2.303 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:37.0%"></i></div>
+      <span class="miuda">Metade espera há mais de 6 meses · 717 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Porto de Santana" data-nome="US Porto de Santana" data-pedidos="1694" data-mediana="246">
+      <div class="linha"><a href="/fila/porto-de-santana/">US Porto de Santana</a><span class="qtd num">1.694 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:27.2%"></i></div>
+      <span class="miuda">Metade espera há mais de 8 meses · 670 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Bela Aurora" data-nome="US Bela Aurora" data-pedidos="1658" data-mediana="286">
+      <div class="linha"><a href="/fila/bela-aurora/">US Bela Aurora</a><span class="qtd num">1.658 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:26.6%"></i></div>
+      <span class="miuda">Metade espera há mais de 9 meses · 695 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Rio Marinho" data-nome="US Rio Marinho" data-pedidos="1373" data-mediana="316">
+      <div class="linha"><a href="/fila/rio-marinho/">US Rio Marinho</a><span class="qtd num">1.373 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:22.0%"></i></div>
+      <span class="miuda">Metade espera há mais de 10 meses · 611 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Jardim América" data-nome="US Jardim América" data-pedidos="1372" data-mediana="191">
+      <div class="linha"><a href="/fila/jardim-america/">US Jardim América</a><span class="qtd num">1.372 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:22.0%"></i></div>
+      <span class="miuda">Metade espera há mais de 6 meses · 482 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US São Francisco" data-nome="US São Francisco" data-pedidos="1297" data-mediana="219" class="atual">
+      <div class="linha"><a href="/fila/sao-francisco/">US São Francisco</a><span class="qtd num">1.297 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="eu" style="width:20.8%"></i></div>
+      <span class="miuda">Metade espera há mais de 7 meses · 470 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Nova Brasília" data-nome="US Nova Brasília" data-pedidos="1262" data-mediana="240">
+      <div class="linha"><a href="/fila/nova-brasilia/">US Nova Brasília</a><span class="qtd num">1.262 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:20.3%"></i></div>
+      <span class="miuda">Metade espera há quase 8 meses · 420 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Cariacica Sede" data-nome="US Cariacica Sede" data-pedidos="1224" data-mediana="245">
+      <div class="linha"><a href="/fila/cariacica-sede/">US Cariacica Sede</a><span class="qtd num">1.224 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:19.6%"></i></div>
+      <span class="miuda">Metade espera há mais de 8 meses · 469 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Novo Brasil" data-nome="US Novo Brasil" data-pedidos="1189" data-mediana="218">
+      <div class="linha"><a href="/fila/novo-brasil/">US Novo Brasil</a><span class="qtd num">1.189 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:19.1%"></i></div>
+      <span class="miuda">Metade espera há mais de 7 meses · 426 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Bela Vista" data-nome="US Bela Vista" data-pedidos="1174" data-mediana="309">
+      <div class="linha"><a href="/fila/bela-vista/">US Bela Vista</a><span class="qtd num">1.174 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:18.8%"></i></div>
+      <span class="miuda">Metade espera há mais de 10 meses · 515 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Santa Bárbara" data-nome="US Santa Bárbara" data-pedidos="1148" data-mediana="310">
+      <div class="linha"><a href="/fila/santa-barbara/">US Santa Bárbara</a><span class="qtd num">1.148 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:18.4%"></i></div>
+      <span class="miuda">Metade espera há mais de 10 meses · 497 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Bairro Operário" data-nome="US Bairro Operário" data-pedidos="1079" data-mediana="212">
+      <div class="linha"><a href="/fila/bairro-operario/">US Bairro Operário</a><span class="qtd num">1.079 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:17.3%"></i></div>
+      <span class="miuda">Metade espera há quase 7 meses · 387 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="USF Padre Gabriel" data-nome="USF Padre Gabriel" data-pedidos="1051" data-mediana="239">
+      <div class="linha"><a href="/fila/padre-gabriel/">USF Padre Gabriel</a><span class="qtd num">1.051 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:16.9%"></i></div>
+      <span class="miuda">Metade espera há quase 8 meses · 390 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Jardim Botânico (Jarbas Cypreste de Sá)" data-nome="US Jardim Botânico (Jarbas Cypreste de Sá)" data-pedidos="1036" data-mediana="233">
+      <div class="linha"><a href="/fila/jardim-botanico/">US Jardim Botânico (Jarbas Cypreste de Sá)</a><span class="qtd num">1.036 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:16.6%"></i></div>
+      <span class="miuda">Metade espera há quase 8 meses · 383 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Alto Lage" data-nome="US Alto Lage" data-pedidos="987" data-mediana="178">
+      <div class="linha"><a href="/fila/alto-lage/">US Alto Lage</a><span class="qtd num">987 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:15.8%"></i></div>
+      <span class="miuda">Metade espera há quase 6 meses · 321 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US de Itapemirim" data-nome="US de Itapemirim" data-pedidos="982" data-mediana="212">
+      <div class="linha"><a href="/fila/itapemirim/">US de Itapemirim</a><span class="qtd num">982 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:15.8%"></i></div>
+      <span class="miuda">Metade espera há quase 7 meses · 311 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Santana" data-nome="US Santana" data-pedidos="916" data-mediana="205">
+      <div class="linha"><a href="/fila/santana/">US Santana</a><span class="qtd num">916 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:14.7%"></i></div>
+      <span class="miuda">Metade espera há quase 7 meses · 284 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Sotelândia" data-nome="US Sotelândia" data-pedidos="910" data-mediana="195">
+      <div class="linha"><a href="/fila/sotelandia/">US Sotelândia</a><span class="qtd num">910 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:14.6%"></i></div>
+      <span class="miuda">Metade espera há mais de 6 meses · 275 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Flexal I (Nova Canaã)" data-nome="US Flexal I (Nova Canaã)" data-pedidos="895" data-mediana="236">
+      <div class="linha"><a href="/fila/flexal-1/">US Flexal I (Nova Canaã)</a><span class="qtd num">895 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:14.4%"></i></div>
+      <span class="miuda">Metade espera há quase 8 meses · 347 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="USF Itaquari (Dalmácia Pestana de Almeida)" data-nome="USF Itaquari (Dalmácia Pestana de Almeida)" data-pedidos="888" data-mediana="323">
+      <div class="linha"><a href="/fila/itaquari/">USF Itaquari (Dalmácia Pestana de Almeida)</a><span class="qtd num">888 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:14.2%"></i></div>
+      <span class="miuda">Metade espera há quase 11 meses · 412 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Valparaíso" data-nome="US Valparaíso" data-pedidos="888" data-mediana="345">
+      <div class="linha"><a href="/fila/valparaiso/">US Valparaíso</a><span class="qtd num">888 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:14.2%"></i></div>
+      <span class="miuda">Metade espera há mais de 11 meses · 418 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Flexal II" data-nome="US Flexal II" data-pedidos="861" data-mediana="264">
+      <div class="linha"><a href="/fila/flexal-2/">US Flexal II</a><span class="qtd num">861 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:13.8%"></i></div>
+      <span class="miuda">Metade espera há quase 9 meses · 363 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Oriente" data-nome="US Oriente" data-pedidos="842" data-mediana="183">
+      <div class="linha"><a href="/fila/oriente/">US Oriente</a><span class="qtd num">842 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:13.5%"></i></div>
+      <span class="miuda">Metade espera há mais de 6 meses · 262 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Campo Verde" data-nome="US Campo Verde" data-pedidos="815" data-mediana="233">
+      <div class="linha"><a href="/fila/campo-verde/">US Campo Verde</a><span class="qtd num">815 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:13.1%"></i></div>
+      <span class="miuda">Metade espera há quase 8 meses · 309 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US São Geraldo (Dario Paiva)" data-nome="US São Geraldo (Dario Paiva)" data-pedidos="776" data-mediana="181">
+      <div class="linha"><a href="/fila/sao-geraldo/">US São Geraldo (Dario Paiva)</a><span class="qtd num">776 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:12.5%"></i></div>
+      <span class="miuda">Metade espera há quase 6 meses · 220 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Vila Graúna" data-nome="US Vila Graúna" data-pedidos="675" data-mediana="205">
+      <div class="linha"><a href="/fila/vila-grauna/">US Vila Graúna</a><span class="qtd num">675 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:10.8%"></i></div>
+      <span class="miuda">Metade espera há quase 7 meses · 182 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US São João Batista" data-nome="US São João Batista" data-pedidos="634" data-mediana="127">
+      <div class="linha"><a href="/fila/sao-joao-batista/">US São João Batista</a><span class="qtd num">634 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:10.2%"></i></div>
+      <span class="miuda">Metade espera há mais de 4 meses · 143 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Mucuri (Alice Coutinho Santos)" data-nome="US Mucuri (Alice Coutinho Santos)" data-pedidos="625" data-mediana="207">
+      <div class="linha"><a href="/fila/mucuri/">US Mucuri (Alice Coutinho Santos)</a><span class="qtd num">625 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:10.0%"></i></div>
+      <span class="miuda">Metade espera há quase 7 meses · 215 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="US Santa Luzia" data-nome="US Santa Luzia" data-pedidos="256" data-mediana="127">
+      <div class="linha"><a href="/fila/santa-luzia/">US Santa Luzia</a><span class="qtd num">256 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:4.1%"></i></div>
+      <span class="miuda">Metade espera há mais de 4 meses · 55 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="UBS Retiro Saudoso (Durval Inácio da Silva)" data-nome="UBS Retiro Saudoso (Durval Inácio da Silva)" data-pedidos="177" data-mediana="43">
+      <div class="linha"><a href="/fila/retiro-saudoso/">UBS Retiro Saudoso (Durval Inácio da Silva)</a><span class="qtd num">177 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:2.8%"></i></div>
+      <span class="miuda">Metade espera há cerca de 1 mês · 5 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="Centro de Referência em IST/Aids" data-nome="Centro de Referência em IST/Aids" data-pedidos="124" data-mediana="219">
+      <div class="linha"><a href="/fila/ist-aids/">Centro de Referência em IST/Aids</a><span class="qtd num">124 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:2.0%"></i></div>
+      <span class="miuda">Metade espera há mais de 7 meses · 52 há mais de 1 ano</span>
+    </li>
+    <li data-nomes="CAPS Infantojuvenil" data-nome="CAPS Infantojuvenil" data-pedidos="114" data-mediana="358">
+      <div class="linha"><a href="/fila/caps-infantojuvenil/">CAPS Infantojuvenil</a><span class="qtd num">114 <small>esperando</small></span></div>
+      <div class="trilho mini" aria-hidden="true"><i class="" style="width:1.8%"></i></div>
+      <span class="miuda">Metade espera há quase 1 ano · 55 há mais de 1 ano</span>
+    </li>
   </ol>
 </section>
 
@@ -115,49 +271,6 @@
   <p class="prot" id="h-fez">O que o Vigia já fez</p>
   <p>Em 10/11, perguntamos à prefeitura: <strong>Quanto tempo se espera por consulta e exame em cada posto?</strong></p>
   <p><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></p>
-</section>
-
-<section class="bloco" aria-labelledby="h-todos">
-  <h2 id="h-todos">Todos os postos</h2>
-  <div class="tabela"><table>
-    <thead><tr><th scope="col">Posto</th><th scope="col" class="n">Esperando</th><th scope="col" class="n">Metade espera mais de</th><th scope="col" class="n">Há mais de 1 ano</th></tr></thead>
-    <tbody>
-<tr><td><a href="/fila/secretaria/">Pedidos registrados pela própria Secretaria de Saúde</a></td><td class="n">6.232</td><td class="n">285 dias</td><td class="n">2.719</td></tr>
-<tr><td><a href="/fila/santa-fe/">US Santa Fé (Joaquim Lovati)</a></td><td class="n">2.569</td><td class="n">265 dias</td><td class="n">1.043</td></tr>
-<tr><td><a href="/fila/nova-rosa-da-penha-2/">US Nova Rosa da Penha II (Sebastião Gonçalves)</a></td><td class="n">2.303</td><td class="n">195 dias</td><td class="n">717</td></tr>
-<tr><td><a href="/fila/porto-de-santana/">US Porto de Santana</a></td><td class="n">1.694</td><td class="n">246 dias</td><td class="n">670</td></tr>
-<tr><td><a href="/fila/bela-aurora/">US Bela Aurora</a></td><td class="n">1.658</td><td class="n">286 dias</td><td class="n">695</td></tr>
-<tr><td><a href="/fila/rio-marinho/">US Rio Marinho</a></td><td class="n">1.373</td><td class="n">316 dias</td><td class="n">611</td></tr>
-<tr><td><a href="/fila/jardim-america/">US Jardim América</a></td><td class="n">1.372</td><td class="n">191 dias</td><td class="n">482</td></tr>
-<tr class="atual"><td><a href="/fila/sao-francisco/">US São Francisco</a></td><td class="n">1.297</td><td class="n">219 dias</td><td class="n">470</td></tr>
-<tr><td><a href="/fila/nova-brasilia/">US Nova Brasília</a></td><td class="n">1.262</td><td class="n">240 dias</td><td class="n">420</td></tr>
-<tr><td><a href="/fila/cariacica-sede/">US Cariacica Sede</a></td><td class="n">1.224</td><td class="n">245 dias</td><td class="n">469</td></tr>
-<tr><td><a href="/fila/novo-brasil/">US Novo Brasil</a></td><td class="n">1.189</td><td class="n">218 dias</td><td class="n">426</td></tr>
-<tr><td><a href="/fila/bela-vista/">US Bela Vista</a></td><td class="n">1.174</td><td class="n">309 dias</td><td class="n">515</td></tr>
-<tr><td><a href="/fila/santa-barbara/">US Santa Bárbara</a></td><td class="n">1.148</td><td class="n">310 dias</td><td class="n">497</td></tr>
-<tr><td><a href="/fila/bairro-operario/">US Bairro Operário</a></td><td class="n">1.079</td><td class="n">212 dias</td><td class="n">387</td></tr>
-<tr><td><a href="/fila/padre-gabriel/">USF Padre Gabriel</a></td><td class="n">1.051</td><td class="n">239 dias</td><td class="n">390</td></tr>
-<tr><td><a href="/fila/jardim-botanico/">US Jardim Botânico (Jarbas Cypreste de Sá)</a></td><td class="n">1.036</td><td class="n">233 dias</td><td class="n">383</td></tr>
-<tr><td><a href="/fila/alto-lage/">US Alto Lage</a></td><td class="n">987</td><td class="n">178 dias</td><td class="n">321</td></tr>
-<tr><td><a href="/fila/itapemirim/">US de Itapemirim</a></td><td class="n">982</td><td class="n">212 dias</td><td class="n">311</td></tr>
-<tr><td><a href="/fila/santana/">US Santana</a></td><td class="n">916</td><td class="n">205 dias</td><td class="n">284</td></tr>
-<tr><td><a href="/fila/sotelandia/">US Sotelândia</a></td><td class="n">910</td><td class="n">195 dias</td><td class="n">275</td></tr>
-<tr><td><a href="/fila/flexal-1/">US Flexal I (Nova Canaã)</a></td><td class="n">895</td><td class="n">236 dias</td><td class="n">347</td></tr>
-<tr><td><a href="/fila/itaquari/">USF Itaquari (Dalmácia Pestana de Almeida)</a></td><td class="n">888</td><td class="n">323 dias</td><td class="n">412</td></tr>
-<tr><td><a href="/fila/valparaiso/">US Valparaíso</a></td><td class="n">888</td><td class="n">345 dias</td><td class="n">418</td></tr>
-<tr><td><a href="/fila/flexal-2/">US Flexal II</a></td><td class="n">861</td><td class="n">264 dias</td><td class="n">363</td></tr>
-<tr><td><a href="/fila/oriente/">US Oriente</a></td><td class="n">842</td><td class="n">183 dias</td><td class="n">262</td></tr>
-<tr><td><a href="/fila/campo-verde/">US Campo Verde</a></td><td class="n">815</td><td class="n">233 dias</td><td class="n">309</td></tr>
-<tr><td><a href="/fila/sao-geraldo/">US São Geraldo (Dario Paiva)</a></td><td class="n">776</td><td class="n">181 dias</td><td class="n">220</td></tr>
-<tr><td><a href="/fila/vila-grauna/">US Vila Graúna</a></td><td class="n">675</td><td class="n">205 dias</td><td class="n">182</td></tr>
-<tr><td><a href="/fila/sao-joao-batista/">US São João Batista</a></td><td class="n">634</td><td class="n">127 dias</td><td class="n">143</td></tr>
-<tr><td><a href="/fila/mucuri/">US Mucuri (Alice Coutinho Santos)</a></td><td class="n">625</td><td class="n">207 dias</td><td class="n">215</td></tr>
-<tr><td><a href="/fila/santa-luzia/">US Santa Luzia</a></td><td class="n">256</td><td class="n">127 dias</td><td class="n">55</td></tr>
-<tr><td><a href="/fila/retiro-saudoso/">UBS Retiro Saudoso (Durval Inácio da Silva)</a></td><td class="n">177</td><td class="n">43 dias</td><td class="n">5</td></tr>
-<tr><td><a href="/fila/ist-aids/">Centro de Referência em IST/Aids</a></td><td class="n">124</td><td class="n">219 dias</td><td class="n">52</td></tr>
-<tr><td><a href="/fila/caps-infantojuvenil/">CAPS Infantojuvenil</a></td><td class="n">114</td><td class="n">358 dias</td><td class="n">55</td></tr>
-    </tbody>
-  </table></div>
 </section>
 
 <section class="bloco" aria-labelledby="h-mande">
@@ -174,13 +287,13 @@
 </div>
 </main>
 <footer class="rodape">
-  <span class="marca"><img src="/marca.svg" alt="Vigia Cariacica" width="150" height="114"></span>
+  <img src="/bandeira.svg" alt="Bandeira de Cariacica com o nome Vigia no lugar do brasão" width="180" height="120">
   <p class="lema">A gente confere. Você cobra.</p>
-  <p class="miuda">Feito por moradores de Cariacica. Sem partido e sem religião. Não aceitamos dinheiro de quem a gente olha.</p>
+  <p class="miuda">Feito por moradores de Cariacica. Nosso lado é o povo de Cariacica e o que ele precisa. <a href="/quem-somos/">Quem somos →</a></p>
   <p class="miuda">Fale com a gente: <a href="https://www.instagram.com/vigiacariacica/">@vigiacariacica</a> no Instagram.</p>
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=a36d8ea1" defer></script>
+<script src="/site.js?v=fe1dfa75" defer></script>
 </body>
 </html>

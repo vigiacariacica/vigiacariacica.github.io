@@ -19,14 +19,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=a36d8ea1">
+<link rel="stylesheet" href="/estilo.css?v=fe1dfa75">
 </head>
 <body>
 <div class="app">
 <a class="pular" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo">
   <div class="topo-in">
-    <a class="marca" href="/" aria-label="Vigia Cariacica, página inicial"><img src="/marca.svg" alt="Vigia Cariacica" width="112" height="85"></a>
+    <a class="marca" href="/" aria-label="Vigia Cariacica, página inicial"><img src="/bandeira.svg" alt="" width="66" height="44"><span class="nome">Vigia Cariacica<small>Feito por moradores · sem partido</small></span></a>
     <div class="ferr">
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
@@ -39,20 +39,20 @@
 <li><a href="/fila/">Fila da saúde</a></li>
 <li><a href="/perguntas/">Perguntas</a></li>
 <li><a href="/dinheiro/">Dinheiro</a></li>
-<li><a href="/como-trabalhamos/">Como trabalhamos</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
     </ul>
   </nav>
 </header>
 <main id="conteudo" tabindex="-1">
-<section class="bloco" aria-labelledby="h1">
-  <p class="prot"><b>Vigia Cariacica</b> · feito por moradores · sem partido</p>
-  <h1 id="h1" tabindex="-1">A gente mostra como a prefeitura usa o <span class="mk">seu dinheiro</span>.</h1>
-  <p class="lead">Olhamos as contas de Cariacica. Perguntamos o que não está claro. E mostramos a resposta, para você cobrar.</p>
-</section>
-
-<section class="bloco folha" aria-labelledby="h-bairro">
-  <h2 id="h-bairro">Como está o seu bairro?</h2>
-  <p>Veja o esgoto, o posto de saúde e a fila do seu bairro. E compare com o resto da cidade.</p>
+<div class="grade-2 larga-esq">
+  <section class="bloco" aria-labelledby="h1">
+    <p class="prot"><b>Vigia Cariacica</b> · feito por moradores · sem partido</p>
+    <h1 id="h1" tabindex="-1">A gente mostra como a prefeitura usa o <span class="mk">seu dinheiro</span>.</h1>
+    <p class="lead">Olhamos as contas de Cariacica. Perguntamos o que não está claro. E mostramos a resposta, para você cobrar.</p>
+  </section>
+  <section class="bloco folha" aria-labelledby="h-bairro">
+    <h2 id="h-bairro">Como está o seu bairro?</h2>
+    <p>Veja o esgoto, o posto de saúde e a fila do seu bairro. E compare com o resto da cidade.</p>
 <form class="busca" data-busca-bairro="lista-inicio" data-so-busca role="search">
   <label for="q-inicio">Escreva o nome do seu bairro</label>
   <input type="search" id="q-inicio" name="q" autocomplete="off" placeholder="Ex.: Nova Rosa da Penha">
@@ -158,20 +158,32 @@
 <li data-nomes="Vista Dourada " hidden><a href="/bairros/vista-dourada/">Vista Dourada</a></li>
 <li data-nomes="Vista Linda " hidden><a href="/bairros/vista-linda/">Vista Linda</a></li>
 <li data-nomes="Vista Mar " hidden><a href="/bairros/vista-mar/">Vista Mar</a></li>
-</ul></section>
+</ul>  </section>
+</div>
 
-<section class="bloco" aria-labelledby="h-padrao">
-  <p class="prot">O que os números mostram</p>
-  <h2 id="h-padrao">Onde a renda é menor, falta mais esgoto</h2>
-  <p class="lead">Nos 20 bairros de menor renda, <strong>7 de cada 10 casas</strong> têm esgoto ligado na rede. Nos 20 bairros de maior renda, <strong>quase todas as casas</strong>.</p>
-  <p>É por isso que a gente olha as contas: o dinheiro precisa chegar primeiro onde falta mais.</p>
-  <p><a href="/bairros/">Veja todos os bairros →</a></p>
+<section class="bloco faixa" aria-labelledby="h-padrao">
+  <div class="grade-2">
+    <div class="bloco">
+      <p class="prot">O que os números mostram</p>
+      <h2 id="h-padrao">Onde a renda é menor, falta mais esgoto</h2>
+      <p class="lead">Nos 20 bairros de menor renda, <strong>7 de cada 10 casas</strong> têm esgoto ligado na rede. Nos 20 bairros de maior renda, <strong>quase todas as casas</strong>.</p>
+      <p>É por isso que a gente olha as contas: o dinheiro precisa chegar primeiro onde falta mais.</p>
+      <p><a href="/bairros/">Veja todos os bairros →</a></p>
+    </div>
+    <div class="bloco">
+      <p><strong>Casas com esgoto ligado na rede, de cada 10</strong></p>
+      <div class="dez" role="img" aria-label="Bairros de menor renda: 7 de cada 10 casas. Bairros de maior renda: quase todas as casas.">
+  <div class="dez-lin"><span class="rot">Bairros de menor renda</span><span class="casas"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span><span class="val">7 de cada 10 casas</span></div>
+  <div class="dez-lin cid"><span class="rot">Bairros de maior renda</span><span class="casas"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="val">quase todas as casas</span></div>
+</div>
+    </div>
+  </div>
   <p class="fonte">Fonte: IBGE, Censo 2022, resultados por bairro. Bairros com 100 casas ou mais, separados pela renda de quem sustenta a casa. Contas do Vigia.</p>
 </section>
 
 <section class="bloco" aria-labelledby="h-portas">
   <h2 id="h-portas">O que mais você quer saber?</h2>
-  <div class="portas">
+  <div class="grade-3">
     <a class="porta" href="/fila/"><span class="prot">Saúde</span><b>A fila do seu posto</b><span class="t">Quase 41 mil consultas e exames esperam vaga. Veja o seu posto.</span><span class="seta" aria-hidden="true">→</span></a>
     <a class="porta" href="/perguntas/"><span class="prot">Perguntas</span><b>O que perguntamos</b><span class="t">56 perguntas à prefeitura e à Câmara. Veja quem já respondeu.</span><span class="seta" aria-hidden="true">→</span></a>
     <a class="porta" href="/dinheiro/"><span class="prot">Dinheiro</span><b>Para onde vai o dinheiro</b><span class="t">É como se a prefeitura gastasse R$ 369 por mês com cada morador. Veja em quê.</span><span class="seta" aria-hidden="true">→</span></a>
@@ -180,7 +192,7 @@
 
 <section class="bloco" aria-labelledby="h-funciona">
   <h2 id="h-funciona">Como o Vigia funciona</h2>
-  <ol class="passos">
+  <ol class="passos grade-4">
     <li><b>Olhamos as contas</b><span>Todo dia, um programa de computador baixa as contas oficiais da prefeitura.</span></li>
     <li><b>Perguntamos</b><span>Quando algo não está claro, perguntamos à prefeitura. A lei manda responder em 20 dias.</span></li>
     <li><b>Mostramos a resposta</b><span>A resposta sai aqui, do jeito que veio. Se estiver tudo certo, mostramos também.</span></li>
@@ -188,31 +200,22 @@
   </ol>
 </section>
 
-<section class="bloco" aria-labelledby="h-porque">
-  <h2 id="h-porque">Por que a gente faz isso</h2>
-  <p class="lead">Quem mais precisa da prefeitura é quem tem menos.</p>
-  <p>É quem usa o posto de saúde e a escola pública. É quem espera asfalto e esgoto na rua. É por essas pessoas que a gente olha as contas. Não é contra ninguém. É a favor de Cariacica.</p>
-</section>
-
-<section class="bloco folha" aria-labelledby="h-mudou">
-  <p class="prot">Placar</p>
-  <h2 id="h-mudou">O que já mudou</h2>
-  <p class="grande num">0</p>
-  <p>Ainda nada. As primeiras respostas chegam a partir de 27/11.</p>
-  <p class="miuda">Contamos só o que tem prova oficial: uma resposta completa, um dado publicado, um serviço que melhorou. Nossa meta: 3 até fevereiro de 2027.</p>
-</section>
-
-<section class="bloco" aria-labelledby="h-regras">
-  <h2 id="h-regras">Nossas regras</h2>
-  <ul class="regras">
-    <li>Não temos partido nem religião.</li>
-    <li>Não acusamos ninguém. Perguntamos e mostramos o documento.</li>
-    <li>Não mostramos dados pessoais de ninguém.</li>
-    <li>O que está certo aparece também.</li>
-    <li>Se a gente errar, corrige aqui, com a data.</li>
-  </ul>
-  <p><a href="/como-trabalhamos/">Veja como trabalhamos →</a></p>
-</section>
+<div class="grade-2">
+  <section class="bloco" aria-labelledby="h-porque">
+    <h2 id="h-porque">Por que a gente faz isso</h2>
+    <p class="lead">Quem mais precisa da prefeitura é quem tem menos.</p>
+    <p>É quem usa o posto de saúde e a escola pública. É quem espera asfalto e esgoto na rua. É por essas pessoas que a gente olha as contas.</p>
+    <p>Não somos contra nenhum governo. Mostramos fatos e cobramos respostas.</p>
+    <p><a href="/quem-somos/">Quem somos e no que acreditamos →</a></p>
+  </section>
+  <section class="bloco folha" aria-labelledby="h-mudou">
+    <p class="prot">Placar</p>
+    <h2 id="h-mudou">O que já mudou</h2>
+    <p class="grande num">0</p>
+    <p>Ainda nada. As primeiras respostas chegam a partir de 27/11.</p>
+    <p class="miuda">Contamos só o que tem prova oficial: uma resposta completa, um dado publicado, um serviço que melhorou. Nossa meta: 3 até fevereiro de 2027.</p>
+  </section>
+</div>
 
 <section class="bloco" aria-labelledby="h-mande">
   <h2 id="h-mande">Mande para quem precisa saber</h2>
@@ -223,13 +226,13 @@
   <p class="miuda" id="copiado" role="status"></p>
 </section></main>
 <footer class="rodape">
-  <span class="marca"><img src="/marca.svg" alt="Vigia Cariacica" width="150" height="114"></span>
+  <img src="/bandeira.svg" alt="Bandeira de Cariacica com o nome Vigia no lugar do brasão" width="180" height="120">
   <p class="lema">A gente confere. Você cobra.</p>
-  <p class="miuda">Feito por moradores de Cariacica. Sem partido e sem religião. Não aceitamos dinheiro de quem a gente olha.</p>
+  <p class="miuda">Feito por moradores de Cariacica. Nosso lado é o povo de Cariacica e o que ele precisa. <a href="/quem-somos/">Quem somos →</a></p>
   <p class="miuda">Fale com a gente: <a href="https://www.instagram.com/vigiacariacica/">@vigiacariacica</a> no Instagram.</p>
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=a36d8ea1" defer></script>
+<script src="/site.js?v=fe1dfa75" defer></script>
 </body>
 </html>
