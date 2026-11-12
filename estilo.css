@@ -222,3 +222,12 @@ footer.rodape>img{width:180px;height:auto;border:1px solid var(--linha)}
   .dez-lin .val{grid-column:1}
 }
 @media (prefers-reduced-motion:no-preference){.trilho i{transition:width .5s ease-out}}
+
+/* maiores problemas */
+ol.indice{list-style:none;margin:0;padding:0}
+ol.indice a{display:flex;flex-direction:column;gap:4px;height:100%;padding:14px;background:var(--folha);border:1px solid var(--linha);border-top:4px solid var(--tinta);color:var(--tinta);text-decoration:none}
+ol.indice a:hover{border-top-color:var(--marca)}
+ol.indice b{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1.5em;line-height:1}
+.problema{border-top:3px solid var(--tinta);padding-top:20px;scroll-margin-top:12px}
+.melhorou{display:flex;flex-direction:column;gap:6px;border-left:6px solid var(--verde);padding-left:12px}
+.problema .numero{white-space:normal;font-size:clamp(48px,7vw,88px);text-transform:uppercase}
