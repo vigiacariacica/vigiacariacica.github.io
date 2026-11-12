@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=19fe9e05">
+<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
 </head>
 <body>
 <div class="app">
@@ -38,8 +38,10 @@
 <li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
 <li><a href="/problemas/">Maiores problemas</a></li>
 <li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
 <li><a href="/perguntas/">Perguntas</a></li>
 <li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
 <li><a href="/quem-somos/">Quem somos</a></li>
     </ul>
   </nav>
@@ -48,7 +50,7 @@
 <section class="bloco" aria-labelledby="h1">
   <p class="prot"><b>Meu bairro</b> · Censo do IBGE de 2022</p>
   <h1 id="h1" tabindex="-1">Como está o seu bairro?</h1>
-  <p class="lead">Escolha o seu bairro. Você vê o esgoto, a leitura, a renda e o posto de saúde. Tudo comparado com o resto de Cariacica.</p>
+  <p class="lead">Escolha o seu bairro. Você vê o esgoto, a leitura, a renda, o posto de saúde e as obras. Tudo comparado com o resto de Cariacica.</p>
 <form class="busca" data-busca-bairro="lista-bairros" role="search">
   <label for="q-bairros">Escreva o nome do seu bairro</label>
   <input type="search" id="q-bairros" name="q" autocomplete="off" placeholder="Ex.: Nova Rosa da Penha">
@@ -186,6 +188,89 @@
 </section>
 </div>
 
+<section class="bloco" id="cidade-toda" aria-labelledby="h-obras-cidade">
+  <p class="prot">Obras</p>
+  <h2 id="h-obras-cidade">As obras no sistema da prefeitura</h2>
+  <p class="lead">O sistema de obras tem 221 obras desde 2010. Cada uma aparece na página do seu bairro.</p>
+  <ul class="niveis">
+<li><b class="num">105</b> pronta, falta a vistoria final</li><li><b class="num">98</b> pronta e entregue</li><li><b class="num">13</b> em andamento</li><li><b class="num">4</b> parada: o contrato foi cancelado</li><li><b class="num">1</b> recomeçou</li>  </ul>
+  <p>Para 2025, tem só 1. Para 2026, nenhuma. <strong>Por que o sistema quase parou de receber obras?</strong></p>
+  <h3>Obras e serviços da cidade toda</h3>
+  <p>Estes não dizem o bairro, ou servem a cidade inteira, como o tapa-buraco.</p>
+  <ol class="obras grade-2">
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2024</span><span class="selo neutro">Em andamento</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Construção de escadarias no município de Cariacica/ES</h3>
+<p><span class="valor-obra num">R$ 7 milhões</span> pagos.</p>      <p class="meta">Bairros no sistema: Cariacica · número da obra 1825</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2023</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Proteção de taludes com revestimento em Geocomposto de PVC e Muros de Contenção</h3>
+<p><span class="valor-obra num">R$ 1,1 milhão</span> pagos.</p>      <p class="meta">Bairros no sistema: Cariacica · número da obra 1800</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo neutro">Em andamento</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Recapeamento de pavimento asfáltico e correção de buracos</h3>
+<p><span class="valor-obra num">R$ 86,9 milhões</span> pagos.</p><p class="miuda">O prazo do contrato no sistema acabou em 21/05/2024.</p>      <p class="meta">Bairros no sistema: Nova Rosa da Penha · número da obra 995</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo neutro">Em andamento</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Prestação de serviços de pavimentação e assentamento de meio fio em todo o município de Cariacica</h3>
+<p><span class="valor-obra num">R$ 19,4 milhões</span> pagos.</p><p class="miuda">O prazo do contrato no sistema acabou em 23/10/2026.</p>      <p class="meta">número da obra 1870</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo neutro">Em andamento</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Manutenção de equipamentos públicos fabricados com materiais metálicos e/ou mistos</h3>
+<p><span class="valor-obra num">R$ 15,8 milhões</span> pagos.</p>      <p class="meta">número da obra 1746</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo ok">Pronta e entregue</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Malha Viária, na Avenida do Congo nos bairros Roda D&#39;água, Nova Campo Grande e Vista Dourada</h3>
+<p><span class="valor-obra num">R$ 12 milhões</span> pagos.</p>      <p class="meta">Bairros no sistema: Roda D&#39;água · número da obra 1748</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo ok">Pronta e entregue</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação no acesso ao Destacamento de Cima</h3>
+<p><span class="valor-obra num">R$ 3,1 milhões</span> pagos.</p>      <p class="meta">número da obra 1741</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo ok">Pronta e entregue</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Proteção de taludes e barreiras com revestimento em geocomposto de pvc</h3>
+<p><span class="valor-obra num">R$ 2,9 milhões</span> pagos.</p>      <p class="meta">Bairros no sistema: Cariacica · número da obra 1780</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo ok">Pronta e entregue</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação nos bairros Porto Engenho e Porto das Pedras</h3>
+<p><span class="valor-obra num">R$ 1,1 milhão</span> pagos.</p>      <p class="meta">Bairros no sistema: Porto das Pedras · número da obra 1744</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo neutro">Em andamento</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Manutenção de equipamentos públicos</h3>
+<p><span class="valor-obra num">R$ 27 milhões</span> pagos.</p><p class="miuda">O prazo do contrato no sistema acabou em 10/05/2026.</p>      <p class="meta">número da obra 1723</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo neutro">Em andamento</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Elaboração de projetos de Praças e Unidades de Saúde</h3>
+<p><span class="valor-obra num">R$ 319 mil</span> pagos.</p><p class="miuda">O prazo do contrato no sistema acabou em 17/04/2019.</p>      <p class="meta">número da obra 1703</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2015</span><span class="selo ok">Pronta e entregue</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Iluminação Publica da Avenida Leste Oeste</h3>
+<p><span class="valor-obra num">R$ 404 mil</span> pagos.</p>      <p class="meta">Bairros no sistema: Rod. Leste-Oeste · número da obra 79</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2015</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Construção do CMEI Maria Custódia de Jesus - Porto Belo I</h3>
+<p>O sistema não mostra nenhum pagamento.</p>      <p class="meta">Bairros no sistema: Porto Belo · número da obra 53</p>
+    </li>
+    <li class="folha">
+      <p class="linha"><span class="prot">Contrato de 2014</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+      <h3 class="obra-nome" data-fora-da-regua>Iluminação Pública da Rodovia do Contorno</h3>
+<p><span class="valor-obra num">R$ 4,8 milhões</span> pagos.</p>      <p class="meta">Bairros no sistema: Rodovia do Contorno · número da obra 81</p>
+    </li>
+  </ol>
+</section>
+
 <section class="bloco" aria-labelledby="h-mande">
   <h2 id="h-mande">Mande para quem precisa saber</h2>
   <div class="acoes-linha">
@@ -195,17 +280,17 @@
   <p class="miuda" id="copiado" role="status"></p>
 </section>
 <div class="fonte">
-  <p>Fonte: IBGE, Censo 2022, resultados por bairro. "Casas com rede" é a parte das casas com esgoto ligado à rede geral. Só entram bairros com 100 casas ou mais. Contas do Vigia.</p>
+  <p>Fonte: IBGE, Censo 2022, resultados por bairro. "Casas com rede" é a parte das casas com esgoto ligado à rede geral. Só entram bairros com 100 casas ou mais. Obras: sistema de obras do <a href="https://transparencia.cariacica.es.gov.br/">Portal da Transparência de Cariacica</a>. Contas do Vigia. <a href="/fontes/#obras">Como fazemos →</a></p>
 </div>
 </main>
 <footer class="rodape">
   <img src="/bandeira.svg" alt="Bandeira de Cariacica com o nome Vigia no lugar do brasão" width="180" height="120">
   <p class="lema">A gente confere. Você cobra.</p>
-  <p class="miuda">Feito por moradores de Cariacica. Nosso lado é o povo de Cariacica e o que ele precisa. <a href="/quem-somos/">Quem somos →</a></p>
+  <p class="miuda">Feito por moradores de Cariacica. Nosso lado é o povo de Cariacica e o que ele precisa. <a href="/quem-somos/">Quem somos →</a> · <a href="/fontes/">Nossas fontes →</a></p>
   <p class="miuda">Fale com a gente: <a href="https://www.instagram.com/vigiacariacica/">@vigiacariacica</a> no Instagram.</p>
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=19fe9e05" defer></script>
+<script src="/site.js?v=2ed1170d" defer></script>
 </body>
 </html>

@@ -231,3 +231,61 @@ ol.indice b{font-family:var(--display);font-weight:900;text-transform:uppercase;
 .problema{border-top:3px solid var(--tinta);padding-top:20px;scroll-margin-top:12px}
 .melhorou{display:flex;flex-direction:column;gap:6px;border-left:6px solid var(--verde);padding-left:12px}
 .problema .numero{white-space:normal;font-size:clamp(48px,7vw,88px);text-transform:uppercase}
+/* vereadores: níveis de impacto. Verde cheio = muda algo; listrado = muda pouco; cinza = simbólico;
+   vazado = pode ser barrado. A forma também muda, para quem não distingue cor. */
+:root{--simb:#a3b3a9}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--simb:#5d7a69}}
+:root[data-theme="dark"]{--simb:#5d7a69}
+.cem i.n-concreto,.pilha i.n-concreto,.nv.n-concreto{background:var(--bandeira)}
+.cem i.n-fraco,.pilha i.n-fraco,.nv.n-fraco{background:repeating-linear-gradient(135deg,var(--bandeira) 0 3px,var(--folha) 3px 6px)}
+.cem i.n-simbolico,.pilha i.n-simbolico,.nv.n-simbolico{background:var(--simb)}
+.cem i.n-barrado,.pilha i.n-barrado,.nv.n-barrado{background:var(--folha);box-shadow:inset 0 0 0 2px var(--tinta)}
+.cem i.n-sem,.pilha i.n-sem,.nv.n-sem{background:var(--vazio)}
+.cem.grande{width:min(100%,300px);gap:4px}
+.pilha{display:flex;height:22px;width:100%;background:var(--vazio)}
+.pilha i{display:block;height:100%;min-width:3px}
+.pilha i+i{border-left:2px solid var(--folha)}
+.nv{display:inline-block;width:18px;height:18px;flex:none;vertical-align:-3px}
+.nv.grande{width:44px;height:44px}
+ul.niveis{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+ul.niveis li{display:flex;gap:10px;align-items:center;line-height:1.3}
+ol.niveis-grade,ol.vereadores,ul.tarefas,ol.projetos{list-style:none;margin:0;padding:0}
+ol.niveis-grade li{gap:8px}
+ul.tarefas li{display:flex;flex-direction:column;gap:4px;border-top:4px solid var(--tinta);padding-top:10px}
+ul.tarefas b{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1.6em;line-height:1}
+.vereador h3 a{color:var(--tinta);text-decoration:none}
+.vereador h3 a:hover{text-decoration:underline}
+.folha .valor{font-family:var(--display);font-weight:900;font-size:clamp(44px,7vw,68px);line-height:.9;text-transform:uppercase}
+.vereador .valor small,.folha .valor small{font-family:var(--texto);font-weight:700;font-size:.3em;text-transform:none;letter-spacing:0}
+.vereador .mais{margin-top:auto;font-weight:700}
+.conta{border-top:3px solid var(--tinta);padding-top:20px;scroll-margin-top:12px}
+.conta .numero{white-space:normal;font-size:clamp(52px,7vw,88px)}
+table.tabela{width:100%;border-collapse:collapse;font-size:.92em}
+table.tabela caption{text-align:left;padding-bottom:8px}
+table.tabela th,table.tabela td{padding:10px 8px;border-bottom:1px solid var(--linha);text-align:right;vertical-align:top}
+table.tabela th[scope=row],table.tabela thead th:first-child{text-align:left}
+table.tabela thead th{font-family:var(--protocolo);font-size:.78em;letter-spacing:.04em;text-transform:uppercase;color:var(--tinta-suave);vertical-align:bottom;border-bottom:2px solid var(--tinta)}
+table.tabela td{font-variant-numeric:tabular-nums}
+@media (max-width:760px){
+  table.tabela thead{position:absolute;left:-9999px}
+  table.tabela,table.tabela tbody,table.tabela tr,table.tabela th,table.tabela td{display:block;width:100%}
+  table.tabela tr{border-top:2px solid var(--tinta);padding:8px 0}
+  table.tabela th[scope=row]{border:0;padding:4px 0;font-size:1.1em}
+  table.tabela td{display:flex;justify-content:space-between;gap:12px;border:0;padding:3px 0}
+  table.tabela td::before{content:attr(data-rot);color:var(--tinta-suave);text-align:left}
+  table.tabela tr{display:grid;grid-template-columns:1fr 1fr;column-gap:18px}
+  table.tabela th[scope=row]{grid-column:1/-1}
+  table.tabela td[data-rot="Salário"]{display:none}
+  .nv.grande{width:28px;height:28px}
+}
+ol.projetos{display:flex;flex-direction:column;gap:0;margin-top:8px}
+ol.projetos li{display:flex;flex-direction:column;gap:6px;padding:14px 0;border-top:1px solid var(--linha)}
+ol.projetos .linha{display:flex;gap:10px;align-items:center;flex-wrap:wrap;max-width:none}
+details.grupo summary b{display:flex;gap:10px;align-items:center}
+.selo.cheio{background:var(--bandeira);border-color:var(--bandeira);color:var(--on-bandeira)}
+.selo.apagado{border-color:var(--tinta-suave);color:var(--tinta-suave)}
+/* obras no bairro */
+ol.obras{list-style:none;margin:0;padding:0}
+ol.obras .linha{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;max-width:none}
+ol.obras h3.obra-nome{font-family:var(--texto);font-weight:700;text-transform:none;font-size:1.05em;line-height:1.3}
+.valor-obra{font-family:var(--display);font-weight:900;font-size:1.8em;line-height:1}
