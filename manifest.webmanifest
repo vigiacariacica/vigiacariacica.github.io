@@ -1,0 +1,14 @@
+{
+  "name": "Vigia Cariacica",
+  "short_name": "Vigia",
+  "description": "Como a prefeitura de Cariacica usa o seu dinheiro: o seu bairro, a fila do seu posto e as perguntas que fizemos.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#f3f6f2",
+  "theme_color": "#00923f",
+  "icons": [
+    {"src": "/icone-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/icone-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}

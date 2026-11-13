@@ -123,6 +123,13 @@
   abrirAlvo();
   window.addEventListener("hashchange", abrirAlvo);
 
+  /* imprimir: abre as partes fechadas e depois fecha de novo */
+  var fechadas = [];
+  window.addEventListener("beforeprint", function () {
+    fechadas = Array.prototype.filter.call(document.querySelectorAll("main details:not([open])"), function (d) { d.open = true; return true; });
+  });
+  window.addEventListener("afterprint", function () { fechadas.forEach(function (d) { d.open = false; }); fechadas = []; });
+
   /* mandar no WhatsApp e copiar o link desta página */
   document.querySelectorAll("[data-zap]").forEach(function (a) {
     a.href = "https://wa.me/?text=" + encodeURIComponent(a.dataset.zap + " " + location.href);
