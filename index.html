@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/" aria-current="page">Início</a></li>
+<li><a href="/bairros/">Meu bairro</a></li>
+<li><a href="/problemas/">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/" aria-current="page">Início</a></li>
 <li><a href="/bairros/">Meu bairro</a></li>
@@ -49,13 +64,13 @@
 <main id="conteudo" tabindex="-1">
 <div class="grade-2 larga-esq">
   <section class="bloco" aria-labelledby="h1">
-    <p class="prot"><b>Vigia Cariacica</b> · feito por moradores · sem partido</p>
     <h1 id="h1" tabindex="-1">A gente mostra como a prefeitura usa o <span class="mk">seu dinheiro</span>.</h1>
     <p class="lead">Olhamos as contas de Cariacica. Perguntamos o que não está claro. E mostramos a resposta, para você cobrar.</p>
   </section>
   <section class="bloco folha" aria-labelledby="h-bairro">
     <h2 id="h-bairro">Como está o seu bairro?</h2>
-    <p>Veja o esgoto, o posto de saúde e a fila do seu bairro. E compare com o resto da cidade.</p>
+    <p>Veja o esgoto, o posto de saúde, as obras e a fila do seu bairro. E compare com o resto da cidade.</p>
+    <p class="seu-bairro" data-seu-bairro hidden><a href="/bairros/"><span>Voltar para <b></b></span><span aria-hidden="true">→</span></a></p>
 <form class="busca" data-busca-bairro="lista-inicio" data-so-busca role="search">
   <label for="q-inicio">Escreva o nome do seu bairro</label>
   <input type="search" id="q-inicio" name="q" autocomplete="off" placeholder="Ex.: Nova Rosa da Penha">
@@ -196,23 +211,15 @@
   </div>
 </section>
 
-<section class="bloco" aria-labelledby="h-funciona">
-  <h2 id="h-funciona">Como o Vigia funciona</h2>
-  <ol class="passos grade-4">
-    <li><b>Olhamos as contas</b><span>Todo dia, um programa de computador baixa as contas oficiais da prefeitura.</span></li>
-    <li><b>Perguntamos</b><span>Quando algo não está claro, perguntamos à prefeitura. A lei manda responder em 20 dias.</span></li>
-    <li><b>Mostramos a resposta</b><span>A resposta sai aqui, do jeito que veio. Se estiver tudo certo, mostramos também.</span></li>
-    <li><b>Você cobra</b><span>Com a prova na mão, você cobra no posto, na Ouvidoria e do vereador.</span></li>
-  </ol>
-</section>
-
 <div class="grade-2">
-  <section class="bloco" aria-labelledby="h-porque">
-    <h2 id="h-porque">Por que a gente faz isso</h2>
-    <p class="lead">Quem mais precisa da prefeitura é quem tem menos.</p>
-    <p>É quem usa o posto de saúde e a escola pública. É quem espera asfalto e esgoto na rua. É por essas pessoas que a gente olha as contas.</p>
-    <p>Não somos contra nenhum governo. Mostramos fatos e cobramos respostas.</p>
-    <p><a href="/quem-somos/">Quem somos e no que acreditamos →</a></p>
+  <section class="bloco" aria-labelledby="h-funciona">
+    <h2 id="h-funciona">Como o Vigia funciona</h2>
+    <ol class="passos">
+      <li><b>Olhamos as contas</b><span>Todo dia, um programa baixa as contas oficiais da cidade.</span></li>
+      <li><b>Perguntamos</b><span>O que não está claro vira pergunta. A lei manda responder em 20 dias.</span></li>
+      <li><b>Você cobra</b><span>A resposta sai aqui, do jeito que veio. Com a prova na mão, você cobra.</span></li>
+    </ol>
+    <p>Não somos contra nenhum governo. <a href="/quem-somos/">Quem somos e no que acreditamos →</a></p>
   </section>
   <section class="bloco folha" aria-labelledby="h-mudou">
     <p class="prot">Placar</p>
@@ -223,8 +230,8 @@
   </section>
 </div>
 
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="Vigia Cariacica: veja como a prefeitura usa o nosso dinheiro, com prova oficial." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
@@ -239,6 +246,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>

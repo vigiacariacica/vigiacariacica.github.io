@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/fontes/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/">Início</a></li>
+<li><a href="/bairros/">Meu bairro</a></li>
+<li><a href="/problemas/">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/" aria-current="page">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/">Meu bairro</a></li>
@@ -65,194 +80,200 @@
   </ul>
 </section>
 
-<nav aria-label="Partes do site">
-  <ol class="indice grade-4">
-<li><a href="#bairros"><b>Meu bairro</b><span class="miuda">Esgoto, água, lixo, leitura e renda de cada bairro. E os postos, as escolas e as obras do bairro.</span></a></li>
-<li><a href="#obras"><b>Obras no bairro</b><span class="miuda">Cada obra que a prefeitura registrou com o nome do bairro, quanto já pagou e em que pé está.</span></a></li>
-<li><a href="#fila"><b>Fila da saúde</b><span class="miuda">Quantas consultas e exames com especialista esperam vaga em cada posto, e há quanto tempo.</span></a></li>
-<li><a href="#vereadores"><b>Vereadores</b><span class="miuda">Os projetos de lei e os pedidos de cada um dos 19 vereadores. E a conta do salário e do gasto da Câmara.</span></a></li>
-<li><a href="#dinheiro"><b>Dinheiro</b><span class="miuda">Quanto a prefeitura gastou no ano, em quê, e quanto isso dá por morador.</span></a></li>
-<li><a href="#problemas"><b>Maiores problemas</b><span class="miuda">Os problemas que atingem mais gente em Cariacica, com o número de cada um e o que já perguntamos.</span></a></li>
-<li><a href="#perguntas"><b>Perguntas</b><span class="miuda">As perguntas oficiais que fizemos à prefeitura, à Câmara e ao Governo do ES, com prazo e resposta.</span></a></li>
-  </ol>
-</nav>
-
-<section class="bloco problema" id="bairros" aria-labelledby="h-bairros">
-  <p class="prot"><a href="/bairros/">Meu bairro →</a></p>
-  <h2 id="h-bairros">Meu bairro</h2>
-  <p class="lead">Esgoto, água, lixo, leitura e renda de cada bairro. E os postos, as escolas e as obras do bairro.</p>
-  <div class="grade-3">
-    <div class="folha">
-      <h3>De onde vem</h3>
-      <ul class="regras">
+<section class="bloco" aria-labelledby="h-partes">
+  <h2 id="h-partes">Parte por parte</h2>
+  <p>Abra a parte do site que você quer conferir.</p>
+  <div>
+  <details class="grupo" id="bairros">
+    <summary><b>Meu bairro</b><span>5 fontes</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">Esgoto, água, lixo, leitura e renda de cada bairro. E os postos, as escolas e as obras do bairro. <a href="/bairros/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
 <li><span class="meta"><a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/22827-censo-demografico-2022.html">IBGE, Censo 2022, resultados por bairro</a></span><br>Casas, moradores, esgoto, água, lixo, leitura e renda.</li>
 <li><span class="meta"><a href="https://apidadosabertos.saude.gov.br/cnes/estabelecimentos?codigo_municipio=320130&amp;codigo_tipo_unidade=2">Ministério da Saúde, cadastro de estabelecimentos de saúde (CNES)</a></span><br>Endereço e bairro de cada posto.</li>
 <li><span class="meta"><a href="https://dados.es.gov.br/">Governo do ES, dados abertos, mapa das escolas</a></span><br>Endereço e bairro de cada escola.</li>
 <li><span class="meta"><a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/pesquisas-estatisticas-e-indicadores/ideb">MEC, Ideb por escola</a></span><br>Nota de cada escola.</li>
 <li><span class="meta"><a href="https://transparencia.cariacica.es.gov.br/">Portal da Transparência de Cariacica, sistema de obras</a></span><br>Obras, bairros, valor pago e situação.</li>
-      </ul>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>Comparamos cada bairro com a cidade inteira.</li><li>Bairro com menos de 100 casas não entra na lista dos piores. Com poucas casas, o número muda muito.</li><li>A obra que passa por mais de um bairro aparece em todos eles, com o valor da obra inteira.</li></ul>
+          <p><strong>Atualiza:</strong> O Censo é de 2022 e só muda no próximo. Postos e escolas, toda segunda. Obras, todo dia.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>O Censo junta alguns bairros pequenos com o vizinho.</li><li>O sistema de obras tem poucas obras de 2025 e nenhuma de 2026.</li><li>Obra sem bairro no sistema não aparece em nenhum bairro. Ela entra na conta da cidade.</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="folha">
-      <h3>Como fazemos a conta</h3>
-      <ul class="regras"><li>Comparamos cada bairro com a cidade inteira.</li><li>Bairro com menos de 100 casas não entra na lista dos piores. Com poucas casas, o número muda muito.</li><li>A obra que passa por mais de um bairro aparece em todos eles, com o valor da obra inteira.</li></ul>
-      <p><strong>Atualiza:</strong> O Censo é de 2022 e só muda no próximo. Postos e escolas, toda segunda. Obras, todo dia.</p>
-    </div>
-    <div class="outro">
-      <h3>O que o dado não mostra</h3>
-      <ul class="regras"><li>O Censo junta alguns bairros pequenos com o vizinho.</li><li>O sistema de obras tem poucas obras de 2025 e nenhuma de 2026.</li><li>Obra sem bairro no sistema não aparece em nenhum bairro. Ela entra na conta da cidade.</li></ul>
-    </div>
-  </div>
-</section>
-<section class="bloco problema" id="obras" aria-labelledby="h-obras">
-  <p class="prot"><a href="/bairros/">Obras no bairro →</a></p>
-  <h2 id="h-obras">Obras no bairro</h2>
-  <p class="lead">Cada obra que a prefeitura registrou com o nome do bairro, quanto já pagou e em que pé está.</p>
-  <div class="grade-3">
-    <div class="folha">
-      <h3>De onde vem</h3>
-      <ul class="regras">
+  </details>
+  <details class="grupo" id="obras">
+    <summary><b>Obras no bairro</b><span>1 fonte</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">Cada obra que a prefeitura registrou com o nome do bairro, quanto já pagou e em que pé está. <a href="/bairros/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
 <li><span class="meta"><a href="https://transparencia.cariacica.es.gov.br/">Portal da Transparência de Cariacica, sistema de obras, um arquivo por ano desde 2010</a></span><br>Nome, bairros, valor do contrato, valor pago e situação.</li>
-      </ul>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>Lemos o campo de bairros de cada obra e ligamos ao nome do bairro no Censo.</li><li>A situação é copiada do sistema e trocada por palavras simples. Pronta e entregue, por exemplo.</li><li>Quando a obra está em andamento e o prazo do contrato já passou, a gente avisa.</li></ul>
+          <p><strong>Atualiza:</strong> Todo dia, junto com o resto do Portal da Transparência.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>Só aparece a obra que a prefeitura registrou no sistema de obras.</li><li>Obra paga como serviço comum, sem registro no sistema de obras, fica de fora.</li><li>Serviço da cidade toda, como tapa-buraco, não entra em nenhum bairro. Fica na lista da cidade.</li><li>A situação é a que a prefeitura escreveu. Pode estar atrasada.</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="folha">
-      <h3>Como fazemos a conta</h3>
-      <ul class="regras"><li>Lemos o campo de bairros de cada obra e ligamos ao nome do bairro no Censo.</li><li>A situação é copiada do sistema e trocada por palavras simples. Pronta e entregue, por exemplo.</li><li>Quando a obra está em andamento e o prazo do contrato já passou, a gente avisa.</li></ul>
-      <p><strong>Atualiza:</strong> Todo dia, junto com o resto do Portal da Transparência.</p>
-    </div>
-    <div class="outro">
-      <h3>O que o dado não mostra</h3>
-      <ul class="regras"><li>Só aparece a obra que a prefeitura registrou no sistema de obras.</li><li>Obra paga como serviço comum, sem registro no sistema de obras, fica de fora.</li><li>Serviço da cidade toda, como tapa-buraco, não entra em nenhum bairro. Fica na lista da cidade.</li><li>A situação é a que a prefeitura escreveu. Pode estar atrasada.</li></ul>
-    </div>
-  </div>
-</section>
-<section class="bloco problema" id="fila" aria-labelledby="h-fila">
-  <p class="prot"><a href="/fila/">Fila da saúde →</a></p>
-  <h2 id="h-fila">Fila da saúde</h2>
-  <p class="lead">Quantas consultas e exames com especialista esperam vaga em cada posto, e há quanto tempo.</p>
-  <div class="grade-3">
-    <div class="folha">
-      <h3>De onde vem</h3>
-      <ul class="regras">
+  </details>
+  <details class="grupo" id="fila">
+    <summary><b>Fila da saúde</b><span>1 fonte</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">Quantas consultas e exames com especialista esperam vaga em cada posto, e há quanto tempo. <a href="/fila/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
 <li><span class="meta"><a href="https://cariacica.es.gov.br/pagina/ler/951/semus-fila-de-espera-para-agendamento-de-consultas-e-exames">Secretaria de Saúde de Cariacica, fila de espera de consultas e exames</a></span><br>Um pedido por linha, com o posto e a data do pedido.</li>
-      </ul>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>Contamos os pedidos de cada posto.</li><li>Metade espera há: o meio da fila, em dias, virado em meses.</li><li>Não usamos nome nem nada que mostre quem está na fila.</li></ul>
+          <p><strong>Atualiza:</strong> O robô olha todo dia. A prefeitura publica uma planilha por mês.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>A mesma pessoa pode ter mais de um pedido.</li><li>Se a prefeitura atrasa a planilha, o site mostra o último mês publicado.</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="folha">
-      <h3>Como fazemos a conta</h3>
-      <ul class="regras"><li>Contamos os pedidos de cada posto.</li><li>Metade espera há: o meio da fila, em dias, virado em meses.</li><li>Não usamos nome nem nada que mostre quem está na fila.</li></ul>
-      <p><strong>Atualiza:</strong> O robô olha todo dia. A prefeitura publica uma planilha por mês.</p>
-    </div>
-    <div class="outro">
-      <h3>O que o dado não mostra</h3>
-      <ul class="regras"><li>A mesma pessoa pode ter mais de um pedido.</li><li>Se a prefeitura atrasa a planilha, o site mostra o último mês publicado.</li></ul>
-    </div>
-  </div>
-</section>
-<section class="bloco problema" id="vereadores" aria-labelledby="h-vereadores">
-  <p class="prot"><a href="/vereadores/">Vereadores →</a></p>
-  <h2 id="h-vereadores">Vereadores</h2>
-  <p class="lead">Os projetos de lei e os pedidos de cada um dos 19 vereadores. E a conta do salário e do gasto da Câmara.</p>
-  <div class="grade-3">
-    <div class="folha">
-      <h3>De onde vem</h3>
-      <ul class="regras">
+  </details>
+  <details class="grupo" id="vereadores">
+    <summary><b>Vereadores</b><span>3 fontes</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">Os projetos de lei e os pedidos de cada um dos 19 vereadores. E a conta do salário e do gasto da Câmara. <a href="/vereadores/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
 <li><span class="meta"><a href="https://cariacica.camarasempapel.com.br/consulta-producao.aspx">Câmara Municipal de Cariacica, sistema de projetos, consulta por autor</a></span><br>Projetos, resumos, situação e pedidos.</li>
 <li><span class="meta"><a href="https://transparenciacmc.cariacica.es.gov.br/Despesa.Secretaria.aspx">Portal da Transparência da Câmara</a></span><br>Gasto da câmara por ano e salário na folha.</li>
 <li><span class="meta"><a href="https://cariacica.camarasempapel.com.br/">Leis municipais 6.410/2022 e 6.865/2026</a></span><br>Limite de gasto de cada gabinete.</li>
-      </ul>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>Contamos os projetos de lei de cada vereador desde janeiro de 2025.</li><li>Lemos o resumo oficial de cada um e separamos por impacto: muda algo, muda pouco, simbólico ou pode ser barrado.</li><li>A conta da Câmara divide o gasto total pelas leis aprovadas.</li><li>Não dividimos o salário de cada vereador pelas leis dele. Mais projetos não quer dizer mais trabalho bom.</li></ul>
+          <p><strong>Atualiza:</strong> A Câmara bloqueia o robô. Por enquanto, copiamos os dados pelo navegador. A última cópia é de 06/11/2026.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>A separação por impacto é nossa e pode ter erro. Cada projeto tem link para você conferir.</li><li>Ainda não mostramos votos e presença. Já perguntamos à Câmara.</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="folha">
-      <h3>Como fazemos a conta</h3>
-      <ul class="regras"><li>Contamos os projetos de lei de cada vereador desde janeiro de 2025.</li><li>Lemos o resumo oficial de cada um e separamos por impacto: muda algo, muda pouco, simbólico ou pode ser barrado.</li><li>A conta da Câmara divide o gasto total pelas leis aprovadas.</li><li>Não dividimos o salário de cada vereador pelas leis dele. Mais projetos não quer dizer mais trabalho bom.</li></ul>
-      <p><strong>Atualiza:</strong> A Câmara bloqueia o robô. Por enquanto, copiamos os dados pelo navegador. A última cópia é de 06/11/2026.</p>
-    </div>
-    <div class="outro">
-      <h3>O que o dado não mostra</h3>
-      <ul class="regras"><li>A separação por impacto é nossa e pode ter erro. Cada projeto tem link para você conferir.</li><li>Ainda não mostramos votos e presença. Já perguntamos à Câmara.</li></ul>
-    </div>
-  </div>
-</section>
-<section class="bloco problema" id="dinheiro" aria-labelledby="h-dinheiro">
-  <p class="prot"><a href="/dinheiro/">Dinheiro →</a></p>
-  <h2 id="h-dinheiro">Dinheiro</h2>
-  <p class="lead">Quanto a prefeitura gastou no ano, em quê, e quanto isso dá por morador.</p>
-  <div class="grade-3">
-    <div class="folha">
-      <h3>De onde vem</h3>
-      <ul class="regras">
+  </details>
+  <details class="grupo" id="dinheiro">
+    <summary><b>Dinheiro</b><span>3 fontes</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">Quanto a prefeitura gastou no ano, em quê, e quanto isso dá por morador. <a href="/dinheiro/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
 <li><span class="meta"><a href="https://dados.es.gov.br/dataset/despesas-municipios">Tribunal de Contas do ES, dados abertos, despesas dos municípios</a></span><br>Gasto da prefeitura por área.</li>
 <li><span class="meta"><a href="https://siconfi.tesouro.gov.br/">Tesouro Nacional, contas anuais dos municípios (Siconfi)</a></span><br>Gasto com saúde de cariacica e das cidades vizinhas.</li>
 <li><span class="meta"><a href="https://www.ibge.gov.br/cidades-e-estados/es/cariacica.html">IBGE, estimativa de população</a></span><br>Número de moradores.</li>
-      </ul>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>Usamos o gasto que a prefeitura já conferiu que recebeu.</li><li>Dividimos pelo número de moradores e por 12 meses.</li></ul>
+          <p><strong>Atualiza:</strong> Uma vez por ano, quando as contas do ano fecham.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>É a média da cidade. Não diz quanto chega a cada bairro.</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="folha">
-      <h3>Como fazemos a conta</h3>
-      <ul class="regras"><li>Usamos o gasto que a prefeitura já conferiu que recebeu.</li><li>Dividimos pelo número de moradores e por 12 meses.</li></ul>
-      <p><strong>Atualiza:</strong> Uma vez por ano, quando as contas do ano fecham.</p>
-    </div>
-    <div class="outro">
-      <h3>O que o dado não mostra</h3>
-      <ul class="regras"><li>É a média da cidade. Não diz quanto chega a cada bairro.</li></ul>
-    </div>
-  </div>
-</section>
-<section class="bloco problema" id="problemas" aria-labelledby="h-problemas">
-  <p class="prot"><a href="/problemas/">Maiores problemas →</a></p>
-  <h2 id="h-problemas">Maiores problemas</h2>
-  <p class="lead">Os problemas que atingem mais gente em Cariacica, com o número de cada um e o que já perguntamos.</p>
-  <div class="grade-3">
-    <div class="folha">
-      <h3>De onde vem</h3>
-      <ul class="regras">
+  </details>
+  <details class="grupo" id="problemas">
+    <summary><b>Maiores problemas</b><span>4 fontes</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">Os problemas que atingem mais gente em Cariacica, com o número de cada um e o que já perguntamos. <a href="/problemas/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
 <li><span class="meta"><a href="http://tabnet.datasus.gov.br/">Ministério da Saúde, DataSUS, mortes de bebês e nascimentos</a></span><br>Mortes de bebês.</li>
 <li><span class="meta"><a href="https://www.sgb.gov.br/">Serviço Geológico do Brasil, áreas de risco</a></span><br>Moradores em área de risco.</li>
 <li><span class="meta"><a href="https://transparencia.cariacica.es.gov.br/">Portal da Transparência de Cariacica, contratos de emergência</a></span><br>Contratos sem concorrência.</li>
 <li><span class="meta"><a href="https://siconfi.tesouro.gov.br/">Tesouro Nacional (Siconfi)</a></span><br>Dinheiro próprio da cidade.</li>
-      </ul>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>Escolhemos os problemas que atingem mais gente, fazem mais estrago e a cidade pode resolver.</li><li>Fila, esgoto e contratos de emergência se atualizam sozinhos.</li><li>Os outros números conferimos na fonte em novembro de 2026.</li></ul>
+          <p><strong>Atualiza:</strong> Fila, esgoto e contratos, sozinhos. O resto, quando sai dado novo.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>Alguns números vêm de reportagem que cita o dado oficial. Nesses casos, dizemos o jornal.</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="folha">
-      <h3>Como fazemos a conta</h3>
-      <ul class="regras"><li>Escolhemos os problemas que atingem mais gente, fazem mais estrago e a cidade pode resolver.</li><li>Fila, esgoto e contratos de emergência se atualizam sozinhos.</li><li>Os outros números conferimos na fonte em novembro de 2026.</li></ul>
-      <p><strong>Atualiza:</strong> Fila, esgoto e contratos, sozinhos. O resto, quando sai dado novo.</p>
-    </div>
-    <div class="outro">
-      <h3>O que o dado não mostra</h3>
-      <ul class="regras"><li>Alguns números vêm de reportagem que cita o dado oficial. Nesses casos, dizemos o jornal.</li></ul>
-    </div>
-  </div>
-</section>
-<section class="bloco problema" id="perguntas" aria-labelledby="h-perguntas">
-  <p class="prot"><a href="/perguntas/">Perguntas →</a></p>
-  <h2 id="h-perguntas">Perguntas</h2>
-  <p class="lead">As perguntas oficiais que fizemos à prefeitura, à Câmara e ao Governo do ES, com prazo e resposta.</p>
-  <div class="grade-3">
-    <div class="folha">
-      <h3>De onde vem</h3>
-      <ul class="regras">
+  </details>
+  <details class="grupo" id="perguntas">
+    <summary><b>Perguntas</b><span>2 fontes</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">As perguntas oficiais que fizemos à prefeitura, à Câmara e ao Governo do ES, com prazo e resposta. <a href="/perguntas/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
 <li><span class="meta">Sistemas de pedido de informação da prefeitura, da Câmara e do Governo do ES, e a Ouvidoria</span></li>
 <li><span class="meta"><a href="https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2011/lei/l12527.htm">Lei de Acesso à Informação, Lei 12.527/2011</a></span><br>Prazo de resposta.</li>
-      </ul>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>Cada pergunta tem o número oficial do pedido e o prazo da lei: 20 dias, ou 30 na Ouvidoria.</li><li>Quando a resposta chega, mostramos o que disseram.</li></ul>
+          <p><strong>Atualiza:</strong> Quando mandamos uma pergunta nova ou chega uma resposta.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>Prazo que cai no fim de semana passa para a segunda-feira.</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="folha">
-      <h3>Como fazemos a conta</h3>
-      <ul class="regras"><li>Cada pergunta tem o número oficial do pedido e o prazo da lei: 20 dias, ou 30 na Ouvidoria.</li><li>Quando a resposta chega, mostramos o que disseram.</li></ul>
-      <p><strong>Atualiza:</strong> Quando mandamos uma pergunta nova ou chega uma resposta.</p>
-    </div>
-    <div class="outro">
-      <h3>O que o dado não mostra</h3>
-      <ul class="regras"><li>Prazo que cai no fim de semana passa para a segunda-feira.</li></ul>
-    </div>
+  </details>
   </div>
 </section>
 
 <section class="bloco" aria-labelledby="h-palavras">
-  <h2 id="h-palavras">Palavras que usamos</h2>
+  <h2 id="h-palavras">Palavras difíceis</h2>
   <dl class="glossario">
-<div><dt>De cada 10</dt><dd>A porcentagem dita do jeito que se fala. 72% vira 7 de cada 10.</dd></div>
-<div><dt>Metade espera há</dt><dd>O meio da fila. Metade das pessoas espera menos que isso. A outra metade espera mais.</dd></div>
-<div><dt>Valor pago</dt><dd>O dinheiro que já saiu da conta da prefeitura para quem fez o serviço.</dd></div>
-<div><dt>Por morador</dt><dd>O total dividido pelo número de moradores. Serve para comparar cidades de tamanhos diferentes.</dd></div>
-<div><dt>Pedido de informação</dt><dd>Uma pergunta oficial. A lei dá 20 dias para a resposta.</dd></div>
-<div><dt>Situação no sistema</dt><dd>O que a prefeitura escreveu no sistema dela. Pode estar atrasado. Por isso a gente pergunta.</dd></div>
+<div><dt data-fora-da-regua>De cada 10</dt><dd>A porcentagem dita do jeito que se fala. 72% vira 7 de cada 10.</dd></div>
+<div><dt data-fora-da-regua>Metade espera há</dt><dd>O meio da fila. Metade das pessoas espera menos que isso. A outra metade espera mais.</dd></div>
+<div><dt data-fora-da-regua>Por morador</dt><dd>O total dividido pelo número de moradores. Serve para comparar cidades de tamanhos diferentes.</dd></div>
+<div><dt data-fora-da-regua>Valor pago</dt><dd>O dinheiro que já saiu da conta da prefeitura para quem fez o serviço.</dd></div>
+<div><dt data-fora-da-regua>Valor liquidado</dt><dd>Quando a prefeitura confere que recebeu o que comprou. Depois vem o pagamento.</dd></div>
+<div><dt data-fora-da-regua>Situação no sistema</dt><dd>O que a prefeitura escreveu no sistema dela. Pode estar atrasado. Por isso a gente pergunta.</dd></div>
+<div><dt data-fora-da-regua>Lei de Acesso à Informação</dt><dd>A lei que manda o governo responder qualquer pessoa em até 20 dias.</dd></div>
+<div><dt data-fora-da-regua>Licitação</dt><dd>Concorrência para escolher quem faz o serviço pelo melhor preço.</dd></div>
+<div><dt data-fora-da-regua>Contrato de emergência</dt><dd>Contrato feito às pressas, sem concorrência, por causa de uma urgência. Dura até 1 ano.</dd></div>
+<div><dt data-fora-da-regua>Aditivo</dt><dd>Mudança no contrato depois de assinado: mais prazo, mais dinheiro ou mais serviço.</dd></div>
+<div><dt data-fora-da-regua>Tribunal de Contas</dt><dd>O órgão que confere as contas do Estado e das prefeituras do Espírito Santo.</dd></div>
   </dl>
 </section>
 
@@ -261,8 +282,8 @@
   <p>Mande no Instagram <a href="https://www.instagram.com/vigiacariacica/">@vigiacariacica</a>. Diga a página e o número. A gente confere na fonte, corrige e avisa o que mudou.</p>
 </section>
 
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="De onde vêm os números do Vigia Cariacica: todas as fontes oficiais." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
@@ -278,6 +299,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>

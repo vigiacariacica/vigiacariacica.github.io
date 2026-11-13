@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/bairros/flexal-ii/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/">Início</a></li>
+<li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
+<li><a href="/problemas/">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
@@ -49,7 +64,7 @@
 <main id="conteudo" tabindex="-1">
 <section class="bloco" aria-labelledby="h1">
   <p class="prot"><a href="/bairros/">Meu bairro</a> · Censo do IBGE de 2022</p>
-  <h1 id="h1" tabindex="-1">Flexal II</h1>
+  <h1 id="h1" tabindex="-1" data-guardar-bairro="flexal-ii">Flexal II</h1>
   <p class="lead">6.474 moradores em 2.288 casas.</p>
 </section>
 
@@ -119,49 +134,54 @@
   <h2 id="h-obras">Obras pagas pela prefeitura no bairro</h2>
   <p>Estas são as 7 obras que a prefeitura registrou com o nome de Flexal II. A situação é a que o sistema de obras mostra hoje.</p>
   <ol class="obras grade-2">
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2024 · Obras</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Iluminação do campo do apollo</h3>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2024</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Iluminação do campo do apollo</h3>
 <p><span class="valor-obra num">R$ 290 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Flexal II · contrato de 07/03/2024 a 03/08/2024 · número da obra 1897</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2023 · Obras</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Conclusão das obras de drenagem e pavimentação de diversas ruas do bairro flexal</h3>
+  <p class="meta">Contrato de 07/03/2024 a 03/08/2024 · obra nº 1897</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2023</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Conclusão das obras de drenagem e pavimentação de diversas ruas do bairro flexal</h3>
 <p><span class="valor-obra num">R$ 186 mil</span> pagos.</p>
-<p class="miuda">Obra em mais de um bairro. O valor é da obra inteira.</p>      <p class="meta">Bairros no sistema: Flexal I, Flexal II · contrato de 23/02/2023 a 19/12/2023 · número da obra 1779</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Escadaria Sem Nome e Escadaria de acesso em Flexal II</h3>
+<p class="miuda">Obra em mais de um bairro (Flexal I, Flexal II). O valor é da obra inteira.</p>  <p class="meta">Contrato de 23/02/2023 a 19/12/2023 · obra nº 1779</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Escadaria Sem Nome e Escadaria de acesso em Flexal II</h3>
 <p><span class="valor-obra num">R$ 101 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Flexal II · contrato de 15/06/2021 a 12/10/2021 · número da obra 1699</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Execução da Escadaria Ramira Ferreira de Souza no Bairro Flexal II</h3>
+  <p class="meta">Contrato de 15/06/2021 a 12/10/2021 · obra nº 1699</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Execução da Escadaria Ramira Ferreira de Souza no Bairro Flexal II</h3>
 <p><span class="valor-obra num">R$ 86 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Flexal II · contrato de 18/06/2021 a 18/11/2021 · número da obra 1698</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Execução da Escadaria Maria da Penha Silva no Bairro Flexal II</h3>
-<p><span class="valor-obra num">R$ 85 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Flexal II · contrato de 22/06/2021 a 19/10/2021 · número da obra 1697</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ">Parada: o contrato foi cancelado</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Santo André no Bairro Bandeirantes e Execução da Escadaria Sem Nome situada no Bairro Vista Mar</h3>
-<p><span class="valor-obra num">R$ 100 mil</span> pagos, de R$ 240 mil do contrato.</p>
-      <p class="meta">Bairros no sistema: Flexal II · contrato de 02/01/2020 a 29/07/2020 · número da obra 1030</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2014 · Saúde</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Construção de unidade de pronto atendimento - bairro flexal ii</h3>
-<p><span class="valor-obra num">R$ 4,9 milhões</span> pagos, de R$ 4,8 milhões do contrato.</p>
-      <p class="meta">Bairros no sistema: Flexal II · contrato de 31/10/2014 a 10/05/2017 · número da obra 75</p>
-    </li>
+  <p class="meta">Contrato de 18/06/2021 a 18/11/2021 · obra nº 1698</p>
+</li>
   </ol>
+  <details class="grupo mais-obras">
+    <summary><b>Ver as outras 3</b><span>obras mais antigas</span></summary>
+    <ol class="obras grade-2">
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Execução da Escadaria Maria da Penha Silva no Bairro Flexal II</h3>
+<p><span class="valor-obra num">R$ 85 mil</span> pagos.</p>
+  <p class="meta">Contrato de 22/06/2021 a 19/10/2021 · obra nº 1697</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ">Parada: o contrato foi cancelado</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Santo André no Bairro Bandeirantes e Execução da Escadaria Sem Nome situada no Bairro Vista Mar</h3>
+<p><span class="valor-obra num">R$ 100 mil</span> pagos, de R$ 240 mil do contrato.</p>
+  <p class="meta">Contrato de 02/01/2020 a 29/07/2020 · obra nº 1030</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2014</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Construção de unidade de pronto atendimento - bairro flexal ii</h3>
+<p><span class="valor-obra num">R$ 4,9 milhões</span> pagos.</p>
+  <p class="meta">Contrato de 31/10/2014 a 10/05/2017 · obra nº 75</p>
+</li>
+    </ol>
+  </details>
   <p class="miuda">O sistema tem 221 obras desde 2010. Para 2025, tem só 1. Para 2026, nenhuma. Outras 14, que somam R$ 182 milhões, são da cidade toda ou não dizem o bairro. <a href="/bairros/#cidade-toda">Veja a lista</a>. <a href="/fontes/#obras">Como lemos as obras →</a></p>
 </section>
 
@@ -197,8 +217,8 @@
   </ol>
 </section>
 
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="Veja como está Flexal II (Cariacica): esgoto, posto de saúde e fila." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
@@ -219,6 +239,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>

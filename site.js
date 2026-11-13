@@ -97,6 +97,32 @@
     });
   });
 
+  /* o bairro da pessoa: guardado só neste aparelho, para o início mostrar o atalho */
+  var guardar = document.querySelector("[data-guardar-bairro]");
+  if (guardar) {
+    try { localStorage.setItem("vigia-bairro", JSON.stringify({ slug: guardar.dataset.guardarBairro, nome: guardar.textContent.trim() })); } catch (e) {}
+  }
+  var atalho = document.querySelector("[data-seu-bairro]");
+  if (atalho) {
+    try {
+      var meu = JSON.parse(localStorage.getItem("vigia-bairro") || "null");
+      if (meu && /^[a-z0-9-]+$/.test(meu.slug)) {
+        atalho.querySelector("a").href = "/bairros/" + meu.slug + "/";
+        atalho.querySelector("b").textContent = meu.nome;
+        atalho.hidden = false;
+      }
+    } catch (e) {}
+  }
+
+  /* link para uma parte fechada (ex.: /fontes/#obras): abre a parte */
+  function abrirAlvo() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var alvo = id && document.getElementById(id);
+    if (alvo && alvo.tagName === "DETAILS") { alvo.open = true; alvo.scrollIntoView(); }
+  }
+  abrirAlvo();
+  window.addEventListener("hashchange", abrirAlvo);
+
   /* mandar no WhatsApp e copiar o link desta página */
   document.querySelectorAll("[data-zap]").forEach(function (a) {
     a.href = "https://wa.me/?text=" + encodeURIComponent(a.dataset.zap + " " + location.href);

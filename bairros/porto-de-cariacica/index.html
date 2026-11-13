@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/bairros/porto-de-cariacica/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/">Início</a></li>
+<li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
+<li><a href="/problemas/">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
@@ -49,7 +64,7 @@
 <main id="conteudo" tabindex="-1">
 <section class="bloco" aria-labelledby="h1">
   <p class="prot"><a href="/bairros/">Meu bairro</a> · Censo do IBGE de 2022</p>
-  <h1 id="h1" tabindex="-1">Porto de Cariacica</h1>
+  <h1 id="h1" tabindex="-1" data-guardar-bairro="porto-de-cariacica">Porto de Cariacica</h1>
   <p class="lead">5.286 moradores em 1.869 casas.</p>
 </section>
 
@@ -117,18 +132,18 @@
   <h2 id="h-obras">Obras pagas pela prefeitura no bairro</h2>
   <p>Estas são as 2 obras que a prefeitura registrou com o nome de Porto de Cariacica. A situação é a que o sistema de obras mostra hoje.</p>
   <ol class="obras grade-2">
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Drenagem e pavimentação na Rua Alfredo Antônio Ferreira, Rua Amarílis e Rua Flor de Laranjeira em Porto de Cariacica</h3>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Drenagem e pavimentação na Rua Alfredo Antônio Ferreira, Rua Amarílis e Rua Flor de Laranjeira em Porto de Cariacica</h3>
 <p><span class="valor-obra num">R$ 2 milhões</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Porto de Cariacica · contrato de 31/01/2020 a 26/10/2020 · número da obra 1040</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Construção de Praça em Porto de Cariacica</h3>
+  <p class="meta">Contrato de 31/01/2020 a 26/10/2020 · obra nº 1040</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Construção de Praça em Porto de Cariacica</h3>
 <p><span class="valor-obra num">R$ 255 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Porto de Cariacica · contrato de 22/07/2019 a 16/02/2020 · número da obra 1005</p>
-    </li>
+  <p class="meta">Contrato de 22/07/2019 a 16/02/2020 · obra nº 1005</p>
+</li>
   </ol>
   <p class="miuda">O sistema tem 221 obras desde 2010. Para 2025, tem só 1. Para 2026, nenhuma. Outras 14, que somam R$ 182 milhões, são da cidade toda ou não dizem o bairro. <a href="/bairros/#cidade-toda">Veja a lista</a>. <a href="/fontes/#obras">Como lemos as obras →</a></p>
 </section>
@@ -165,8 +180,8 @@
   </ol>
 </section>
 
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="Veja como está Porto de Cariacica (Cariacica): esgoto, posto de saúde e fila." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
@@ -187,6 +202,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>

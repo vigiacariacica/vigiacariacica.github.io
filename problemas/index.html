@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/problemas/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/">Início</a></li>
+<li><a href="/bairros/">Meu bairro</a></li>
+<li><a href="/problemas/" aria-current="page">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/">Meu bairro</a></li>
@@ -54,319 +69,89 @@
   <div class="oque"><b>O que já fizemos</b><p>Para cada problema, fizemos perguntas oficiais com prazo e mostramos os números. Quem conserta é a prefeitura. Quando algo mudar de verdade, aparece no <a href="/#h-mudou">placar</a>.</p></div>
 </section>
 
-<nav aria-label="Os problemas">
-  <ol class="indice grade-4">
-    <li><a href="#fila"><span class="prot">1</span><b>A fila da saúde</b><span class="miuda">Quase 41 mil consultas e exames esperam vaga.</span></a></li>
-    <li><a href="#bebes"><span class="prot">2</span><b>Bebês e grávidas</b><span class="miuda">Quase 16 de cada 1.000 bebês morreram antes de 1 ano.</span></a></li>
-    <li><a href="#esgoto"><span class="prot">3</span><b>Esgoto</b><span class="miuda">Cerca de 22 mil casas fora da rede de esgoto.</span></a></li>
-    <li><a href="#morros"><span class="prot">4</span><b>Morros com risco de deslizar</b><span class="miuda">Mais de 25 mil pessoas em área de risco.</span></a></li>
-    <li><a href="#escola"><span class="prot">5</span><b>Aprender a ler e creche</b><span class="miuda">1 de cada 3 crianças terminou o 2º ano sem ler.</span></a></li>
-    <li><a href="#violencia"><span class="prot">6</span><b>Violência</b><span class="miuda">A maior taxa de assassinatos da Grande Vitória em 2024.</span></a></li>
-    <li><a href="#emergencias"><span class="prot">7</span><b>Contratos sem concorrência</b><span class="miuda">R$ 125 milhões em contratos sem concorrência em 2026.</span></a></li>
-    <li><a href="#dinheiro"><span class="prot">8</span><b>Pouco dinheiro próprio</b><span class="miuda">R$ 122 de IPTU por morador, quase metade da Serra.</span></a></li>
-  </ol>
-</nav>
+<ol class="lista-problemas grade-2">
+  <li>
+    <a class="problema-cartao" href="/problemas/fila/">
+      <span class="prot">Problema 1</span>
+      <b class="titulo">A fila da saúde</b>
+      <span class="numero num">Quase 41 mil</span>
+      <span class="t">consultas e exames com especialista esperam vaga.</span>
+      <span class="mais">2 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+  <li>
+    <a class="problema-cartao" href="/problemas/bebes/">
+      <span class="prot">Problema 2</span>
+      <b class="titulo">Bebês e grávidas</b>
+      <span class="numero num">Quase 16</span>
+      <span class="t">de cada 1.000 bebês nascidos em 2024 morreram antes de fazer 1 ano.</span>
+      <span class="mais">3 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+  <li>
+    <a class="problema-cartao" href="/problemas/esgoto/">
+      <span class="prot">Problema 3</span>
+      <b class="titulo">Esgoto</b>
+      <span class="numero num">Cerca de 22 mil</span>
+      <span class="t">casas não têm esgoto ligado na rede.</span>
+      <span class="mais">2 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+  <li>
+    <a class="problema-cartao" href="/problemas/morros/">
+      <span class="prot">Problema 4</span>
+      <b class="titulo">Morros com risco de deslizar</b>
+      <span class="numero num">Mais de 25 mil</span>
+      <span class="t">pessoas moram em lugares com risco alto de deslizamento.</span>
+      <span class="mais">2 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+  <li>
+    <a class="problema-cartao" href="/problemas/escola/">
+      <span class="prot">Problema 5</span>
+      <b class="titulo">Aprender a ler e creche</b>
+      <span class="numero num">1 de cada 3</span>
+      <span class="t">crianças terminou o 2º ano sem saber ler e escrever, em 2024.</span>
+      <span class="mais">3 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+  <li>
+    <a class="problema-cartao" href="/problemas/violencia/">
+      <span class="prot">Problema 6</span>
+      <b class="titulo">Violência</b>
+      <span class="numero num">28</span>
+      <span class="t">assassinatos para cada 100 mil moradores em 2024. Foi a maior taxa da Grande Vitória.</span>
+      <span class="mais">2 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+  <li>
+    <a class="problema-cartao" href="/problemas/emergencias/">
+      <span class="prot">Problema 7</span>
+      <b class="titulo">Contratos sem concorrência</b>
+      <span class="numero num">R$ 125 milhões</span>
+      <span class="t">em contratos de emergência em 2026. Emergência é contrato feito sem concorrência.</span>
+      <span class="mais">6 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+  <li>
+    <a class="problema-cartao" href="/problemas/dinheiro/">
+      <span class="prot">Problema 8</span>
+      <b class="titulo">Pouco dinheiro próprio</b>
+      <span class="numero num">R$ 122</span>
+      <span class="t">de IPTU por morador em 2025. Na Serra, foram R$ 234.</span>
+      <span class="mais">3 perguntas do Vigia · Ver o problema →</span>
+    </a>
+  </li>
+</ol>
 
-<section class="bloco problema" id="fila" aria-labelledby="h-fila">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 1 de 8</p>
-      <h2 id="h-fila">A fila da saúde</h2>
-      <p class="numero num">Quase 41 mil</p>
-      <p class="lead"><strong>consultas e exames com especialista esperam vaga.</strong></p>
-<p>Metade espera há quase 8 meses. Esperam há mais de 1 ano: 15.349.</p><p>Crianças e adolescentes esperam neurologista: quase 5.100 pedidos. Metade espera há mais de 1 ano e 4 meses.</p><p>A fila cresceu: eram mais de 30 mil pedidos em maio e quase 41 mil em setembro. Parte é exame novo na lista.</p><p>Na Câmara, um projeto para mostrar a fila com transparência está parado desde junho de 2022.</p><div class="outro"><p class="prot">O outro lado</p><p>A Secretaria de Saúde diz que a fila vai pela gravidade de cada caso. E quem marca a consulta é o governo do Estado.</p></div>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>Quanto tempo se espera por consulta e exame em cada posto?</strong></p>
-          <span class="meta">Para: Secretaria de Saúde · número 008949.2026-38</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>A planilha da fila mostra o nome dos pacientes. Pedimos para tirar.</strong></p>
-          <span class="meta">Para: Ouvidoria da Saúde · número 009043.2026-22</span>
-          <span><span class="relogio" data-prazo="2026-12-14" data-respondido="">Prazo: 14/12/2026</span></span>
-        </div>
-<p><a href="/fila/">Veja a fila do seu posto →</a></p>      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Espera há mais de 1 ano?</strong> Reclame na Ouvidoria da Saúde: 162 (prefeitura) ou 136 (Disque Saúde).</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: <a href="https://cariacica.es.gov.br/pagina/ler/951/semus-fila-de-espera-para-agendamento-de-consultas-e-exames">Planilha da fila, Secretaria de Saúde de Cariacica</a>; <a href="https://docs.google.com/document/d/1QOnNc7PCWg3V6dTCrj-2m18CD_ZMuA1c/edit">Nota Técnica 02/2026 da Saúde</a>; <a href="https://cariacica.camarasempapel.com.br/spl/consulta-producao.aspx?termo=transpar%C3%AAncia%20na%20divulga%C3%A7%C3%A3o">Projeto de Lei 80/2022 na Câmara</a>.</p>
-</section>
-<section class="bloco problema" id="bebes" aria-labelledby="h-bebes">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 2 de 8</p>
-      <h2 id="h-bebes">Bebês e grávidas</h2>
-      <p class="numero num">Quase 16</p>
-      <p class="lead"><strong>de cada 1.000 bebês nascidos em 2024 morreram antes de fazer 1 ano.</strong></p>
-<p>Em Vitória, foram quase 11 de cada 1.000.</p><p>Em 2024, 131 bebês nasceram com sífilis, passada pela mãe na gravidez. O teste e o remédio são de graça no SUS.</p><p>Muitas dessas mortes podem ser evitadas com pré-natal bem feito no posto.</p><div class="melhorou"><span class="selo ok">Está melhorando</span><p>Em 2025, o número ainda preliminar caiu para quase 14 de cada 1.000.</p></div>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>Como está o pré-natal e a saúde dos bebês em cada posto?</strong></p>
-          <span class="meta">Para: Secretaria de Saúde · número 008925.2026-07</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Os postos têm teste e remédio para sífilis?</strong></p>
-          <span class="meta">Para: Secretaria de Saúde · número 008926.2026-77</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Quantas equipes de Saúde da Família cada posto tem?</strong></p>
-          <span class="meta">Para: Secretaria de Saúde · número 008936.2026-98</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Está grávida?</strong> Comece o pré-natal no posto logo no começo. É de graça.</p></li><li><p><strong>Faça o teste de sífilis no posto.</strong> O remédio também é de graça.</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: <a href="http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sim/cnv/inf10es.def">DataSUS, mortes de bebês (SIM)</a>; <a href="http://tabnet.datasus.gov.br/cgi/deftohtm.exe?sinasc/cnv/nves.def">DataSUS, nascimentos (SINASC)</a>; <a href="https://cariacica.es.gov.br/uploads/files/secretarias/semus/2026/anexos/plano-municipal-de-saude---2026-2029/plano-municipal-de-saude-quadrienio-2026_2029.pdf">Plano Municipal de Saúde 2026–2029 (sífilis)</a>.</p>
-</section>
-<section class="bloco problema" id="esgoto" aria-labelledby="h-esgoto">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 3 de 8</p>
-      <h2 id="h-esgoto">Esgoto</h2>
-      <p class="numero num">Cerca de 22 mil</p>
-      <p class="lead"><strong>casas não têm esgoto ligado na rede.</strong></p>
-<p>Nos 20 bairros de menor renda, 3 de cada 10 casas estão fora da rede.</p><p>E nem todo esgoto que entra na rede é tratado. Em 2024, só cerca de 4 de cada 10 moradores tinham coleta de esgoto.</p><p>Em 2021, a Justiça mandou resolver o esgoto da cidade.</p><div class="melhorou"><span class="selo ok">Está melhorando</span><p>Em janeiro de 2026, o governo do Estado abriu estações de tratamento que atendem 18 bairros.</p></div>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>Quando o esgoto vai chegar em cada bairro?</strong></p>
-          <span class="meta">Para: Cesan · número 2026111046</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>A prefeitura cumpriu a decisão da Justiça de 2021 sobre o esgoto?</strong></p>
-          <span class="meta">Para: Meio Ambiente · número 008929.2026-93</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-<p><a href="/bairros/">Veja o esgoto do seu bairro →</a></p>      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Esgoto vazando ou a céu aberto?</strong> Ligue para a Cesan: 115. A ligação é grátis.</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: <a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/22827-censo-demografico-2022.html">IBGE, Censo 2022 por bairro</a>; <a href="https://www.parana.pr.gov.br/sites/default/arquivos_restritos/files/documento/2026-06/ranking2026_v1_0.pdf">Ranking do saneamento 2026 (dados de 2024)</a>; <a href="https://www.es.gov.br/Noticia/cariacica-alcanca-80-de-cobertura-em-esgotamento-sanitario-com-novas-estacoes-de-tratamento">Governo do ES, estações de 2026</a>.</p>
-</section>
-<section class="bloco problema" id="morros" aria-labelledby="h-morros">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 4 de 8</p>
-      <h2 id="h-morros">Morros com risco de deslizar</h2>
-      <p class="numero num">Mais de 25 mil</p>
-      <p class="lead"><strong>pessoas moram em lugares com risco alto de deslizamento.</strong></p>
-<p>São 92 lugares mapeados pelo Serviço Geológico do Brasil em 2023.</p><p>Em dia de chuva forte, quem mora ali precisa saber a hora de sair de casa.</p>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>Qual é o plano para os morros com risco de deslizar na chuva?</strong></p>
-          <span class="meta">Para: Defesa Civil · número 008923.2026-61</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>A obra da encosta da Rua Gabino Rios está parada ou pronta?</strong></p>
-          <span class="meta">Para: Secretaria de Obras · número 008948.2026-65</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Receba o alerta de chuva no celular:</strong> mande o seu CEP por SMS para 40199. É de graça.</p></li><li><p><strong>Rachadura na parede ou no chão?</strong> Ligue para a Defesa Civil: 199.</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: <a href="https://www.sgb.gov.br/w/mais-de-25-mil-pessoas-vivem-em-areas-de-risco-geologico-em-cariacica-no-espirito-santo">Serviço Geológico do Brasil</a>.</p>
-</section>
-<section class="bloco problema" id="escola" aria-labelledby="h-escola">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 5 de 8</p>
-      <h2 id="h-escola">Aprender a ler e creche</h2>
-      <p class="numero num">1 de cada 3</p>
-      <p class="lead"><strong>crianças terminou o 2º ano sem saber ler e escrever, em 2024.</strong></p>
-<p>Só cerca de 2 de cada 10 crianças de 0 a 3 anos têm vaga em creche.</p><p>Sem creche, muitas mães não conseguem trabalhar.</p><div class="melhorou"><span class="selo ok">Está melhorando</span><p>Está melhorando: em 2023, eram mais de 4 de cada 10 crianças sem saber ler no fim do 2º ano.</p></div>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>Quantas crianças aprendem a ler na idade certa, em cada escola?</strong></p>
-          <span class="meta">Para: Secretaria de Educação · número 008950.2026-11</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Quantas crianças esperam vaga em cada creche?</strong></p>
-          <span class="meta">Para: Secretaria de Educação · número 008935.2026-28</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Cariacica recebe o dinheiro extra que vai para as escolas que melhoram?</strong></p>
-          <span class="meta">Para: Secretaria de Educação · número 008924.2026-34</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-<p><a href="/bairros/">Veja as escolas do seu bairro →</a></p>      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Precisa de creche?</strong> Peça a vaga e peça, por escrito, a sua posição na fila. A lei manda mostrar essa fila.</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: <a href="https://tribunaonline.com.br/_/268056">MEC, alfabetização (A Tribuna)</a>; <a href="https://tribunaonline.com.br/educacao/escolas-de-cariacica-vao-abrir-11-mil-novas-vagas-283974">Vagas de creche (A Tribuna)</a>; <a href="https://www.camara.leg.br/noticias/1000169-lei-determina-divulgacao-obrigatoria-de-lista-de-espera-por-vaga-em-escolas-e-creches/">Lei 14.685/2023, fila da creche pública</a>.</p>
-</section>
-<section class="bloco problema" id="violencia" aria-labelledby="h-violencia">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 6 de 8</p>
-      <h2 id="h-violencia">Violência</h2>
-      <p class="numero num">28</p>
-      <p class="lead"><strong>assassinatos para cada 100 mil moradores em 2024. Foi a maior taxa da Grande Vitória.</strong></p>
-<p>Quem mais morre são os jovens.</p><div class="melhorou"><span class="selo ok">Está melhorando</span><p>Está caindo: de janeiro a agosto de 2025, a polícia registrou 61 assassinatos, o menor número desde 1996.</p></div>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>Em quais bairros e horários acontecem os assassinatos? Sem nenhum nome.</strong></p>
-          <span class="meta">Para: Governo do Estado · número 2026111048</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>A cidade tem plano de segurança? O conselho de segurança se reúne?</strong></p>
-          <span class="meta">Para: Segurança · número 008932.2026-12</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Em perigo?</strong> Ligue 190.</p></li><li><p><strong>Quer avisar a polícia sem dizer o seu nome?</strong> Ligue para o Disque-Denúncia: 181.</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: Fórum Brasileiro de Segurança Pública, taxa de 2024 (27,7); <a href="https://tribunaonline.com.br/_/273811">A Tribuna, 2025</a>.</p>
-</section>
-<section class="bloco problema" id="emergencias" aria-labelledby="h-emergencias">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 7 de 8</p>
-      <h2 id="h-emergencias">Contratos sem concorrência</h2>
-      <p class="numero num">R$ 125 milhões</p>
-      <p class="lead"><strong>em contratos de emergência em 2026. Emergência é contrato feito sem concorrência.</strong></p>
-<p>Em 2024 foram R$ 52 milhões. Em 2025, R$ 75 milhões.</p><p>Sem concorrência, ninguém sabe se aquele era o melhor preço.</p><p>Quatro das cinco maiores concorrências desde 2024 foram feitas numa sala, e não pela internet. O desconto foi menor. Isso não prova nada, mas merece pergunta.</p><div class="outro"><p class="prot">O outro lado</p><p>Emergência é permitida pela lei quando há urgência de verdade, e dura até 1 ano. Perguntamos à prefeitura o motivo de cada uma.</p></div>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>Por que contratos de emergência foram esticados, como o da limpeza das escolas?</strong></p>
-          <span class="meta">Para: Prefeitura · número 008833.2026-66 e 008837.2026-55</span>
-          <span><span class="relogio" data-prazo="2026-11-27" data-respondido="">Prazo: 27/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Por que serviços que seriam contratados com concorrência viraram emergência?</strong></p>
-          <span class="meta">Para: Controle e Transparência · número 008944.2026-76</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Quais contratos acabam até março de 2027 sem poder ser renovados?</strong></p>
-          <span class="meta">Para: Administração · número 009023.2026-77</span>
-          <span><span class="relogio" data-prazo="2026-12-02" data-respondido="">Prazo: 02/12/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Por que quatro concorrências da Saúde pararam enquanto as emergências continuam?</strong></p>
-          <span class="meta">Para: Secretaria de Saúde · número 009037.2026-87</span>
-          <span><span class="relogio" data-prazo="2026-12-02" data-respondido="">Prazo: 02/12/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Como foi escolhida a entidade que cuida do PA do Trevo na emergência?</strong></p>
-          <span class="meta">Para: Secretaria de Saúde · número 009040.2026-06</span>
-          <span><span class="relogio" data-prazo="2026-12-02" data-respondido="">Prazo: 02/12/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Por que seis concorrências foram feitas numa sala, e não pela internet?</strong></p>
-          <span class="meta">Para: Administração · número 009048.2026-81</span>
-          <span><span class="relogio" data-prazo="2026-12-02" data-respondido="">Prazo: 02/12/2026</span></span>
-        </div>
-<p><a href="/dinheiro/">Veja para onde vai o dinheiro →</a></p>      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Fale com o seu vereador.</strong> A Câmara aprova o orçamento e pode chamar o secretário para explicar.</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: <a href="https://transparencia.cariacica.es.gov.br/">Portal da Transparência de Cariacica, contratos de emergência</a>; <a href="https://pncp.gov.br/app/editais?q=cariacica">Portal Nacional de Contratações Públicas</a>.</p>
-</section>
-<section class="bloco problema" id="dinheiro" aria-labelledby="h-dinheiro">
-  <div class="grade-2 larga-esq">
-    <div class="bloco">
-      <p class="prot">Problema 8 de 8</p>
-      <h2 id="h-dinheiro">Pouco dinheiro próprio</h2>
-      <p class="numero num">R$ 122</p>
-      <p class="lead"><strong>de IPTU por morador em 2025. Na Serra, foram R$ 234.</strong></p>
-<p>O IPTU e os outros impostos da cidade rendem pouco. Por isso sobra pouco para saúde e creche.</p><p>A prefeitura gastou R$ 649 por morador com saúde em 2025, o menor valor da Grande Vitória.</p>    </div>
-    <div class="bloco">
-      <div class="folha">
-        <p class="prot">O que o Vigia já fez</p>
-        <div class="ped">
-          <p><strong>O cadastro das casas para cobrar o IPTU está em dia?</strong></p>
-          <span class="meta">Para: Secretaria de Finanças · número 008843.2026-87</span>
-          <span><span class="relogio" data-prazo="2026-11-27" data-respondido="">Prazo: 27/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Os impostos atrasados que devem à prefeitura caíram R$ 153 milhões em 2025. Por quê?</strong></p>
-          <span class="meta">Para: Secretaria de Finanças · número 008842.2026-17</span>
-          <span><span class="relogio" data-prazo="2026-11-27" data-respondido="">Prazo: 27/11/2026</span></span>
-        </div>
-        <div class="ped">
-          <p><strong>Quanto a prefeitura arrecadou de impostos em 2026?</strong></p>
-          <span class="meta">Para: Secretaria de Finanças · número 008937.2026-71</span>
-          <span><span class="relogio" data-prazo="2026-11-30" data-respondido="">Prazo: 30/11/2026</span></span>
-        </div>
-<p><a href="/dinheiro/">Veja para onde vai o dinheiro →</a></p>      </div>
-      <div class="bloco">
-        <h3>O que você pode fazer</h3>
-        <ol class="faca">
-<li><p><strong>Confira o carnê do IPTU.</strong> Se a sua casa estiver errada no cadastro, peça a correção na prefeitura.</p></li>          <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-  <p class="fonte">Fontes: <a href="https://apidatalake.tesouro.gov.br/ords/siconfi/tt/dca?an_exercicio=2025&amp;no_anexo=DCA-Anexo%20I-C&amp;id_ente=3201308">Tesouro Nacional, impostos de 2025</a>; <a href="https://apidatalake.tesouro.gov.br/ords/siconfi/tt/dca?an_exercicio=2025&amp;no_anexo=DCA-Anexo%20I-E&amp;id_ente=3201308">Tesouro Nacional, gastos de 2025</a>.</p>
-</section>
-
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="Os maiores problemas de Cariacica, com número oficial e o que já foi perguntado à prefeitura." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
   </div>
   <p class="miuda" id="copiado" role="status"></p>
-</section><p class="fonte">Como escolhemos: muita gente atingida, dano grave e o quanto a cidade pode resolver. Números conferidos na fonte original em novembro de 2026. Fila, esgoto e contratos de emergência se atualizam sozinhos com os dados oficiais.</p>
+</section><p class="fonte">Como escolhemos: muita gente atingida, dano grave e o quanto a cidade pode resolver. Números conferidos na fonte original em novembro de 2026. Fila, esgoto e contratos de emergência se atualizam sozinhos com os dados oficiais. A fonte de cada número está na página do problema.</p>
 </main>
 <footer class="rodape">
   <img src="/bandeira.svg" alt="Bandeira de Cariacica com o nome Vigia no lugar do brasão" width="180" height="120">
@@ -376,6 +161,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>

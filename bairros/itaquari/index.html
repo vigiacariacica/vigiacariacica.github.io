@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/bairros/itaquari/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/">Início</a></li>
+<li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
+<li><a href="/problemas/">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
@@ -49,7 +64,7 @@
 <main id="conteudo" tabindex="-1">
 <section class="bloco" aria-labelledby="h1">
   <p class="prot"><a href="/bairros/">Meu bairro</a> · Censo do IBGE de 2022</p>
-  <h1 id="h1" tabindex="-1">Itaquari</h1>
+  <h1 id="h1" tabindex="-1" data-guardar-bairro="itaquari">Itaquari</h1>
   <p class="lead">2.999 moradores em 1.145 casas.</p>
 </section>
 
@@ -118,42 +133,47 @@
   <h2 id="h-obras">Obras pagas pela prefeitura no bairro</h2>
   <p>Estas são as 6 obras que a prefeitura registrou com o nome de Itaquari. A situação é a que o sistema de obras mostra hoje.</p>
   <ol class="obras grade-2">
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2022 · Obras</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Execução de Muro de Contenção situado na Rua Pedro Alvares Cabral no bairro Itaquari</h3>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Execução de Muro de Contenção situado na Rua Pedro Alvares Cabral no bairro Itaquari</h3>
 <p><span class="valor-obra num">R$ 3,8 milhões</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Itaquari · contrato de 24/05/2022 a 04/11/2022 · número da obra 1742</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Engenheiro José Maria em Itaquari</h3>
+  <p class="meta">Contrato de 24/05/2022 a 04/11/2022 · obra nº 1742</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Engenheiro José Maria em Itaquari</h3>
 <p><span class="valor-obra num">R$ 50 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Itaquari · contrato de 12/08/2020 a 09/12/2020 · número da obra 1704</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Contenção de Encosta na rua São Vicente em Itaquari e Beco Tupiniquins em Flexal</h3>
+  <p class="meta">Contrato de 12/08/2020 a 09/12/2020 · obra nº 1704</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Contenção de Encosta na rua São Vicente em Itaquari e Beco Tupiniquins em Flexal</h3>
 <p><span class="valor-obra num">R$ 756 mil</span> pagos.</p>
-<p class="miuda">Obra em mais de um bairro. O valor é da obra inteira.</p>      <p class="meta">Bairros no sistema: Itaquari, Flexal I · contrato de 08/07/2019 a 03/01/2020 · número da obra 990</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Contenção em concreto ciclópico na rua Engenheiro José Maria no bairro Itaquari</h3>
+<p class="miuda">Obra em mais de um bairro (Itaquari, Flexal I). O valor é da obra inteira.</p>  <p class="meta">Contrato de 08/07/2019 a 03/01/2020 · obra nº 990</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Contenção em concreto ciclópico na rua Engenheiro José Maria no bairro Itaquari</h3>
 <p><span class="valor-obra num">R$ 131 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Itaquari · contrato de 18/12/2019 a 05/06/2020 · número da obra 1024</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2011 · Obras</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Construção da unidade de saúde da família no bairro itaquari</h3>
-<p>O sistema não mostra nenhum pagamento.</p>      <p class="meta">Bairros no sistema: Itaquari · contrato de 25/07/2011 a 18/07/2012 · número da obra 144</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2009 · Obras</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Reforma do Prédio da Secretaria Municipal de Educação</h3>
-<p><span class="valor-obra num">R$ 202 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Itaquari · contrato de 27/05/2011 a 26/11/2011 · número da obra 60</p>
-    </li>
+  <p class="meta">Contrato de 18/12/2019 a 05/06/2020 · obra nº 1024</p>
+</li>
   </ol>
+  <details class="grupo mais-obras">
+    <summary><b>Ver as outras 2</b><span>obras mais antigas</span></summary>
+    <ol class="obras grade-2">
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2011</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Construção da unidade de saúde da família no bairro itaquari</h3>
+<p>O sistema não mostra nenhum pagamento.</p>  <p class="meta">Contrato de 25/07/2011 a 18/07/2012 · obra nº 144</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2009</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Reforma do Prédio da Secretaria Municipal de Educação</h3>
+<p><span class="valor-obra num">R$ 202 mil</span> pagos.</p>
+  <p class="meta">Contrato de 27/05/2011 a 26/11/2011 · obra nº 60</p>
+</li>
+    </ol>
+  </details>
   <p class="miuda">O sistema tem 221 obras desde 2010. Para 2025, tem só 1. Para 2026, nenhuma. Outras 14, que somam R$ 182 milhões, são da cidade toda ou não dizem o bairro. <a href="/bairros/#cidade-toda">Veja a lista</a>. <a href="/fontes/#obras">Como lemos as obras →</a></p>
 </section>
 
@@ -189,8 +209,8 @@
   </ol>
 </section>
 
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="Veja como está Itaquari (Cariacica): esgoto, posto de saúde e fila." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
@@ -211,6 +231,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>

@@ -2,6 +2,12 @@
    No celular, uma coluna. No computador, a tela inteira: grades de 2, 3 e 4 colunas, texto corrido sempre
    com no máximo ~65 caracteres por linha. Letra base de 18 px (Atkinson Hyperlegible, feita para baixa visão),
    botões de 48 px, contraste acima de 4,5:1. Marca-texto rosa chapado, sem corte inclinado. */
+/* fontes no próprio site (OFL, só os caracteres do português): nada de Google, nada de pedido a terceiros */
+@font-face{font-family:"Big Shoulders";src:url(/fontes/big-shoulders-900.woff2) format("woff2");font-weight:800 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible Next";src:url(/fontes/atkinson-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Atkinson Hyperlegible Next";src:url(/fontes/atkinson-700.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Courier Prime";src:url(/fontes/courier-400.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Courier Prime";src:url(/fontes/courier-700.woff2) format("woff2");font-weight:700;font-style:normal;font-display:swap}
 :root{
   --papel:#f3f6f2; --folha:#ffffff; --tinta:#0c2a1c; --tinta-suave:#42594c; --linha:#c7d4cb;
   --bandeira:#00923f; --verde:#00753a; --on-bandeira:#ffffff; --marca:#ff66b2; --on-marca:#0c2a1c;
@@ -57,8 +63,9 @@ img{max-width:100%}
   .grade-2.larga-esq{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
 }
 
-/* topo: a bandeira no canto, o nome e o menu */
-.topo{display:flex;flex-direction:column;gap:10px;padding-block:14px 0;border-bottom:3px solid var(--verde)}
+/* topo: a bandeira no canto, o nome e o menu. No celular, o topo ocupa pouco: marca + botão Menu numa linha,
+   ouvir e letra maior na outra. O menu abre por cima da página (sem script: <details>). */
+.topo{position:relative;display:flex;flex-direction:column;gap:10px;padding-block:12px 0;border-bottom:3px solid var(--verde)}
 .topo-in{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .marca{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--tinta)}
 .marca img{width:66px;height:44px;display:block;border:1px solid var(--linha)}
@@ -73,6 +80,29 @@ nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:0 2px}
 nav a{display:block;padding:12px 10px 10px;font-weight:700;font-size:.9em;color:var(--tinta);text-decoration:none;border-bottom:4px solid transparent;min-height:48px}
 nav a[aria-current="page"]{border-bottom-color:var(--marca)}
 nav a:hover{color:var(--verde)}
+.menu-cel{display:none}
+.menu-cel summary{list-style:none}
+.menu-cel summary::-webkit-details-marker{display:none}
+.menu-cel summary::after{content:"";width:16px;height:12px;background:linear-gradient(currentColor 0 0) top/100% 2px no-repeat,linear-gradient(currentColor 0 0) center/100% 2px no-repeat,linear-gradient(currentColor 0 0) bottom/100% 2px no-repeat}
+.menu-cel[open] summary::after{content:"×";width:auto;height:auto;background:none;font-size:24px;line-height:16px}
+@media (max-width:759px){
+  .topo{gap:8px;padding-block:10px 0}
+  .topo-in{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+  .marca{gap:10px}
+  .marca img{width:48px;height:32px}
+  .marca .nome{font-size:22px}
+  .marca .nome small{font-size:9.5px;letter-spacing:.1em}
+  .menu-cel{display:block;grid-column:2;grid-row:1}
+  .menu-cel summary{min-height:44px;padding:8px 12px}
+  .ferr{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;padding-bottom:10px}
+  .ferr .btn{min-height:44px;justify-content:center;padding:8px 10px}
+  .menu-pc{display:none}
+  .menu-cel nav{position:absolute;left:0;right:0;top:100%;z-index:30;background:var(--papel);border-bottom:3px solid var(--verde);box-shadow:0 12px 0 rgba(0,0,0,.08)}
+  .menu-cel nav ul{flex-direction:column;gap:0}
+  .menu-cel nav li{border-top:1px solid var(--linha)}
+  .menu-cel nav a{font-size:1.05em;padding:14px 4px;border-bottom:0;border-left:6px solid transparent;padding-left:12px}
+  .menu-cel nav a[aria-current="page"]{border-left-color:var(--marca)}
+}
 @media (min-width:1000px){
   .topo{flex-direction:row;align-items:flex-end;justify-content:space-between;flex-wrap:wrap}
   .topo-in{flex:1 1 auto}
@@ -80,6 +110,7 @@ nav a:hover{color:var(--verde)}
 }
 
 main{display:flex;flex-direction:column;gap:56px;padding-top:28px}
+@media (max-width:759px){main{gap:40px;padding-top:20px}h1{font-size:clamp(36px,10vw,48px)}}
 .bloco{display:flex;flex-direction:column;gap:16px;min-width:0}
 .folha{background:var(--folha);border:1px solid var(--linha);padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
 .outro{border:2px solid var(--verde);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
@@ -89,7 +120,7 @@ main{display:flex;flex-direction:column;gap:56px;padding-top:28px}
 .busca{display:flex;flex-direction:column;gap:8px}
 .busca label{font-weight:700}
 input[type=search],select{font:inherit;font-size:1em;padding:12px;border:2px solid var(--tinta);background:var(--folha);color:var(--tinta);border-radius:0;width:100%;min-width:0;min-height:52px}
-ul.lista-bairros{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:0 20px}
+ul.lista-bairros{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:0 16px}
 ul.lista-bairros li{border-bottom:1px solid var(--linha)}
 ul.lista-bairros a{display:block;padding:12px 0;min-height:48px;font-weight:700;text-decoration:none;color:var(--tinta)}
 ul.lista-bairros a:hover{color:var(--verde)}
@@ -214,6 +245,7 @@ footer.rodape{margin-top:64px;display:grid;grid-template-columns:minmax(0,1fr);g
 @media (min-width:900px){footer.rodape{grid-template-columns:auto minmax(0,1fr);column-gap:32px;align-items:start}footer.rodape>img{grid-row:span 4}}
 footer .lema{font-family:var(--display);font-weight:900;font-size:clamp(30px,4vw,40px);text-transform:uppercase;line-height:1}
 footer.rodape>img{width:180px;height:auto;border:1px solid var(--linha)}
+@media (max-width:759px){footer.rodape{margin-top:40px}footer.rodape>img{width:96px}footer .lema{font-size:26px}}
 
 @media (max-width:520px){
   ol.tempo li{grid-template-columns:minmax(0,1fr);gap:4px}
@@ -233,9 +265,9 @@ ol.indice b{font-family:var(--display);font-weight:900;text-transform:uppercase;
 .problema .numero{white-space:normal;font-size:clamp(48px,7vw,88px);text-transform:uppercase}
 /* vereadores: níveis de impacto. Verde cheio = muda algo; listrado = muda pouco; cinza = simbólico;
    vazado = pode ser barrado. A forma também muda, para quem não distingue cor. */
-:root{--simb:#a3b3a9}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--simb:#5d7a69}}
-:root[data-theme="dark"]{--simb:#5d7a69}
+:root{--simb:#83968a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--simb:#6b8b78}}
+:root[data-theme="dark"]{--simb:#6b8b78}
 .cem i.n-concreto,.pilha i.n-concreto,.nv.n-concreto{background:var(--bandeira)}
 .cem i.n-fraco,.pilha i.n-fraco,.nv.n-fraco{background:repeating-linear-gradient(135deg,var(--bandeira) 0 3px,var(--folha) 3px 6px)}
 .cem i.n-simbolico,.pilha i.n-simbolico,.nv.n-simbolico{background:var(--simb)}
@@ -289,3 +321,47 @@ ol.obras{list-style:none;margin:0;padding:0}
 ol.obras .linha{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between;max-width:none}
 ol.obras h3.obra-nome{font-family:var(--texto);font-weight:700;text-transform:none;font-size:1.05em;line-height:1.3}
 .valor-obra{font-family:var(--display);font-weight:900;font-size:1.8em;line-height:1}
+/* mandar a página: uma faixa só, sem título grande */
+.mande{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;border-top:2px solid var(--tinta);padding-top:16px}
+.mande>p:first-child{font-size:1.05em}
+.mande #copiado:empty{display:none}
+/* maiores problemas: um cartão por problema na lista, uma página por problema */
+ol.lista-problemas{list-style:none;margin:0;padding:0}
+.problema-cartao{display:flex;flex-direction:column;gap:6px;height:100%;padding:18px;background:var(--folha);border:1px solid var(--linha);border-top:4px solid var(--tinta);color:var(--tinta);text-decoration:none}
+.problema-cartao:hover{border-top-color:var(--marca)}
+.problema-cartao .titulo{font-weight:700;font-size:1.1em;line-height:1.2}
+.problema-cartao .numero{white-space:normal;font-size:clamp(40px,6vw,64px);text-transform:uppercase}
+.problema-cartao .mais{margin-top:auto;padding-top:6px;font-weight:700;color:var(--verde)}
+.h-pequeno{font-size:1.6em}
+nav.vizinhos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+nav.vizinhos a{display:flex;flex-direction:column;gap:4px;padding:14px;border:1px solid var(--linha);background:var(--folha);color:var(--tinta);text-decoration:none;min-width:0}
+nav.vizinhos a.prox{text-align:right}
+nav.vizinhos b{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1.2em;line-height:1}
+/* vereadores: uma linha por vereador (nome, barra e os números), a legenda uma vez só */
+ul.niveis.em-linha{flex-direction:row;flex-wrap:wrap;gap:6px 18px;font-size:.9em}
+ol.vereadores{display:flex;flex-direction:column}
+.ver-linha{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);gap:8px 20px;align-items:center;padding:14px 0;border-top:1px solid var(--linha);color:var(--tinta);text-decoration:none}
+.ver-linha:hover .nome{text-decoration:underline}
+.ver-linha .nome{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1.35em;line-height:1}
+.ver-linha .nums{grid-column:2;display:flex;flex-wrap:wrap;gap:2px 16px;font-size:.88em;color:var(--tinta-suave)}
+.ver-linha .nums b{color:var(--tinta);font-size:1.15em}
+.pilha.vazia{display:flex;align-items:center;padding-left:8px;font-size:.8em;color:var(--tinta-suave)}
+@media (max-width:759px){
+  .ver-linha{grid-template-columns:minmax(0,1fr)}
+  .ver-linha .nums{grid-column:1;display:grid;grid-template-columns:1fr 1fr;gap:2px 12px}
+  ol.niveis-grade .cartao{flex-direction:row;flex-wrap:wrap;align-items:center}
+  ol.niveis-grade .cartao>h3{flex:1}
+  ol.niveis-grade .cartao>p{flex-basis:100%}
+}
+details.grupo .aberto{padding-bottom:24px}
+details.grupo:last-child{border-bottom:2px solid var(--tinta)}
+ol.passos:not(.grade-4){display:flex;flex-direction:column;gap:14px}
+ol.passos:not(.grade-4) li{display:grid;grid-template-columns:40px minmax(0,1fr);column-gap:12px;row-gap:2px}
+ol.passos:not(.grade-4) li::before{grid-row:span 2;font-size:36px}
+/* atalho para o bairro que a pessoa já abriu (guardado só neste aparelho) */
+.seu-bairro a{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 14px;border:2px solid var(--verde);color:var(--tinta);text-decoration:none;font-weight:700}
+.seu-bairro b{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:1.4em;line-height:1}
+ol.obras>li.obra{background:var(--folha);border:1px solid var(--linha);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+details.mais-obras ol.obras{padding-bottom:16px}
+.numero.quebra{white-space:normal;text-transform:uppercase;font-size:clamp(48px,7vw,88px)}
+@media (max-width:639px){ul.tarefas.curtas{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px}ul.tarefas.curtas b{font-size:1.35em}}

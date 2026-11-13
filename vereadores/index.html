@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/vereadores/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/">Início</a></li>
+<li><a href="/bairros/">Meu bairro</a></li>
+<li><a href="/problemas/">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/" aria-current="page">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/">Meu bairro</a></li>
@@ -56,7 +71,7 @@
 
 <section class="bloco" aria-labelledby="h-faz">
   <h2 id="h-faz">O que faz um vereador</h2>
-  <ul class="tarefas grade-4">
+  <ul class="tarefas curtas grade-4">
     <li><b>Faz leis</b><span>Propõe projetos de lei. Se a Câmara aprova, vira lei da cidade.</span></li>
     <li><b>Pede obras</b><span>Pede asfalto, poste e limpeza. Quem decide e paga é a prefeitura.</span></li>
     <li><b>Vota</b><span>Vota as leis que a prefeitura manda e o orçamento da cidade.</span></li>
@@ -127,170 +142,198 @@
     <input type="search" id="q-vereador" name="q" autocomplete="off" placeholder="Ex.: Açucena">
     <p class="miuda" data-aviso hidden>Não achamos. Os 19 nomes estão logo abaixo, em ordem alfabética.</p>
   </form>
-  <ol class="vereadores grade-3" id="lista-vereadores">
-    <li data-nomes="Açucena"><article class="cartao vereador" id="acucena">
-      <h3><a href="/vereadores/acucena/">Açucena</a></h3>
-      <p class="valor">52 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Açucena: 13 mudam algo na prática, 23 mudam pouco, 14 são simbólicos, 1 pode ser barrado, 1 sem como saber."><i class="n-concreto" style="width:25.0%"></i><i class="n-fraco" style="width:44.23%"></i><i class="n-simbolico" style="width:26.92%"></i><i class="n-barrado" style="width:1.92%"></i><i class="n-sem" style="width:1.92%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">13</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">23</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">14</b> são simbólicos</span></li><li><i class="nv n-barrado" aria-hidden="true"></i><span><b class="num">1</b> pode ser barrado</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">1</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">2</b>. Mudam algo na prática: <b class="num">0</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">139</b> · Homenagens: <b class="num">66</b></p>
-      <a class="mais" href="/vereadores/acucena/">Ver os 52 projetos →</a>
-    </article></li>
-    <li data-nomes="Cabo Fonseca"><article class="cartao vereador" id="cabo-fonseca">
-      <h3><a href="/vereadores/cabo-fonseca/">Cabo Fonseca</a></h3>
-      <p class="valor">14 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Cabo Fonseca: 4 mudam algo na prática, 1 muda pouco, 4 são simbólicos, 2 podem ser barrados, 3 sem como saber."><i class="n-concreto" style="width:28.57%"></i><i class="n-fraco" style="width:7.14%"></i><i class="n-simbolico" style="width:28.57%"></i><i class="n-barrado" style="width:14.29%"></i><i class="n-sem" style="width:21.43%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">4</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">1</b> muda pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">4</b> são simbólicos</span></li><li><i class="nv n-barrado" aria-hidden="true"></i><span><b class="num">2</b> podem ser barrados</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">3</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">0</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">128</b> · Homenagens: <b class="num">52</b></p>
-      <a class="mais" href="/vereadores/cabo-fonseca/">Ver os 14 projetos →</a>
-    </article></li>
-    <li data-nomes="Cesinha"><article class="cartao vereador" id="cesinha">
-      <h3><a href="/vereadores/cesinha/">Cesinha</a></h3>
-      <p class="valor">0 <small>projetos de lei</small></p>
-<p>Não apresentou projeto de lei de janeiro de 2025 a outubro de 2026.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">43</b> · Homenagens: <b class="num">111</b></p>
-      <a class="mais" href="/vereadores/cesinha/">Ver a página →</a>
-    </article></li>
-    <li data-nomes="Cleidimar Alemão"><article class="cartao vereador" id="cleidimar-alemao">
-      <h3><a href="/vereadores/cleidimar-alemao/">Cleidimar Alemão</a></h3>
-      <p class="valor">26 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Cleidimar Alemão: 6 mudam algo na prática, 9 mudam pouco, 10 são simbólicos, 1 pode ser barrado."><i class="n-concreto" style="width:23.08%"></i><i class="n-fraco" style="width:34.62%"></i><i class="n-simbolico" style="width:38.46%"></i><i class="n-barrado" style="width:3.85%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">6</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">9</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">10</b> são simbólicos</span></li><li><i class="nv n-barrado" aria-hidden="true"></i><span><b class="num">1</b> pode ser barrado</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">5</b>. Muda algo na prática: <b class="num">1</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">292</b> · Homenagens: <b class="num">52</b></p>
-      <a class="mais" href="/vereadores/cleidimar-alemao/">Ver os 26 projetos →</a>
-    </article></li>
-    <li data-nomes="Dr. Fernando Santório"><article class="cartao vereador" id="dr-fernando-santorio">
-      <h3><a href="/vereadores/dr-fernando-santorio/">Dr. Fernando Santório</a></h3>
-      <p class="valor">22 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Dr. Fernando Santório: 7 mudam algo na prática, 4 mudam pouco, 9 são simbólicos, 2 podem ser barrados."><i class="n-concreto" style="width:31.82%"></i><i class="n-fraco" style="width:18.18%"></i><i class="n-simbolico" style="width:40.91%"></i><i class="n-barrado" style="width:9.09%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">7</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">4</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">9</b> são simbólicos</span></li><li><i class="nv n-barrado" aria-hidden="true"></i><span><b class="num">2</b> podem ser barrados</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">5</b>. Mudam algo na prática: <b class="num">3</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">567</b> · Homenagens: <b class="num">91</b></p>
-      <a class="mais" href="/vereadores/dr-fernando-santorio/">Ver os 22 projetos →</a>
-    </article></li>
-    <li data-nomes="Flávio Preto"><article class="cartao vereador" id="flavio-preto">
-      <h3><a href="/vereadores/flavio-preto/">Flávio Preto</a></h3>
-      <p class="valor">38 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Flávio Preto: 11 mudam algo na prática, 15 mudam pouco, 9 são simbólicos, 3 sem como saber."><i class="n-concreto" style="width:28.95%"></i><i class="n-fraco" style="width:39.47%"></i><i class="n-simbolico" style="width:23.68%"></i><i class="n-sem" style="width:7.89%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">11</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">15</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">9</b> são simbólicos</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">3</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">4</b>. Mudam algo na prática: <b class="num">2</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">645</b> · Homenagens: <b class="num">71</b></p>
-      <a class="mais" href="/vereadores/flavio-preto/">Ver os 38 projetos →</a>
-    </article></li>
-    <li data-nomes="Jades Amorim"><article class="cartao vereador" id="jades-amorim">
-      <h3><a href="/vereadores/jades-amorim/">Jades Amorim</a></h3>
-      <p class="valor">17 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Jades Amorim: 6 mudam algo na prática, 3 mudam pouco, 6 são simbólicos, 2 sem como saber."><i class="n-concreto" style="width:35.29%"></i><i class="n-fraco" style="width:17.65%"></i><i class="n-simbolico" style="width:35.29%"></i><i class="n-sem" style="width:11.76%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">6</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">3</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">6</b> são simbólicos</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">2</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">2</b>. Mudam algo na prática: <b class="num">0</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">638</b> · Homenagens: <b class="num">164</b></p>
-      <a class="mais" href="/vereadores/jades-amorim/">Ver os 17 projetos →</a>
-    </article></li>
-    <li data-nomes="Jocemir da Enfermagem"><article class="cartao vereador" id="jocemir-da-enfermagem">
-      <h3><a href="/vereadores/jocemir-da-enfermagem/">Jocemir da Enfermagem</a></h3>
-      <p class="valor">244 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Jocemir da Enfermagem: 41 mudam algo na prática, 65 mudam pouco, 137 são simbólicos, 1 pode ser barrado."><i class="n-concreto" style="width:16.8%"></i><i class="n-fraco" style="width:26.64%"></i><i class="n-simbolico" style="width:56.15%"></i><i class="n-barrado" style="width:0.41%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">41</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">65</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">137</b> são simbólicos</span></li><li><i class="nv n-barrado" aria-hidden="true"></i><span><b class="num">1</b> pode ser barrado</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">11</b>. Muda algo na prática: <b class="num">1</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">1.028</b> · Homenagens: <b class="num">148</b></p>
-      <a class="mais" href="/vereadores/jocemir-da-enfermagem/">Ver os 244 projetos →</a>
-    </article></li>
-    <li data-nomes="Juquinha"><article class="cartao vereador" id="juquinha">
-      <h3><a href="/vereadores/juquinha/">Juquinha</a></h3>
-      <p class="valor">0 <small>projetos de lei</small></p>
-<p>Não apresentou projeto de lei de janeiro de 2025 a outubro de 2026.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">115</b> · Homenagens: <b class="num">88</b></p>
-      <a class="mais" href="/vereadores/juquinha/">Ver a página →</a>
-    </article></li>
-    <li data-nomes="Lei"><article class="cartao vereador" id="lei">
-      <h3><a href="/vereadores/lei/">Lei</a></h3>
-      <p class="valor">5 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Lei: 1 muda pouco, 3 são simbólicos, 1 sem como saber."><i class="n-fraco" style="width:20.0%"></i><i class="n-simbolico" style="width:60.0%"></i><i class="n-sem" style="width:20.0%"></i></div>
-<ul class="niveis"><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">1</b> muda pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">3</b> são simbólicos</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">1</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">1</b>. Mudam algo na prática: <b class="num">0</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">80</b> · Homenagens: <b class="num">34</b></p>
-      <a class="mais" href="/vereadores/lei/">Ver os 5 projetos →</a>
-    </article></li>
-    <li data-nomes="Lelo Couto"><article class="cartao vereador" id="lelo-couto">
-      <h3><a href="/vereadores/lelo-couto/">Lelo Couto</a></h3>
-      <p class="valor">38 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Lelo Couto: 12 mudam algo na prática, 3 mudam pouco, 20 são simbólicos, 3 sem como saber."><i class="n-concreto" style="width:31.58%"></i><i class="n-fraco" style="width:7.89%"></i><i class="n-simbolico" style="width:52.63%"></i><i class="n-sem" style="width:7.89%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">12</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">3</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">20</b> são simbólicos</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">3</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">10</b>. Mudam algo na prática: <b class="num">6</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">134</b> · Homenagens: <b class="num">173</b></p>
-      <a class="mais" href="/vereadores/lelo-couto/">Ver os 38 projetos →</a>
-    </article></li>
-    <li data-nomes="Léo do Iapi"><article class="cartao vereador" id="leo-do-iapi">
-      <h3><a href="/vereadores/leo-do-iapi/">Léo do Iapi</a></h3>
-      <p class="valor">0 <small>projetos de lei</small></p>
-<p>Não apresentou projeto de lei de janeiro de 2025 a outubro de 2026.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">64</b> · Homenagens: <b class="num">14</b></p>
-      <a class="mais" href="/vereadores/leo-do-iapi/">Ver a página →</a>
-    </article></li>
-    <li data-nomes="Marcelo Zonta"><article class="cartao vereador" id="marcelo-zonta">
-      <h3><a href="/vereadores/marcelo-zonta/">Marcelo Zonta</a></h3>
-      <p class="valor">51 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Marcelo Zonta: 21 mudam algo na prática, 14 mudam pouco, 16 são simbólicos."><i class="n-concreto" style="width:41.18%"></i><i class="n-fraco" style="width:27.45%"></i><i class="n-simbolico" style="width:31.37%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">21</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">14</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">16</b> são simbólicos</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">6</b>. Mudam algo na prática: <b class="num">5</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">579</b> · Homenagens: <b class="num">134</b></p>
-      <a class="mais" href="/vereadores/marcelo-zonta/">Ver os 51 projetos →</a>
-    </article></li>
-    <li data-nomes="Mauro Durval"><article class="cartao vereador" id="mauro-durval">
-      <h3><a href="/vereadores/mauro-durval/">Mauro Durval</a></h3>
-      <p class="valor">0 <small>projetos de lei</small></p>
-<p>Não apresentou projeto de lei de janeiro de 2025 a outubro de 2026.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">136</b> · Homenagens: <b class="num">19</b></p>
-      <a class="mais" href="/vereadores/mauro-durval/">Ver a página →</a>
-    </article></li>
-    <li data-nomes="Paulo Foto"><article class="cartao vereador" id="paulo-foto">
-      <h3><a href="/vereadores/paulo-foto/">Paulo Foto</a></h3>
-      <p class="valor">23 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Paulo Foto: 5 mudam algo na prática, 6 mudam pouco, 10 são simbólicos, 2 sem como saber."><i class="n-concreto" style="width:21.74%"></i><i class="n-fraco" style="width:26.09%"></i><i class="n-simbolico" style="width:43.48%"></i><i class="n-sem" style="width:8.7%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">5</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">6</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">10</b> são simbólicos</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">2</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">5</b>. Mudam algo na prática: <b class="num">0</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">273</b> · Homenagens: <b class="num">141</b></p>
-      <a class="mais" href="/vereadores/paulo-foto/">Ver os 23 projetos →</a>
-    </article></li>
-    <li data-nomes="Renato Machado"><article class="cartao vereador" id="renato-machado">
-      <h3><a href="/vereadores/renato-machado/">Renato Machado</a></h3>
-      <p class="valor">10 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Renato Machado: 2 mudam algo na prática, 1 muda pouco, 6 são simbólicos, 1 sem como saber."><i class="n-concreto" style="width:20.0%"></i><i class="n-fraco" style="width:10.0%"></i><i class="n-simbolico" style="width:60.0%"></i><i class="n-sem" style="width:10.0%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">2</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">1</b> muda pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">6</b> são simbólicos</span></li><li><i class="nv n-sem" aria-hidden="true"></i><span><b class="num">1</b> sem como saber</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">2</b>. Mudam algo na prática: <b class="num">0</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">179</b> · Homenagens: <b class="num">138</b></p>
-      <a class="mais" href="/vereadores/renato-machado/">Ver os 10 projetos →</a>
-    </article></li>
-    <li data-nomes="Ribeirinho"><article class="cartao vereador" id="ribeirinho">
-      <h3><a href="/vereadores/ribeirinho/">Ribeirinho</a></h3>
-      <p class="valor">3 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Ribeirinho: 1 muda algo na prática, 2 são simbólicos."><i class="n-concreto" style="width:33.33%"></i><i class="n-simbolico" style="width:66.67%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">1</b> muda algo na prática</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">2</b> são simbólicos</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">1</b>. Muda algo na prática: <b class="num">1</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">232</b> · Homenagens: <b class="num">48</b></p>
-      <a class="mais" href="/vereadores/ribeirinho/">Ver os 3 projetos →</a>
-    </article></li>
-    <li data-nomes="Romildo Alves"><article class="cartao vereador" id="romildo-alves">
-      <h3><a href="/vereadores/romildo-alves/">Romildo Alves</a></h3>
-      <p class="valor">6 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Romildo Alves: 4 mudam algo na prática, 1 muda pouco, 1 é simbólico."><i class="n-concreto" style="width:66.67%"></i><i class="n-fraco" style="width:16.67%"></i><i class="n-simbolico" style="width:16.67%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">4</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">1</b> muda pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">1</b> é simbólico</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">1</b>. Muda algo na prática: <b class="num">1</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">27</b> · Homenagens: <b class="num">21</b></p>
-      <a class="mais" href="/vereadores/romildo-alves/">Ver os 6 projetos →</a>
-    </article></li>
-    <li data-nomes="Sérgio Camilo"><article class="cartao vereador" id="sergio-camilo">
-      <h3><a href="/vereadores/sergio-camilo/">Sérgio Camilo</a></h3>
-      <p class="valor">16 <small>projetos de lei</small></p>
-<div class="pilha" role="img" aria-label="Projetos de Sérgio Camilo: 9 mudam algo na prática, 2 mudam pouco, 4 são simbólicos, 1 pode ser barrado."><i class="n-concreto" style="width:56.25%"></i><i class="n-fraco" style="width:12.5%"></i><i class="n-simbolico" style="width:25.0%"></i><i class="n-barrado" style="width:6.25%"></i></div>
-<ul class="niveis"><li><i class="nv n-concreto" aria-hidden="true"></i><span><b class="num">9</b> mudam algo na prática</span></li><li><i class="nv n-fraco" aria-hidden="true"></i><span><b class="num">2</b> mudam pouco</span></li><li><i class="nv n-simbolico" aria-hidden="true"></i><span><b class="num">4</b> são simbólicos</span></li><li><i class="nv n-barrado" aria-hidden="true"></i><span><b class="num">1</b> pode ser barrado</span></li></ul>
-<p>Aprovados pela Câmara: <b class="num">1</b>. Mudam algo na prática: <b class="num">0</b>.</p>
-<p class="miuda">Pedidos à prefeitura: <b class="num">3</b> · Homenagens: <b class="num">27</b></p>
-      <a class="mais" href="/vereadores/sergio-camilo/">Ver os 16 projetos →</a>
-    </article></li>
+  <ul class="niveis em-linha" aria-label="O que quer dizer cada cor"><li><i class="nv n-concreto" aria-hidden="true"></i>Muda algo na prática</li><li><i class="nv n-fraco" aria-hidden="true"></i>Muda pouco</li><li><i class="nv n-simbolico" aria-hidden="true"></i>Simbólico</li><li><i class="nv n-barrado" aria-hidden="true"></i>Pode ser barrado</li></ul>
+  <ol class="vereadores" id="lista-vereadores">
+    <li data-nomes="Açucena"><a class="ver-linha" href="/vereadores/acucena/" id="acucena">
+      <b class="nome">Açucena</b>
+<div class="pilha" role="img" aria-label="Projetos de Açucena: 13 mudam algo na prática, 23 mudam pouco, 14 são simbólicos, 1 pode ser barrado, 1 sem como saber."><i class="n-concreto" style="width:25.0%"></i><i class="n-fraco" style="width:44.23%"></i><i class="n-simbolico" style="width:26.92%"></i><i class="n-barrado" style="width:1.92%"></i><i class="n-sem" style="width:1.92%"></i></div>      <span class="nums">
+        <span><b class="num">52</b> projetos</span>
+        <span><b class="num">13</b> mudam algo</span>
+        <span><b class="num">14</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">139</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Cabo Fonseca"><a class="ver-linha" href="/vereadores/cabo-fonseca/" id="cabo-fonseca">
+      <b class="nome">Cabo Fonseca</b>
+<div class="pilha" role="img" aria-label="Projetos de Cabo Fonseca: 4 mudam algo na prática, 1 muda pouco, 4 são simbólicos, 2 podem ser barrados, 3 sem como saber."><i class="n-concreto" style="width:28.57%"></i><i class="n-fraco" style="width:7.14%"></i><i class="n-simbolico" style="width:28.57%"></i><i class="n-barrado" style="width:14.29%"></i><i class="n-sem" style="width:21.43%"></i></div>      <span class="nums">
+        <span><b class="num">14</b> projetos</span>
+        <span><b class="num">4</b> mudam algo</span>
+        <span><b class="num">4</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">128</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Cesinha"><a class="ver-linha" href="/vereadores/cesinha/" id="cesinha">
+      <b class="nome">Cesinha</b>
+<span class="pilha vazia">Nenhum projeto de lei</span>      <span class="nums">
+        <span><b class="num">0</b> projetos</span>
+        <span><b class="num">0</b> mudam algo</span>
+        <span><b class="num">0</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">43</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Cleidimar Alemão"><a class="ver-linha" href="/vereadores/cleidimar-alemao/" id="cleidimar-alemao">
+      <b class="nome">Cleidimar Alemão</b>
+<div class="pilha" role="img" aria-label="Projetos de Cleidimar Alemão: 6 mudam algo na prática, 9 mudam pouco, 10 são simbólicos, 1 pode ser barrado."><i class="n-concreto" style="width:23.08%"></i><i class="n-fraco" style="width:34.62%"></i><i class="n-simbolico" style="width:38.46%"></i><i class="n-barrado" style="width:3.85%"></i></div>      <span class="nums">
+        <span><b class="num">26</b> projetos</span>
+        <span><b class="num">6</b> mudam algo</span>
+        <span><b class="num">10</b> simbólicos</span>
+        <span><b class="num">1</b> aprovado que muda algo</span>
+        <span><b class="num">292</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Dr. Fernando Santório"><a class="ver-linha" href="/vereadores/dr-fernando-santorio/" id="dr-fernando-santorio">
+      <b class="nome">Dr. Fernando Santório</b>
+<div class="pilha" role="img" aria-label="Projetos de Dr. Fernando Santório: 7 mudam algo na prática, 4 mudam pouco, 9 são simbólicos, 2 podem ser barrados."><i class="n-concreto" style="width:31.82%"></i><i class="n-fraco" style="width:18.18%"></i><i class="n-simbolico" style="width:40.91%"></i><i class="n-barrado" style="width:9.09%"></i></div>      <span class="nums">
+        <span><b class="num">22</b> projetos</span>
+        <span><b class="num">7</b> mudam algo</span>
+        <span><b class="num">9</b> simbólicos</span>
+        <span><b class="num">3</b> aprovados que mudam algo</span>
+        <span><b class="num">567</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Flávio Preto"><a class="ver-linha" href="/vereadores/flavio-preto/" id="flavio-preto">
+      <b class="nome">Flávio Preto</b>
+<div class="pilha" role="img" aria-label="Projetos de Flávio Preto: 11 mudam algo na prática, 15 mudam pouco, 9 são simbólicos, 3 sem como saber."><i class="n-concreto" style="width:28.95%"></i><i class="n-fraco" style="width:39.47%"></i><i class="n-simbolico" style="width:23.68%"></i><i class="n-sem" style="width:7.89%"></i></div>      <span class="nums">
+        <span><b class="num">38</b> projetos</span>
+        <span><b class="num">11</b> mudam algo</span>
+        <span><b class="num">9</b> simbólicos</span>
+        <span><b class="num">2</b> aprovados que mudam algo</span>
+        <span><b class="num">645</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Jades Amorim"><a class="ver-linha" href="/vereadores/jades-amorim/" id="jades-amorim">
+      <b class="nome">Jades Amorim</b>
+<div class="pilha" role="img" aria-label="Projetos de Jades Amorim: 6 mudam algo na prática, 3 mudam pouco, 6 são simbólicos, 2 sem como saber."><i class="n-concreto" style="width:35.29%"></i><i class="n-fraco" style="width:17.65%"></i><i class="n-simbolico" style="width:35.29%"></i><i class="n-sem" style="width:11.76%"></i></div>      <span class="nums">
+        <span><b class="num">17</b> projetos</span>
+        <span><b class="num">6</b> mudam algo</span>
+        <span><b class="num">6</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">638</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Jocemir da Enfermagem"><a class="ver-linha" href="/vereadores/jocemir-da-enfermagem/" id="jocemir-da-enfermagem">
+      <b class="nome">Jocemir da Enfermagem</b>
+<div class="pilha" role="img" aria-label="Projetos de Jocemir da Enfermagem: 41 mudam algo na prática, 65 mudam pouco, 137 são simbólicos, 1 pode ser barrado."><i class="n-concreto" style="width:16.8%"></i><i class="n-fraco" style="width:26.64%"></i><i class="n-simbolico" style="width:56.15%"></i><i class="n-barrado" style="width:0.41%"></i></div>      <span class="nums">
+        <span><b class="num">244</b> projetos</span>
+        <span><b class="num">41</b> mudam algo</span>
+        <span><b class="num">137</b> simbólicos</span>
+        <span><b class="num">1</b> aprovado que muda algo</span>
+        <span><b class="num">1.028</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Juquinha"><a class="ver-linha" href="/vereadores/juquinha/" id="juquinha">
+      <b class="nome">Juquinha</b>
+<span class="pilha vazia">Nenhum projeto de lei</span>      <span class="nums">
+        <span><b class="num">0</b> projetos</span>
+        <span><b class="num">0</b> mudam algo</span>
+        <span><b class="num">0</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">115</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Lei"><a class="ver-linha" href="/vereadores/lei/" id="lei">
+      <b class="nome">Lei</b>
+<div class="pilha" role="img" aria-label="Projetos de Lei: 1 muda pouco, 3 são simbólicos, 1 sem como saber."><i class="n-fraco" style="width:20.0%"></i><i class="n-simbolico" style="width:60.0%"></i><i class="n-sem" style="width:20.0%"></i></div>      <span class="nums">
+        <span><b class="num">5</b> projetos</span>
+        <span><b class="num">0</b> mudam algo</span>
+        <span><b class="num">3</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">80</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Lelo Couto"><a class="ver-linha" href="/vereadores/lelo-couto/" id="lelo-couto">
+      <b class="nome">Lelo Couto</b>
+<div class="pilha" role="img" aria-label="Projetos de Lelo Couto: 12 mudam algo na prática, 3 mudam pouco, 20 são simbólicos, 3 sem como saber."><i class="n-concreto" style="width:31.58%"></i><i class="n-fraco" style="width:7.89%"></i><i class="n-simbolico" style="width:52.63%"></i><i class="n-sem" style="width:7.89%"></i></div>      <span class="nums">
+        <span><b class="num">38</b> projetos</span>
+        <span><b class="num">12</b> mudam algo</span>
+        <span><b class="num">20</b> simbólicos</span>
+        <span><b class="num">6</b> aprovados que mudam algo</span>
+        <span><b class="num">134</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Léo do Iapi"><a class="ver-linha" href="/vereadores/leo-do-iapi/" id="leo-do-iapi">
+      <b class="nome">Léo do Iapi</b>
+<span class="pilha vazia">Nenhum projeto de lei</span>      <span class="nums">
+        <span><b class="num">0</b> projetos</span>
+        <span><b class="num">0</b> mudam algo</span>
+        <span><b class="num">0</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">64</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Marcelo Zonta"><a class="ver-linha" href="/vereadores/marcelo-zonta/" id="marcelo-zonta">
+      <b class="nome">Marcelo Zonta</b>
+<div class="pilha" role="img" aria-label="Projetos de Marcelo Zonta: 21 mudam algo na prática, 14 mudam pouco, 16 são simbólicos."><i class="n-concreto" style="width:41.18%"></i><i class="n-fraco" style="width:27.45%"></i><i class="n-simbolico" style="width:31.37%"></i></div>      <span class="nums">
+        <span><b class="num">51</b> projetos</span>
+        <span><b class="num">21</b> mudam algo</span>
+        <span><b class="num">16</b> simbólicos</span>
+        <span><b class="num">5</b> aprovados que mudam algo</span>
+        <span><b class="num">579</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Mauro Durval"><a class="ver-linha" href="/vereadores/mauro-durval/" id="mauro-durval">
+      <b class="nome">Mauro Durval</b>
+<span class="pilha vazia">Nenhum projeto de lei</span>      <span class="nums">
+        <span><b class="num">0</b> projetos</span>
+        <span><b class="num">0</b> mudam algo</span>
+        <span><b class="num">0</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">136</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Paulo Foto"><a class="ver-linha" href="/vereadores/paulo-foto/" id="paulo-foto">
+      <b class="nome">Paulo Foto</b>
+<div class="pilha" role="img" aria-label="Projetos de Paulo Foto: 5 mudam algo na prática, 6 mudam pouco, 10 são simbólicos, 2 sem como saber."><i class="n-concreto" style="width:21.74%"></i><i class="n-fraco" style="width:26.09%"></i><i class="n-simbolico" style="width:43.48%"></i><i class="n-sem" style="width:8.7%"></i></div>      <span class="nums">
+        <span><b class="num">23</b> projetos</span>
+        <span><b class="num">5</b> mudam algo</span>
+        <span><b class="num">10</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">273</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Renato Machado"><a class="ver-linha" href="/vereadores/renato-machado/" id="renato-machado">
+      <b class="nome">Renato Machado</b>
+<div class="pilha" role="img" aria-label="Projetos de Renato Machado: 2 mudam algo na prática, 1 muda pouco, 6 são simbólicos, 1 sem como saber."><i class="n-concreto" style="width:20.0%"></i><i class="n-fraco" style="width:10.0%"></i><i class="n-simbolico" style="width:60.0%"></i><i class="n-sem" style="width:10.0%"></i></div>      <span class="nums">
+        <span><b class="num">10</b> projetos</span>
+        <span><b class="num">2</b> mudam algo</span>
+        <span><b class="num">6</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">179</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Ribeirinho"><a class="ver-linha" href="/vereadores/ribeirinho/" id="ribeirinho">
+      <b class="nome">Ribeirinho</b>
+<div class="pilha" role="img" aria-label="Projetos de Ribeirinho: 1 muda algo na prática, 2 são simbólicos."><i class="n-concreto" style="width:33.33%"></i><i class="n-simbolico" style="width:66.67%"></i></div>      <span class="nums">
+        <span><b class="num">3</b> projetos</span>
+        <span><b class="num">1</b> muda algo</span>
+        <span><b class="num">2</b> simbólicos</span>
+        <span><b class="num">1</b> aprovado que muda algo</span>
+        <span><b class="num">232</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Romildo Alves"><a class="ver-linha" href="/vereadores/romildo-alves/" id="romildo-alves">
+      <b class="nome">Romildo Alves</b>
+<div class="pilha" role="img" aria-label="Projetos de Romildo Alves: 4 mudam algo na prática, 1 muda pouco, 1 é simbólico."><i class="n-concreto" style="width:66.67%"></i><i class="n-fraco" style="width:16.67%"></i><i class="n-simbolico" style="width:16.67%"></i></div>      <span class="nums">
+        <span><b class="num">6</b> projetos</span>
+        <span><b class="num">4</b> mudam algo</span>
+        <span><b class="num">1</b> simbólico</span>
+        <span><b class="num">1</b> aprovado que muda algo</span>
+        <span><b class="num">27</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
+    <li data-nomes="Sérgio Camilo"><a class="ver-linha" href="/vereadores/sergio-camilo/" id="sergio-camilo">
+      <b class="nome">Sérgio Camilo</b>
+<div class="pilha" role="img" aria-label="Projetos de Sérgio Camilo: 9 mudam algo na prática, 2 mudam pouco, 4 são simbólicos, 1 pode ser barrado."><i class="n-concreto" style="width:56.25%"></i><i class="n-fraco" style="width:12.5%"></i><i class="n-simbolico" style="width:25.0%"></i><i class="n-barrado" style="width:6.25%"></i></div>      <span class="nums">
+        <span><b class="num">16</b> projetos</span>
+        <span><b class="num">9</b> mudam algo</span>
+        <span><b class="num">4</b> simbólicos</span>
+        <span><b class="num">0</b> aprovados que mudam algo</span>
+        <span><b class="num">3</b> pedidos à prefeitura</span>
+      </span>
+    </a></li>
   </ol>
 </section>
 
@@ -319,33 +362,7 @@
   </div>
 
   <div class="bloco">
-    <h3>A conta de cada um</h3>
-    <p>O salário é o mesmo: R$ 297 mil para cada vereador em 22 meses. Veja o que saiu de cada mandato.</p>
-    <table class="tabela">
-      <caption class="miuda">Em ordem alfabética, de janeiro de 2025 a outubro de 2026.</caption>
-      <thead><tr><th scope="col">Vereador</th><th scope="col">Salário no período</th><th scope="col">Projetos de lei</th><th scope="col">Mudam algo na prática</th><th scope="col">Aprovados que mudam algo</th><th scope="col">Simbólicos</th><th scope="col">Pedidos à prefeitura</th></tr></thead>
-      <tbody>
-        <tr><th scope="row"><a href="/vereadores/acucena/">Açucena</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">52</td><td data-rot="Mudam algo">13</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">14</td><td data-rot="Pedidos">139</td></tr>
-        <tr><th scope="row"><a href="/vereadores/cabo-fonseca/">Cabo Fonseca</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">14</td><td data-rot="Mudam algo">4</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">4</td><td data-rot="Pedidos">128</td></tr>
-        <tr><th scope="row"><a href="/vereadores/cesinha/">Cesinha</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">0</td><td data-rot="Mudam algo">0</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">0</td><td data-rot="Pedidos">43</td></tr>
-        <tr><th scope="row"><a href="/vereadores/cleidimar-alemao/">Cleidimar Alemão</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">26</td><td data-rot="Mudam algo">6</td><td data-rot="Aprovados que mudam algo">1</td><td data-rot="Simbólicos">10</td><td data-rot="Pedidos">292</td></tr>
-        <tr><th scope="row"><a href="/vereadores/dr-fernando-santorio/">Dr. Fernando Santório</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">22</td><td data-rot="Mudam algo">7</td><td data-rot="Aprovados que mudam algo">3</td><td data-rot="Simbólicos">9</td><td data-rot="Pedidos">567</td></tr>
-        <tr><th scope="row"><a href="/vereadores/flavio-preto/">Flávio Preto</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">38</td><td data-rot="Mudam algo">11</td><td data-rot="Aprovados que mudam algo">2</td><td data-rot="Simbólicos">9</td><td data-rot="Pedidos">645</td></tr>
-        <tr><th scope="row"><a href="/vereadores/jades-amorim/">Jades Amorim</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">17</td><td data-rot="Mudam algo">6</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">6</td><td data-rot="Pedidos">638</td></tr>
-        <tr><th scope="row"><a href="/vereadores/jocemir-da-enfermagem/">Jocemir da Enfermagem</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">244</td><td data-rot="Mudam algo">41</td><td data-rot="Aprovados que mudam algo">1</td><td data-rot="Simbólicos">137</td><td data-rot="Pedidos">1.028</td></tr>
-        <tr><th scope="row"><a href="/vereadores/juquinha/">Juquinha</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">0</td><td data-rot="Mudam algo">0</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">0</td><td data-rot="Pedidos">115</td></tr>
-        <tr><th scope="row"><a href="/vereadores/lei/">Lei</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">5</td><td data-rot="Mudam algo">0</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">3</td><td data-rot="Pedidos">80</td></tr>
-        <tr><th scope="row"><a href="/vereadores/lelo-couto/">Lelo Couto</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">38</td><td data-rot="Mudam algo">12</td><td data-rot="Aprovados que mudam algo">6</td><td data-rot="Simbólicos">20</td><td data-rot="Pedidos">134</td></tr>
-        <tr><th scope="row"><a href="/vereadores/leo-do-iapi/">Léo do Iapi</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">0</td><td data-rot="Mudam algo">0</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">0</td><td data-rot="Pedidos">64</td></tr>
-        <tr><th scope="row"><a href="/vereadores/marcelo-zonta/">Marcelo Zonta</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">51</td><td data-rot="Mudam algo">21</td><td data-rot="Aprovados que mudam algo">5</td><td data-rot="Simbólicos">16</td><td data-rot="Pedidos">579</td></tr>
-        <tr><th scope="row"><a href="/vereadores/mauro-durval/">Mauro Durval</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">0</td><td data-rot="Mudam algo">0</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">0</td><td data-rot="Pedidos">136</td></tr>
-        <tr><th scope="row"><a href="/vereadores/paulo-foto/">Paulo Foto</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">23</td><td data-rot="Mudam algo">5</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">10</td><td data-rot="Pedidos">273</td></tr>
-        <tr><th scope="row"><a href="/vereadores/renato-machado/">Renato Machado</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">10</td><td data-rot="Mudam algo">2</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">6</td><td data-rot="Pedidos">179</td></tr>
-        <tr><th scope="row"><a href="/vereadores/ribeirinho/">Ribeirinho</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">3</td><td data-rot="Mudam algo">1</td><td data-rot="Aprovados que mudam algo">1</td><td data-rot="Simbólicos">2</td><td data-rot="Pedidos">232</td></tr>
-        <tr><th scope="row"><a href="/vereadores/romildo-alves/">Romildo Alves</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">6</td><td data-rot="Mudam algo">4</td><td data-rot="Aprovados que mudam algo">1</td><td data-rot="Simbólicos">1</td><td data-rot="Pedidos">27</td></tr>
-        <tr><th scope="row"><a href="/vereadores/sergio-camilo/">Sérgio Camilo</a></th><td data-rot="Salário">R$ 297 mil</td><td data-rot="Projetos de lei">16</td><td data-rot="Mudam algo">9</td><td data-rot="Aprovados que mudam algo">0</td><td data-rot="Simbólicos">4</td><td data-rot="Pedidos">3</td></tr>
-      </tbody>
-    </table>
+    <p class="lead">O salário é o mesmo para os 19: R$ 297 mil para cada um em 22 meses. O que saiu de cada mandato está na <a href="#h-cada">lista acima</a>.</p>
     <div class="outro">
       <p class="prot">Por que não dividimos o salário de cada um</p>
       <p>Quem apresenta mais projetos nem sempre faz mais pela cidade. Um projeto bom vale mais que dez fracos.</p>
@@ -380,13 +397,12 @@
     <li><p><strong>Ache o seu vereador</strong> e veja cada projeto que ele apresentou.</p></li>
     <li><p><strong>Pergunte a ele</strong> qual projeto muda a vida do seu bairro.</p></li>
     <li><p><strong>Achou um erro?</strong> Mande no Instagram <a href="https://www.instagram.com/vigiacariacica/">@vigiacariacica</a>. A gente confere e corrige.</p></li>
-    <li><p><strong>Mande esta página</strong> para quem precisa saber.</p></li>
   </ol>
 </section>
 </div>
 
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="O que fez cada vereador de Cariacica? Veja os projetos, separados pelo que muda na vida da gente." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
@@ -402,6 +418,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>

@@ -16,10 +16,9 @@
 <meta name="theme-color" content="#00923f">
 <link rel="icon" href="/marca.svg" type="image/svg+xml">
 <link rel="canonical" href="https://vigiacariacica.github.io/bairros/porto-novo/">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders:wght@800;900&family=Atkinson+Hyperlegible+Next:wght@400;700&family=Courier+Prime:wght@400;700&display=swap">
-<link rel="stylesheet" href="/estilo.css?v=2ed1170d">
+<link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/estilo.css?v=0e806e06">
 </head>
 <body>
 <div class="app">
@@ -31,8 +30,24 @@
       <button class="btn" type="button" id="b-ouvir" aria-pressed="false">Ouvir esta página</button>
       <button class="btn" type="button" id="b-letra" aria-pressed="false">Letra maior</button>
     </div>
+    <details class="menu-cel">
+      <summary class="btn">Menu</summary>
+      <nav aria-label="Partes do site">
+        <ul>
+<li><a href="/">Início</a></li>
+<li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
+<li><a href="/problemas/">Maiores problemas</a></li>
+<li><a href="/fila/">Fila da saúde</a></li>
+<li><a href="/vereadores/">Vereadores</a></li>
+<li><a href="/perguntas/">Perguntas</a></li>
+<li><a href="/dinheiro/">Dinheiro</a></li>
+<li><a href="/fontes/">Nossas fontes</a></li>
+<li><a href="/quem-somos/">Quem somos</a></li>
+        </ul>
+      </nav>
+    </details>
   </div>
-  <nav aria-label="Partes do site">
+  <nav class="menu-pc" aria-label="Partes do site">
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
@@ -49,7 +64,7 @@
 <main id="conteudo" tabindex="-1">
 <section class="bloco" aria-labelledby="h1">
   <p class="prot"><a href="/bairros/">Meu bairro</a> · Censo do IBGE de 2022</p>
-  <h1 id="h1" tabindex="-1">Porto Novo</h1>
+  <h1 id="h1" tabindex="-1" data-guardar-bairro="porto-novo">Porto Novo</h1>
   <p class="lead">7.057 moradores em 2.540 casas.</p>
 </section>
 
@@ -120,37 +135,42 @@
   <h2 id="h-obras">Obras pagas pela prefeitura no bairro</h2>
   <p>Estas são as 5 obras que a prefeitura registrou com o nome de Porto Novo. A situação é a que o sistema de obras mostra hoje.</p>
   <ol class="obras grade-2">
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2021 · Obras</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Construção de uma Escadaria na Rua do Matadouro no bairro Porto Novo</h3>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2021</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Construção de uma Escadaria na Rua do Matadouro no bairro Porto Novo</h3>
 <p><span class="valor-obra num">R$ 138 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Porto Novo · contrato de 17/11/2021 a 14/07/2022 · número da obra 1734</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Silvano Ferreira Santos no bairro Porto Novo</h3>
+  <p class="meta">Contrato de 17/11/2021 a 14/07/2022 · obra nº 1734</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Silvano Ferreira Santos no bairro Porto Novo</h3>
 <p><span class="valor-obra num">R$ 70 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Porto Novo · contrato de 03/12/2020 a 02/03/2021 · número da obra 1694</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Cinco no bairro Porto Novo</h3>
+  <p class="meta">Contrato de 03/12/2020 a 02/03/2021 · obra nº 1694</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2019</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua Cinco no bairro Porto Novo</h3>
 <p><span class="valor-obra num">R$ 65 mil</span> pagos.</p>
-      <p class="meta">Bairros no sistema: Porto Novo · contrato de 30/07/2019 a 26/12/2019 · número da obra 998</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2018 · Obras</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação Região 01 - Aparecida, Flexal, Porto Novo e Nova Canaã</h3>
+  <p class="meta">Contrato de 30/07/2019 a 26/12/2019 · obra nº 998</p>
+</li>
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2018</span><span class="selo ok">Pronta, falta a vistoria final</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação Região 01 - Aparecida, Flexal, Porto Novo e Nova Canaã</h3>
 <p><span class="valor-obra num">R$ 2 milhões</span> pagos.</p>
-<p class="miuda">Obra em mais de um bairro. O valor é da obra inteira.</p>      <p class="meta">Bairros no sistema: Flexal I, Nova Canaã, Aparecida, Porto Novo · contrato de 08/10/2018 a 27/07/2019 · número da obra 954</p>
-    </li>
-    <li class="folha">
-      <p class="linha"><span class="prot">Contrato de 2012 · Educação</span><span class="selo ok">Pronta e entregue</span></p>
-      <h3 class="obra-nome" data-fora-da-regua>Cmei silvino de paula ramos - porto novo</h3>
-<p><span class="valor-obra num">R$ 519 mil</span> pagos, de R$ 265 mil do contrato.</p>
-      <p class="meta">Bairros no sistema: Porto Novo · contrato de 01/10/2012 a 27/02/2014 · número da obra 133</p>
-    </li>
+<p class="miuda">Obra em mais de um bairro (Flexal I, Nova Canaã, Aparecida, Porto Novo). O valor é da obra inteira.</p>  <p class="meta">Contrato de 08/10/2018 a 27/07/2019 · obra nº 954</p>
+</li>
   </ol>
+  <details class="grupo mais-obras">
+    <summary><b>Ver as outras 1</b><span>obras mais antigas</span></summary>
+    <ol class="obras grade-2">
+<li class="obra">
+  <p class="linha"><span class="prot">Contrato de 2012</span><span class="selo ok">Pronta e entregue</span></p>
+  <h3 class="obra-nome" data-fora-da-regua>Cmei silvino de paula ramos - porto novo</h3>
+<p><span class="valor-obra num">R$ 519 mil</span> pagos.</p>
+  <p class="meta">Contrato de 01/10/2012 a 27/02/2014 · obra nº 133</p>
+</li>
+    </ol>
+  </details>
   <p class="miuda">O sistema tem 221 obras desde 2010. Para 2025, tem só 1. Para 2026, nenhuma. Outras 14, que somam R$ 182 milhões, são da cidade toda ou não dizem o bairro. <a href="/bairros/#cidade-toda">Veja a lista</a>. <a href="/fontes/#obras">Como lemos as obras →</a></p>
 </section>
 
@@ -186,8 +206,8 @@
   </ol>
 </section>
 
-<section class="bloco" aria-labelledby="h-mande">
-  <h2 id="h-mande">Mande para quem precisa saber</h2>
+<section class="mande" aria-label="Mandar esta página">
+  <p><strong>Mande para quem precisa saber</strong></p>
   <div class="acoes-linha">
     <a class="btn cheio" data-zap="Veja como está Porto Novo (Cariacica): esgoto, posto de saúde e fila." href="https://wa.me/" rel="noopener">Mandar no WhatsApp</a>
     <button class="btn" type="button" data-copiar="copiado">Copiar o link</button>
@@ -208,6 +228,6 @@
   <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=2ed1170d" defer></script>
+<script src="/site.js?v=0e806e06" defer></script>
 </body>
 </html>
