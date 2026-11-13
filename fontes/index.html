@@ -23,7 +23,7 @@
 <link rel="canonical" href="https://vigiacariacica.github.io/fontes/">
 <link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/estilo.css?v=7cd1030d">
+<link rel="stylesheet" href="/estilo.css?v=f1b6a2c2">
 </head>
 <body>
 <div class="app">
@@ -41,6 +41,7 @@
         <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/">Meu bairro</a></li>
+<li><a href="/mapa/">Mapa</a></li>
 <li><a href="/problemas/">Maiores problemas</a></li>
 <li><a href="/fila/">Fila da saúde</a></li>
 <li><a href="/vereadores/">Vereadores</a></li>
@@ -56,6 +57,7 @@
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/">Meu bairro</a></li>
+<li><a href="/mapa/">Mapa</a></li>
 <li><a href="/problemas/">Maiores problemas</a></li>
 <li><a href="/fila/">Fila da saúde</a></li>
 <li><a href="/vereadores/">Vereadores</a></li>
@@ -112,6 +114,30 @@
         <div class="outro">
           <h3>O que o dado não mostra</h3>
           <ul class="regras"><li>O Censo junta alguns bairros pequenos com o vizinho.</li><li>O sistema de obras tem poucas obras de 2025 e nenhuma de 2026.</li><li>Obra sem bairro no sistema não aparece em nenhum bairro. Ela entra na conta da cidade.</li></ul>
+        </div>
+      </div>
+    </div>
+  </details>
+  <details class="grupo" id="mapa">
+    <summary><b>Mapa</b><span>2 fontes</span></summary>
+    <div class="bloco aberto">
+      <p class="lead">Onde mora a gente: moradores, aperto, casas sem esgoto e renda de cada bairro, no mapa. <a href="/mapa/">Ir para a página →</a></p>
+      <div class="grade-3">
+        <div class="folha">
+          <h3>De onde vem</h3>
+          <ul class="regras">
+<li><span class="meta"><a href="https://www.ibge.gov.br/estatisticas/sociais/trabalho/22827-censo-demografico-2022.html">IBGE, Censo 2022, resultados por bairro</a></span><br>Moradores, casas, esgoto e renda.</li>
+<li><span class="meta"><a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/26565-malhasde-setores-censitarios-divisoes-intramunicipais.html">IBGE, malha de bairros do Censo 2022</a></span><br>O desenho de cada bairro e a área em km².</li>
+          </ul>
+        </div>
+        <div class="folha">
+          <h3>Como fazemos a conta</h3>
+          <ul class="regras"><li>O robô baixa o desenho dos bairros do IBGE e desenha o mapa. Não usa mapa de outra empresa.</li><li>Cada cor junta cerca de 20 bairros: a mais clara tem os 20 com menos, a mais escura os 20 com mais.</li><li>Moradores por km² é o número de moradores dividido pela área do bairro.</li></ul>
+          <p><strong>Atualiza:</strong> O Censo é de 2022 e só muda no próximo.</p>
+        </div>
+        <div class="outro">
+          <h3>O que o dado não mostra</h3>
+          <ul class="regras"><li>A área sem bairro no Censo, quase toda zona rural, fica cinza.</li><li>Bairro grande com pouca gente parece vazio, mesmo tendo muitas casas espalhadas.</li></ul>
         </div>
       </div>
     </div>
@@ -301,9 +327,9 @@
   <p class="lema">A gente confere. Você cobra.</p>
   <p class="miuda">Feito por moradores de Cariacica. Nosso lado é o povo de Cariacica e o que ele precisa. <a href="/quem-somos/">Quem somos →</a> · <a href="/fontes/">Nossas fontes →</a></p>
   <p class="miuda">Fale com a gente: <a href="https://www.instagram.com/vigiacariacica/">@vigiacariacica</a> no Instagram.</p>
-  <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
+  <p class="fonte">Atualizado em 13 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=7cd1030d" defer></script>
+<script src="/site.js?v=f1b6a2c2" defer></script>
 </body>
 </html>

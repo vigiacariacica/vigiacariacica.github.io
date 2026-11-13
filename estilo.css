@@ -135,7 +135,7 @@ ul.lista-bairros a:hover{color:var(--verde)}
 /* portas */
 .porta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--e-1) var(--e-4);align-items:center;background:var(--folha);border:2px solid var(--tinta);padding:var(--e-4) var(--e-4) var(--e-4);color:var(--tinta);text-decoration:none;min-width:0;height:100%}
 .porta:hover{border-color:var(--verde)}
-.porta .prot{grid-column:1/-1}
+.porta .prot,.porta .cat{grid-column:1/-1}
 .porta b{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(28px,4vw,38px);line-height:1}
 .porta .t{grid-column:1/2;font-size:var(--t-3);color:var(--tinta-suave)}
 .porta .seta{grid-row:2/4;grid-column:2;font-family:var(--display);font-weight:900;font-size:44px;color:var(--verde);line-height:1}
@@ -393,3 +393,62 @@ details.mais-obras ol.obras{padding-bottom:var(--e-4)}
 h1.h1-achado{max-width:none}
 .h1-achado .numero{display:block}
 .h1-achado .resto{display:block;max-width:28ch;margin-top:var(--e-3);font-family:var(--texto);font-weight:700;text-transform:none;font-size:clamp(24px,3.4vw,36px);line-height:1.2}
+/* categorias: ícone de traço + nome, no lugar do rótulo. O assunto antes do texto, sem cor nova. */
+.ic{width:1.25em;height:1.25em;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cat{display:inline-flex;align-items:center;gap:var(--e-2);font-family:var(--protocolo);font-weight:700;font-size:var(--t-1);letter-spacing:.08em;text-transform:uppercase;color:var(--verde)}
+.cat .ic{width:1.6em;height:1.6em}
+h2 .ic,h3 .ic{width:.9em;height:.9em;vertical-align:-.08em;margin-right:var(--e-2);color:var(--verde)}
+/* filtro por assunto (bairro): sem script, tudo aparece */
+.filtro{display:flex;flex-wrap:wrap;gap:var(--e-2);align-items:center}
+.filtro .rot{font-weight:700;margin-right:var(--e-1)}
+.filtro button{font:inherit;font-weight:700;font-size:var(--t-2);min-height:44px;padding:var(--e-2) var(--e-3);border:2px solid var(--linha);background:var(--folha);color:var(--tinta);cursor:pointer;display:inline-flex;align-items:center;gap:var(--e-2)}
+.filtro button[aria-pressed="true"]{border-color:var(--tinta);background:var(--tinta);color:var(--papel)}
+.filtro button .ic{width:1.2em;height:1.2em}
+[data-cat][hidden],[data-grupo-cat][hidden]{display:none!important}
+/* valor com todos os zeros e a leitura dele embaixo */
+.cheio{font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.extenso{font-weight:700;color:var(--tinta-suave);margin-top:calc(-1 * var(--e-2))}
+.numero.cheio{white-space:normal;font-size:var(--n-2)}
+.visual-oculto{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* mapa: 5 tons de verde, do claro (pouco) ao escuro (muito). Cinza = sem bairro no Censo. */
+:root{--m0:#e2eee5;--m1:#b5d6bf;--m2:#79b690;--m3:#2f8f5b;--m4:#0b5e33;--m-borda:#f3f6f2}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--m0:#173527;--m1:#1f5a3a;--m2:#2f7d50;--m3:#4fa673;--m4:#9bd9b1;--m-borda:#07291a}}
+:root[data-theme="dark"]{--m0:#173527;--m1:#1f5a3a;--m2:#2f7d50;--m3:#4fa673;--m4:#9bd9b1;--m-borda:#07291a}
+.mapa{margin:0}
+.mapa svg{width:100%;height:auto;max-height:78vh;display:block}
+.mapa path{fill:var(--m0);stroke:var(--m-borda);stroke-width:1.5;cursor:pointer;transition:fill .15s}
+.mapa path.sem{fill:var(--vazio);cursor:default}
+.mapa path:hover{stroke:var(--tinta);stroke-width:2.5}
+.mapa path.escolhido{stroke:var(--marca);stroke-width:5}
+svg[data-camada=pop] path[data-qpop="1"],svg[data-camada=den] path[data-qden="1"],svg[data-camada=esg] path[data-qesg="1"],svg[data-camada=ren] path[data-qren="1"]{fill:var(--m1)}
+svg[data-camada=pop] path[data-qpop="2"],svg[data-camada=den] path[data-qden="2"],svg[data-camada=esg] path[data-qesg="2"],svg[data-camada=ren] path[data-qren="2"]{fill:var(--m2)}
+svg[data-camada=pop] path[data-qpop="3"],svg[data-camada=den] path[data-qden="3"],svg[data-camada=esg] path[data-qesg="3"],svg[data-camada=ren] path[data-qren="3"]{fill:var(--m3)}
+svg[data-camada=pop] path[data-qpop="4"],svg[data-camada=den] path[data-qden="4"],svg[data-camada=esg] path[data-qesg="4"],svg[data-camada=ren] path[data-qren="4"]{fill:var(--m4)}
+.mapa-info{display:flex;flex-direction:column;gap:var(--e-4);align-self:start;position:sticky;top:var(--e-4)}
+ul.faixas{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--e-1)}
+ul.faixas li{display:flex;align-items:center;gap:var(--e-3);font-variant-numeric:tabular-nums}
+ul.faixas i{width:28px;height:18px;flex:none;border:1px solid var(--linha)}
+ul.faixas i.m0{background:var(--m0)}ul.faixas i.m1{background:var(--m1)}ul.faixas i.m2{background:var(--m2)}ul.faixas i.m3{background:var(--m3)}ul.faixas i.m4{background:var(--m4)}
+.escolhido dl{display:grid;grid-template-columns:auto auto;gap:var(--e-1) var(--e-4);margin:0}
+.escolhido dt{color:var(--tinta-suave)}
+.escolhido dd{margin:0;font-weight:700;text-align:right;font-variant-numeric:tabular-nums}
+.escolhido .nome{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:var(--t-6);line-height:1}
+@media (max-width:759px){.mapa-info{position:static}.mapa svg{max-height:none}}
+/* mapinha do bairro: o fundo (um arquivo para todos) + o bairro em rosa por cima */
+.mapinha{margin:0}
+.mapinha-tela{position:relative;max-width:280px}
+.mapinha-tela img,.mapinha-tela svg{display:block;width:100%;height:auto}
+.mapinha-tela svg{position:absolute;inset:0}
+.mapinha-tela path{fill:var(--marca);stroke:var(--tinta);stroke-width:4}
+/* tabela que ordena */
+table.ordenavel th button{font:inherit;font-weight:inherit;text-transform:inherit;letter-spacing:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-align:inherit}
+table.ordenavel th button::after{content:" ↕";opacity:.5}
+table.ordenavel th[aria-sort] button::after{content:" ↓";opacity:1}
+table.ordenavel th[aria-sort="ascending"] button::after{content:" ↑"}
+table.numeros-bairro td b{font-size:var(--t-4)}
+.destaque-conta{border-left:6px solid var(--marca);padding:var(--e-3) var(--e-4);background:var(--folha)}
+[hidden]{display:none!important}
+@media (max-width:759px){table.tabela caption{display:block;width:100%}.mapinha-tela{max-width:200px}}
+.prot .ic{width:1.3em;height:1.3em;vertical-align:-.3em;margin-right:2px}
+.porta .cat{margin-bottom:var(--e-1)}
+@media (max-width:759px){.placar.extremos{grid-template-columns:1fr}}

@@ -23,7 +23,7 @@
 <link rel="canonical" href="https://vigiacariacica.github.io/bairros/jardim-de-alah/">
 <link rel="preload" href="/fontes/atkinson-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fontes/big-shoulders-900.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/estilo.css?v=7cd1030d">
+<link rel="stylesheet" href="/estilo.css?v=f1b6a2c2">
 </head>
 <body>
 <div class="app">
@@ -41,6 +41,7 @@
         <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
+<li><a href="/mapa/">Mapa</a></li>
 <li><a href="/problemas/">Maiores problemas</a></li>
 <li><a href="/fila/">Fila da saúde</a></li>
 <li><a href="/vereadores/">Vereadores</a></li>
@@ -56,6 +57,7 @@
     <ul>
 <li><a href="/">Início</a></li>
 <li><a href="/bairros/" aria-current="page">Meu bairro</a></li>
+<li><a href="/mapa/">Mapa</a></li>
 <li><a href="/problemas/">Maiores problemas</a></li>
 <li><a href="/fila/">Fila da saúde</a></li>
 <li><a href="/vereadores/">Vereadores</a></li>
@@ -73,11 +75,21 @@
   <p class="lead">2.201 moradores em 769 casas.</p>
 </section>
 
-<section class="bloco" aria-labelledby="h-como">
+<div class="filtro" data-filtro hidden>
+  <span class="rot">Ver só:</span>
+  <button type="button" data-ver="tudo" aria-pressed="true">Tudo</button>
+<button type="button" data-ver="saude" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>Saúde</button>
+<button type="button" data-ver="saneamento" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c3.2 4.6 6 8.1 6 11.2a6 6 0 0 1-12 0C6 11.1 8.8 7.6 12 3z"/></svg>Esgoto e água</button>
+<button type="button" data-ver="educacao" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6.5c3-1.2 6-1.2 9 .8 3-2 6-2 9-.8v12c-3-1.2-6-1.2-9 .8-3-2-6-2-9-.8zM12 7.3v12"/></svg>Escola</button>
+<button type="button" data-ver="renda" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 6.5v11M14.6 9c-.4-1-1.4-1.6-2.6-1.6-1.6 0-2.7.8-2.7 2 0 2.8 5.6 1.6 5.6 4.5 0 1.3-1.2 2.1-2.9 2.1-1.4 0-2.5-.6-2.9-1.7"/></svg>Renda</button>
+<button type="button" data-ver="obras" aria-pressed="false"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3.5h4l4.5 15h-13zM7.2 12h9.6M3 19h18"/></svg>Obras</button>
+</div>
+
+<section class="bloco" aria-labelledby="h-como" data-grupo-cat>
   <h2 id="h-como">Como está o bairro</h2>
   <div class="grade-2">
-    <article class="cartao">
-      <p class="prot">Esgoto</p>
+    <article class="cartao" data-cat="saneamento">
+      <span class="cat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c3.2 4.6 6 8.1 6 11.2a6 6 0 0 1-12 0C6 11.1 8.8 7.6 12 3z"/></svg><span>Esgoto</span></span>
       <h3>O esgoto das casas vai para a rede?</h3>
       <p class="valor">7 de cada 10</p>
       <p>casas têm esgoto ligado na rede.</p>
@@ -87,8 +99,8 @@
 </div>
 <p>Cerca de 201 casas ainda não estão ligadas à rede.</p>      <p class="meta">Censo 2022: 73,8% das casas · Cariacica: 82,6%</p>
     </article>
-    <article class="cartao">
-      <p class="prot">Ler e escrever</p>
+    <article class="cartao" data-cat="educacao">
+      <span class="cat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6.5c3-1.2 6-1.2 9 .8 3-2 6-2 9-.8v12c-3-1.2-6-1.2-9 .8-3-2-6-2-9-.8zM12 7.3v12"/></svg><span>Ler e escrever</span></span>
       <h3>Quantos vizinhos não sabem ler?</h3>
       <p class="valor">7 de cada 100</p>
       <p>pessoas com 15 anos ou mais não sabem ler e escrever.</p>
@@ -98,15 +110,15 @@
 </div>
 <p>São 111 pessoas no bairro.</p>      <p class="meta">Censo 2022: 6,6% não alfabetizados · Cariacica: 4,5%</p>
     </article>
-    <article class="cartao">
-      <p class="prot">Renda</p>
+    <article class="cartao" data-cat="renda">
+      <span class="cat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 6.5v11M14.6 9c-.4-1-1.4-1.6-2.6-1.6-1.6 0-2.7.8-2.7 2 0 2.8 5.6 1.6 5.6 4.5 0 1.3-1.2 2.1-2.9 2.1-1.4 0-2.5-.6-2.9-1.7"/></svg><span>Renda</span></span>
       <h3>Quanto ganha quem sustenta a casa?</h3>
       <p class="valor">R$ 1.212</p>
       <p>por mês: metade dos responsáveis pelas casas ganha até esse valor.</p>
 <p class="cid">Está entre os 20 bairros de menor renda de Cariacica.</p><p>Era o valor do salário mínimo em 2022, ano do Censo.</p>      <p class="meta">Censo 2022: mediana R$ 1.212</p>
     </article>
-    <article class="cartao">
-      <p class="prot">Água e lixo</p>
+    <article class="cartao" data-cat="saneamento">
+      <span class="cat"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3c3.2 4.6 6 8.1 6 11.2a6 6 0 0 1-12 0C6 11.1 8.8 7.6 12 3z"/></svg><span>Água e lixo</span></span>
       <h3>Tem água da rede e coleta de lixo?</h3>
 <span class="selo ok">Isso está certo</span>      <p class="valor">Quase todas</p>
       <p>as casas têm água da rede e lixo recolhido.</p>
@@ -115,15 +127,41 @@
   </div>
 </section>
 
+<div class="grade-2 larga-esq" data-cat="geral">
+  <section class="bloco" aria-labelledby="h-numeros">
+    <h2 id="h-numeros">Os números do bairro</h2>
+    <table class="tabela numeros-bairro">
+      <caption class="miuda">Posição: 1º é o bairro com o maior número entre os 99.</caption>
+      <thead><tr><th scope="col">O que contamos</th><th scope="col">Jardim de Alah</th><th scope="col">Cariacica</th><th scope="col">Posição</th></tr></thead>
+      <tbody>
+        <tr data-cat="geral"><th scope="row">Moradores</th><td data-rot="Jardim de Alah" class="num"><b>2.201</b></td><td data-rot="Cariacica" class="num">349.104</td><td data-rot="Posição" class="num">68º de 99</td></tr>
+        <tr data-cat="geral"><th scope="row">Casas</th><td data-rot="Jardim de Alah" class="num"><b>769</b></td><td data-rot="Cariacica" class="num">128.765</td><td data-rot="Posição" class="num">70º de 99</td></tr>
+        <tr data-cat="geral"><th scope="row">Moradores por km²</th><td data-rot="Jardim de Alah" class="num"><b>4.520</b></td><td data-rot="Cariacica" class="num">3.106</td><td data-rot="Posição" class="num">59º de 99</td></tr>
+        <tr data-cat="saneamento"><th scope="row">Casas sem esgoto ligado na rede</th><td data-rot="Jardim de Alah" class="num"><b>201</b></td><td data-rot="Cariacica" class="num">22.409</td><td data-rot="Posição" class="num">33º de 99</td></tr>
+        <tr data-cat="educacao"><th scope="row">Pessoas de 15 anos ou mais que não sabem ler</th><td data-rot="Jardim de Alah" class="num"><b>111</b></td><td data-rot="Cariacica" class="num">12.426</td><td data-rot="Posição" class="num">48º de 99</td></tr>
+        <tr data-cat="renda"><th scope="row">Metade das famílias ganha até</th><td data-rot="Jardim de Alah" class="num"><b>R$ 1.212</b></td><td data-rot="Cariacica" class="num">—</td><td data-rot="Posição" class="num">70º de 99</td></tr>
+      </tbody>
+    </table>
+  </section>
+  <figure class="bloco mapinha" aria-labelledby="h-onde">
+    <h2 id="h-onde" class="h-pequeno"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5zM9 4v13.5M15 6.5V20"/></svg>Onde fica</h2>
+    <div class="mapinha-tela">
+      <img src="/mapa/base.svg" alt="" width="1000" height="1728" loading="lazy">
+      <svg viewBox="0 0 1000 1728" role="img" aria-label="Jardim de Alah em rosa, no mapa de Cariacica"><path d="M705.5 1549.8l-8.4 -9l-8.3 -4.2l-6.3 -11l-17 -5.6l-6.3 -11.7l-18.6 -12.5l6.4 -4.2l5 -13.2l7.8 -0.1l8.1 6.3l3.3 0.3l12.5 11l5.1 -0.4l3.3 7.1l9.4 3.3l3.5 3.5l2 8.8l5.7 8.5l8.1 2.6l13.2 -0.5l0.1 27l-8.1 24.3l-20.2 2.2l0.4 -8.2l-3.8 -14.1l4.3 -6.3l-2.6 -3.1l1.4 -0.8z"/></svg>
+    </div>
+    <figcaption class="miuda">Jardim de Alah em rosa. <a href="/mapa/#jardim-de-alah">Ver no mapa da cidade →</a></figcaption>
+  </figure>
+</div>
+
 <div class="grade-2">
-<section class="bloco" aria-labelledby="h-posto">
-  <h2 id="h-posto">Posto de saúde no bairro</h2>
+<section class="bloco" aria-labelledby="h-posto" data-cat="saude">
+  <h2 id="h-posto"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6z"/></svg>Posto de saúde no bairro</h2>
   <p>Não achamos um posto de saúde com endereço neste bairro. Quem mora aqui é atendido num posto perto.</p>
   <p><a href="/fila/">Veja a fila de todos os postos →</a></p>
 </section>
 
-<section class="bloco" aria-labelledby="h-escolas">
-  <h2 id="h-escolas">Escolas no bairro</h2>
+<section class="bloco" aria-labelledby="h-escolas" data-cat="educacao">
+  <h2 id="h-escolas"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6.5c3-1.2 6-1.2 9 .8 3-2 6-2 9-.8v12c-3-1.2-6-1.2-9 .8-3-2-6-2-9-.8zM12 7.3v12"/></svg>Escolas no bairro</h2>
   <p>A nota do MEC vai de 0 a 10 e mede se os alunos aprendem e passam de ano.</p>
   <ul class="regras">
 <li><strong>EEEFM Alzira Ramos</strong><br>Anos finais (6º–9º): nota 4,8 em 2025 (Cariacica: 4,9)<br>Ensino médio: nota 4,5 em 2025 (Cariacica: 4,7)</li>
@@ -133,36 +171,36 @@
 
 </div>
 
-<section class="bloco" id="obras" aria-labelledby="h-obras">
-  <h2 id="h-obras">Obras pagas pela prefeitura no bairro</h2>
+<section class="bloco" id="obras" aria-labelledby="h-obras" data-cat="obras">
+  <h2 id="h-obras"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 3.5h4l4.5 15h-13zM7.2 12h9.6M3 19h18"/></svg>Obras pagas pela prefeitura no bairro</h2>
   <p>Estas são as 4 obras que a prefeitura registrou com o nome de Jardim de Alah. A situação é a que o sistema de obras mostra hoje.</p>
   <ol class="obras grade-2">
 <li class="obra">
   <p class="linha"><span class="prot">Contrato de 2023</span><span class="selo ok">Pronta e entregue</span></p>
   <h3 class="obra-nome" data-fora-da-regua>Conclusão das obras de drenagem e pavimentação das ruas q e getúlio bonelli, no bairro jardim de alah</h3>
-<p><span class="valor-obra num">R$ 359 mil</span> pagos.</p>
+<p><span class="valor-obra num">R$ 359.283</span> pagos.</p>
   <p class="meta">Contrato de 18/01/2023 a 15/08/2023 · obra nº 1778</p>
 </li>
 <li class="obra">
   <p class="linha"><span class="prot">Contrato de 2022</span><span class="selo ok">Pronta e entregue</span></p>
   <h3 class="obra-nome" data-fora-da-regua>Construção do Campo de Futebol Society &#34;Bom de Bola II&#34; no bairro Jardim de Alah.</h3>
-<p><span class="valor-obra num">R$ 988 mil</span> pagos.</p>
+<p><span class="valor-obra num">R$ 987.744</span> pagos.</p>
   <p class="meta">Contrato de 27/06/2022 a 12/12/2023 · obra nº 1749</p>
 </li>
 <li class="obra">
   <p class="linha"><span class="prot">Contrato de 2020</span><span class="selo neutro">Em andamento</span></p>
   <h3 class="obra-nome" data-fora-da-regua>Drenagem e Pavimentação da Rua B em Jardim de Alah</h3>
-<p><span class="valor-obra num">R$ 359 mil</span> pagos.</p>
+<p><span class="valor-obra num">R$ 359.075</span> pagos.</p>
 <p class="miuda">O prazo do contrato no sistema acabou em 08/07/2022.</p>  <p class="meta">Contrato de 09/03/2020 a 08/07/2022 · obra nº 1702</p>
 </li>
 <li class="obra">
   <p class="linha"><span class="prot">Contrato de 2012</span><span class="selo ok">Pronta e entregue</span></p>
   <h3 class="obra-nome" data-fora-da-regua>Obras de Reforma, Urbanização e Paisagismo de Pátios Externos no CMEI Abílio Luiz Fagundes - Jardim de Alah</h3>
-<p><span class="valor-obra num">R$ 2 milhões</span> pagos.</p>
+<p><span class="valor-obra num">R$ 1.962.086</span> pagos.</p>
   <p class="meta">Contrato de 25/10/2012 a 16/08/2014 · obra nº 10</p>
 </li>
   </ol>
-  <p class="miuda">O sistema tem 221 obras desde 2010. Para 2025, tem só 1. Para 2026, nenhuma. Outras 14, que somam R$ 182 milhões, são da cidade toda ou não dizem o bairro. <a href="/bairros/#cidade-toda">Veja a lista</a>. <a href="/fontes/#obras">Como lemos as obras →</a></p>
+  <p class="miuda">O sistema tem 221 obras desde 2010. Para 2025, tem só 1. Para 2026, nenhuma. Outras 14, que somam R$ 181.874.016, são da cidade toda ou não dizem o bairro. <a href="/bairros/#cidade-toda">Veja a lista</a>. <a href="/fontes/#obras">Como lemos as obras →</a></p>
 </section>
 
 <section class="bloco" aria-labelledby="h-perg">
@@ -216,9 +254,9 @@
   <p class="lema">A gente confere. Você cobra.</p>
   <p class="miuda">Feito por moradores de Cariacica. Nosso lado é o povo de Cariacica e o que ele precisa. <a href="/quem-somos/">Quem somos →</a> · <a href="/fontes/">Nossas fontes →</a></p>
   <p class="miuda">Fale com a gente: <a href="https://www.instagram.com/vigiacariacica/">@vigiacariacica</a> no Instagram.</p>
-  <p class="fonte">Atualizado em 12 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
+  <p class="fonte">Atualizado em 13 de novembro de 2026. O robô do Vigia atualiza este site sozinho, com dados oficiais.</p>
 </footer>
 </div>
-<script src="/site.js?v=7cd1030d" defer></script>
+<script src="/site.js?v=f1b6a2c2" defer></script>
 </body>
 </html>

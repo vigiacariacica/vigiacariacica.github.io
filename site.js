@@ -123,6 +123,90 @@
   abrirAlvo();
   window.addEventListener("hashchange", abrirAlvo);
 
+  /* filtro por assunto (página do bairro): mostra só o que é daquele assunto; "geral" fica sempre */
+  document.querySelectorAll("[data-filtro]").forEach(function (barra) {
+    barra.hidden = false;
+    var botoes = barra.querySelectorAll("[data-ver]");
+    botoes.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var ver = b.dataset.ver;
+        botoes.forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+        document.querySelectorAll("main [data-cat]").forEach(function (el) {
+          var c = el.dataset.cat;
+          el.hidden = !(ver === "tudo" || c === "geral" || c === ver);
+        });
+        document.querySelectorAll("main [data-grupo-cat]").forEach(function (g) {
+          g.hidden = !g.querySelector("[data-cat]:not([hidden])");
+        });
+      });
+    });
+  });
+
+  /* mapa: trocar a camada e tocar num bairro */
+  var mapa = document.querySelector("[data-mapa]");
+  if (mapa) {
+    var nomes = { pop: "Moradores", den: "Moradores por km²", esg: "Casas sem esgoto na rede", ren: "Metade ganha até" };
+    var caixa = document.querySelector("[data-escolhido]");
+    document.querySelectorAll("[data-camada]").forEach(function (b) {
+      if (b.tagName !== "BUTTON") return;
+      b.addEventListener("click", function () {
+        mapa.setAttribute("data-camada", b.dataset.camada);
+        document.querySelectorAll("button[data-camada]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+        document.querySelectorAll("[data-legenda]").forEach(function (l) { l.hidden = l.dataset.legenda !== b.dataset.camada; });
+      });
+    });
+    function escolher(p, rolar) {
+      if (!p || !p.dataset.n) return;
+      var antes = mapa.querySelector(".escolhido");
+      if (antes) antes.classList.remove("escolhido");
+      p.classList.add("escolhido");
+      p.parentNode.appendChild(p);   /* traz para a frente, para a borda rosa aparecer inteira */
+      var linhas = ["pop", "den", "esg", "ren"].map(function (k) {
+        return "<dt>" + nomes[k] + "</dt><dd>" + (k === "ren" ? "" : "") + p.getAttribute("data-v" + k) + "</dd>";
+      }).join("") + "<dt>Casas</dt><dd>" + p.dataset.c + "</dd>";
+      caixa.innerHTML = '<p class="prot">Bairro</p><p class="nome"></p><dl>' + linhas + '</dl><p><a href="/bairros/' + p.dataset.s + '/">Abrir a página do bairro →</a></p>';
+      caixa.querySelector(".nome").textContent = p.dataset.n;
+      if (rolar && window.innerWidth < 760) caixa.scrollIntoView({ block: "nearest" });
+    }
+    mapa.addEventListener("click", function (e) { escolher(e.target.closest("path"), true); });
+    var inicial = location.hash.slice(1);
+    if (!inicial) { try { inicial = (JSON.parse(localStorage.getItem("vigia-bairro") || "null") || {}).slug; } catch (e) {} }
+    if (inicial && /^[a-z0-9-]+$/.test(inicial)) escolher(document.getElementById("m-" + inicial), false);
+  }
+
+  /* tabela que ordena ao tocar no título da coluna */
+  document.querySelectorAll("[data-ordenavel]").forEach(function (t) {
+    var corpo = t.tBodies[0];
+    t.querySelectorAll("th button[data-col]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var th = b.parentNode, col = +b.dataset.col, txt = b.dataset.tipo === "txt";
+        var desc = th.getAttribute("aria-sort") !== "descending";
+        if (txt) desc = th.getAttribute("aria-sort") === "ascending";
+        t.querySelectorAll("th[aria-sort]").forEach(function (o) { o.removeAttribute("aria-sort"); });
+        th.setAttribute("aria-sort", desc ? "descending" : "ascending");
+        var linhas = Array.prototype.slice.call(corpo.rows);
+        linhas.sort(function (x, y) {
+          var a = x.cells[col].dataset.v, c = y.cells[col].dataset.v;
+          var r = txt ? a.localeCompare(c, "pt-BR") : (+a) - (+c);
+          return desc ? -r : r;
+        });
+        linhas.forEach(function (l) { corpo.appendChild(l); });
+      });
+    });
+  });
+
+  /* trocar o jeito de ver um valor (dinheiro: de cada R$ 100, em reais, por morador) */
+  document.querySelectorAll("[data-trocar]").forEach(function (barra) {
+    var alvo = document.getElementById(barra.dataset.trocar);
+    barra.hidden = false;
+    barra.querySelectorAll("button[data-modo]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        barra.querySelectorAll("button[data-modo]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); });
+        alvo.querySelectorAll("[data-" + b.dataset.modo + "]").forEach(function (el) { el.textContent = el.getAttribute("data-" + b.dataset.modo); });
+      });
+    });
+  });
+
   /* imprimir: abre as partes fechadas e depois fecha de novo */
   var fechadas = [];
   window.addEventListener("beforeprint", function () {
