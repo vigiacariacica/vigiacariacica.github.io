@@ -49,12 +49,18 @@
   function dia(iso) { var p = iso.split("-"); return Date.UTC(+p[0], +p[1] - 1, +p[2]); }
   function ddmm(iso) { return iso.slice(8, 10) + "/" + iso.slice(5, 7); }
   document.querySelectorAll(".relogio[data-prazo]").forEach(function (el) {
-    if (el.dataset.respondido) { el.textContent = "Respondida em " + el.dataset.respondido; return; }
+    if (el.dataset.respondido) { var e = el.dataset.estado; el.textContent = (e === "parcial" ? "Respondida só em parte em " : e === "negado" ? "Negada em " : "Respondida em ") + ddmm(el.dataset.respondido); return; }
     var p = el.dataset.prazo, n = Math.round((dia(p) - hoje) / 86400000);
     if (n > 1) el.textContent = "Prazo: " + ddmm(p) + " · faltam " + n + " dias";
     else if (n === 1) el.textContent = "Prazo: amanhã, " + ddmm(p);
     else if (n === 0) el.textContent = "Prazo: hoje, " + ddmm(p);
     else { el.textContent = "Atrasada há " + (-n) + (n === -1 ? " dia" : " dias"); el.classList.add("vencido"); }
+  });
+
+  /* quanto falta para cada grupo de prazo (a página é gerada uma vez; o celular conta os dias) */
+  document.querySelectorAll(".falta[data-prazo]").forEach(function (el) {
+    var n = Math.round((dia(el.dataset.prazo) - hoje) / 86400000);
+    el.textContent = n > 1 ? "faltam " + n + " dias" : n === 1 ? "vence amanhã" : n === 0 ? "vence hoje" : "venceu há " + (-n) + (n === -1 ? " dia" : " dias");
   });
 
   /* busca de bairro: filtra a lista enquanto a pessoa digita; Enter abre o primeiro */
