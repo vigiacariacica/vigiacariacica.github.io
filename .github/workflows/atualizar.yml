@@ -1,0 +1,69 @@
+name: Atualizar o site
+
+# Gera o site a partir do repositório público do robô (vigiacariacica/vigia-cariacica): código, testes e dados
+# de lá, publicados aqui. Não precisa de token nem de segredo: o robô é público e este workflow só escreve neste
+# repositório, com o token que o próprio GitHub dá a cada execução.
+# Três vezes por dia: depois da coleta da manhã, à tarde (pedidos e respostas do dia) e depois da Câmara.
+on:
+  schedule:
+    - cron: "47 12 * * *"   # 09:47 de Brasília, depois da coleta das 06:23
+    - cron: "13 19 * * *"   # 16:13 de Brasília
+    - cron: "13 4 * * *"    # 01:13 de Brasília, depois das sessões da Câmara
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: atualizar-site
+  cancel-in-progress: false
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Este repositório (o site publicado)
+        uses: actions/checkout@v4
+        with:
+          path: publico
+          persist-credentials: false     # o código do robô roda sem o token no disco; o push usa o token só no fim
+
+      - name: Repositório público do robô
+        uses: actions/checkout@v4
+        with:
+          repository: vigiacariacica/vigia-cariacica
+          ref: main
+          path: robo
+          persist-credentials: false
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: robo/requirements.txt
+
+      - run: pip install -r robo/requirements.txt
+
+      - name: Testes do site (linguagem simples, dados pessoais, fontes)
+        working-directory: robo
+        run: python -m pytest -q tests/test_site.py
+
+      - name: Gerar o site
+        working-directory: robo
+        run: python -m vigia.site --saida ../_site
+
+      - name: Publicar
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test -f _site/index.html || { echo "::error::O site gerado não tem index.html. Nada foi publicado."; exit 1; }
+          rsync -a --delete --exclude .git --exclude .github --exclude README.md --filter="protect CNAME" _site/ publico/
+          cd publico
+          git config user.name "vigia-bot"
+          git config user.email "vigia-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "Site sem mudança."; exit 0; fi
+          git commit -m "site: atualização automática de $(date -u +%Y-%m-%d) (robô $(git -C ../robo rev-parse --short HEAD))"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:main
