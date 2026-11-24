@@ -701,3 +701,165 @@ ol.passos b,details.grupo summary b,.crenca b,ol.indice b,ul.tarefas b,nav.vizin
 .emergencia-linha a{display:flex;flex-direction:column;align-items:flex-start;min-height:48px;padding:0;font-family:var(--texto);font-size:var(--t-1);font-weight:700;color:var(--tinta);text-decoration:none}
 .emergencia-linha a b{font-family:var(--display);font-weight:900;font-size:28px;color:var(--alerta);line-height:1}
 @media (min-width:900px){.emergencia-linha{display:none}}
+
+/* ===== v6 · 24/11/2026 · a alma da marca de volta (crítica independente, rodada 1) ===========================
+   Regras técnicas da v5 ficam (contraste, foco, campos, selos). Volta o que é do Vigia: a manchete condensada,
+   a linha de protocolo em máquina de escrever, o marca-texto rosa, o canto reto, os colchetes e Cariacica na capa. */
+:root{--protocolo:"Courier Prime","Courier New",monospace;--raio:0;--raio-p:0;--linha:#c9d4cc;--vazio:#c9d4cc;
+  --ruim:#a4133c;--ruim-fundo:#fbe9ee;--info:#00753a;--info-fundo:#e3efe7}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--linha:#2a4234;--vazio:#3b5546;--ruim:#ff8fa8;--ruim-fundo:#3d1420;--info:#4cc985;--info-fundo:#173526}}
+:root[data-theme="dark"]{--linha:#2a4234;--vazio:#3b5546;--ruim:#ff8fa8;--ruim-fundo:#3d1420;--info:#4cc985;--info-fundo:#173526}
+/* manchete da marca */
+h1{font-family:var(--display);font-weight:900;font-size:clamp(44px,5.2vw + 16px,72px);line-height:1;letter-spacing:0;max-width:16ch}
+main h1{text-transform:uppercase!important}
+main h1.h1-achado{text-transform:none!important;font-family:var(--texto);font-weight:700;font-size:clamp(28px,2vw + 18px,40px);line-height:1.15;max-width:28ch}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(30px,1.6vw + 24px,40px);line-height:1.05;letter-spacing:0}
+@media (max-width:759px){h1{font-size:clamp(40px,11vw,48px)}}
+.mk{background:var(--marca);color:var(--on-marca);padding:0 .12em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+/* linha de protocolo: o "papel timbrado" do Vigia, em cima de cada página e de cada cartão */
+.prot,.linha-protocolo span,.marca-texto{font-family:var(--protocolo);font-weight:700}
+main .prot,main .linha-protocolo span{text-transform:uppercase!important;letter-spacing:.08em!important;font-size:14px;color:var(--verde)}
+.bloco>.prot:first-child:has(+ h1),.bloco>.prot:first-child:has(+ h2),.cat:has(+ h2),.cat:has(+ h3),.prot:has(+ h3){display:revert}
+.cat{font-family:var(--protocolo);font-weight:700}
+main .cat{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:13px}
+.linha-protocolo{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--e-1) var(--e-4);border-bottom:1px solid var(--linha);padding-bottom:var(--e-1)}
+main>*{order:0!important}
+main>.linha-protocolo{margin-top:calc(-1 * var(--e-4))}
+.linha-protocolo .ouvir{font:inherit;font-family:var(--texto);font-weight:700;font-size:16px;color:var(--verde);background:none;border:0;min-height:44px;padding:0;cursor:pointer;display:inline-flex;align-items:center;gap:var(--e-2)}
+.linha-protocolo .ouvir::before{content:"";border-style:solid;border-width:6px 0 6px 10px;border-color:transparent transparent transparent currentColor}
+.linha-protocolo .ouvir[aria-pressed="true"]::before{border:0;width:9px;height:11px;border-left:3px solid currentColor;border-right:3px solid currentColor}
+.fonte,.meta{font-family:var(--protocolo);font-size:13px;color:#4a5f53;line-height:1.5}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .fonte,:root:not([data-theme="light"]) .meta{color:var(--tinta-suave)}}
+:root[data-theme="dark"] .fonte,:root[data-theme="dark"] .meta{color:var(--tinta-suave)}
+.marca-texto{font-size:14px;color:var(--tinta);text-transform:uppercase!important;letter-spacing:.06em!important}
+/* topo com a assinatura */
+.topo{border-bottom:6px solid var(--bandeira)}
+.marca img{width:42px;height:32px;border:0}
+.marca .nome{display:flex;flex-direction:column;line-height:1;max-width:none}
+.marca .nome b{font-family:var(--display);font-weight:900;font-size:28px;text-transform:uppercase;line-height:.9}
+.marca .nome small{display:block;font-family:var(--protocolo);font-weight:700;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--verde);margin-top:2px}
+.btn,.btn.denunciar,.caminho,.folha,.porta,.cartao,.placar div,.recebido,input[type=search],input[type=text],select,textarea,.outro{border-radius:0}
+.btn.denunciar{border:2px solid #0c2a1c;font-size:16px}
+.selo{border-radius:2px}
+/* colchetes de foco no cartão principal de cada página */
+.colchete{position:relative}
+.colchete::before,.colchete::after{content:"";position:absolute;width:28px;height:28px;border:0 solid var(--verde);pointer-events:none}
+.colchete::before{top:-6px;left:-6px;border-top-width:4px;border-left-width:4px}
+.colchete::after{bottom:-6px;right:-6px;border-bottom-width:4px;border-right-width:4px}
+ul.regras li::before{width:8px;height:8px;border:0;border-radius:50%;background:var(--verde);top:.6em;left:var(--e-2)}
+/* cada cor com um sentido só: rosa é a ação do cidadão; gráfico em tinta */
+.casas i.on,.dez-lin.cid .casas i.on,.cem i.on,.cem.cid i.on{background:var(--tinta)}
+.caminho.forte{background:#07291a;border-color:#07291a;color:#ffffff}
+.caminho.forte span{color:#e6eee8}
+.caminho.forte::after{color:var(--marca)}
+.emergencia-linha a b,ul.numeros-urgencia b{color:var(--tinta)}
+/* Cariacica na capa: foto real com a base em V, como a bandeira */
+.capa-foto{margin:calc(-1 * var(--e-5)) calc(-1 * max(var(--e-4),env(safe-area-inset-left,0px))) 0;display:flex;flex-direction:column;gap:var(--e-1)}
+.capa-foto img{display:block;width:100%;height:220px;object-fit:cover;object-position:50% 45%;clip-path:polygon(0 0,100% 0,100% 72%,50% 100%,0 72%)}
+.capa-foto figcaption{font-family:var(--protocolo);font-size:13px;color:#4a5f53;padding-inline:max(var(--e-4),env(safe-area-inset-left,0px))}
+@media (min-width:760px){.capa-foto{margin-inline:0}.capa-foto img{height:380px}.capa-foto figcaption{padding-inline:0}}
+main>.capa-foto+.linha-protocolo{margin-top:0}
+/* mapa no início */
+.mapa-inicio{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--e-5);align-items:start;border-top:1px solid var(--linha);padding-top:var(--e-6)}
+@media (min-width:900px){.mapa-inicio{grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:var(--e-7)}}
+.mapa-mini svg{width:100%;height:auto;max-height:none;display:block}
+@media (max-width:759px){.mapa-mini{max-width:320px;margin-inline:auto}}
+.mapa-mini a:focus-visible path{stroke:var(--tinta);stroke-width:6}
+ul.faixas.mini{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:var(--e-2);font-size:var(--t-2)}
+ul.faixas.mini li{display:flex;align-items:center;gap:var(--e-2)}
+ul.faixas.mini i{display:inline-block;width:28px;height:16px}
+main>.capa-foto{order:-1!important}
+main h1 *{text-transform:uppercase!important}
+.marca img{width:36px;height:36px}
+@media (max-width:759px){.marca .nome b{font-size:24px}.marca .nome small{letter-spacing:.16em;font-size:10px}.marca{gap:var(--e-2)}}
+@media (min-width:760px){.capa-foto img{height:280px}}
+h1{font-size:clamp(40px,4.4vw + 14px,64px)}
+/* rodada 2 da crítica (24/11) */
+@media (max-width:759px){.capa-foto img{height:132px}}
+.capa-foto figcaption{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.linha-protocolo{flex-wrap:nowrap;max-width:none}
+main .linha-protocolo span{font-size:12px}
+.linha-protocolo .ouvir{font-size:14px;white-space:nowrap}
+.folha.colchete{padding:20px 16px;border-color:transparent}
+@media (min-width:760px){.folha.colchete{padding:var(--e-5)}}
+.folha.colchete h2{font-size:28px}
+.colchete::before{top:0;left:0}
+.colchete::after{bottom:0;right:0}
+.marca-texto{font-family:var(--texto)!important;font-weight:700;font-size:16px;text-transform:none!important;letter-spacing:normal!important}
+.mk{white-space:nowrap;background:linear-gradient(transparent 18%,var(--marca) 18% 92%,transparent 92%);padding:0 .1em}
+main .prot *{text-transform:uppercase!important;color:var(--verde)!important}
+.prot .ic{display:none}
+.topo-in{min-height:56px}
+/* mapa do início: escala em tinta (mais escuro = mais casas sem esgoto), zona rural só com contorno */
+.mapa-inicio{--m0:#eef1ee;--m1:#c9d4cc;--m2:#8fa397;--m3:#4a5f53;--m4:#0c2a1c;--m-borda:#f7f9f6}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mapa-inicio{--m0:#1d2f25;--m1:#3b5546;--m2:#5b7a68;--m3:#a8bdb0;--m4:#e6eee8;--m-borda:#0f1c15}}
+:root[data-theme="dark"] .mapa-inicio{--m0:#1d2f25;--m1:#3b5546;--m2:#5b7a68;--m3:#a8bdb0;--m4:#e6eee8;--m-borda:#0f1c15}
+.mapa-inicio path.sem{fill:none;stroke:#8fa397;stroke-dasharray:6 5;stroke-width:2}
+ul.faixas.mini{flex-direction:row!important;justify-content:flex-start!important;flex-wrap:nowrap;align-items:center}
+ul.faixas.mini li{gap:0}
+ul.faixas.mini i{width:24px;height:16px;border:0}
+@media (min-width:900px){.mapa-mini svg{max-height:620px;width:auto;margin-inline:auto}}
+/* modo escuro: crédito e fonte nunca em cor fixa */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .capa-foto figcaption{color:var(--tinta-suave)}}
+:root[data-theme="dark"] .capa-foto figcaption{color:var(--tinta-suave)}
+/* denúncia: os 6 números de emergência no topo, 3 por linha */
+.emergencia-linha ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+/* rodada 3 da crítica (24/11) */
+/* mapa: no escuro, a escala continua "mais escuro = mais", num painel claro (o texto diz isso) */
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--m0:#e2eee5;--m1:#b5d6bf;--m2:#79b690;--m3:#2f8f5b;--m4:#0b5e33;--m-borda:#f3f6f2}
+  :root:not([data-theme="light"]) .mapa-inicio{--m0:#eef1ee;--m1:#c9d4cc;--m2:#8fa397;--m3:#4a5f53;--m4:#0c2a1c;--m-borda:#f7f9f6}
+  :root:not([data-theme="light"]) figure.mapa{background:#f7f9f6;padding:12px}}
+:root[data-theme="dark"]{--m0:#e2eee5;--m1:#b5d6bf;--m2:#79b690;--m3:#2f8f5b;--m4:#0b5e33;--m-borda:#f3f6f2}
+:root[data-theme="dark"] .mapa-inicio{--m0:#eef1ee;--m1:#c9d4cc;--m2:#8fa397;--m3:#4a5f53;--m4:#0c2a1c;--m-borda:#f7f9f6}
+:root[data-theme="dark"] figure.mapa{background:#f7f9f6;padding:12px}
+ul.faixas i{outline:1px solid var(--linha)}
+/* primeira tela: o campo do bairro sobe */
+@media (max-width:759px){
+  .capa-foto{position:relative}
+  .capa-foto figcaption{position:absolute;top:0;left:0;padding:2px 8px;background:rgba(247,249,246,.9);color:#0c2a1c;max-width:100%}
+  main>.linha-protocolo:has(+ .capa-foto){margin-top:-36px}
+  main>.abertura{margin-top:-24px}
+  .abertura{gap:var(--e-5)}
+  h1{font-size:42px}
+}
+@media (min-width:760px){.capa-foto img{height:200px}}
+/* sobretítulos: tudo em caixa alta, sem palavra sozinha na linha */
+main .cat *{text-transform:uppercase!important}
+main .prot,main .cat{text-wrap:balance}
+/* mapa do início no celular: o mapa logo depois do texto, o botão e a fonte depois do mapa */
+@media (max-width:899px){
+  .mapa-inicio{gap:var(--e-3)}
+  .mapa-texto{display:contents}
+  .mapa-mini{order:1}
+  .mapa-texto>p:has(.btn){order:2}
+  .mapa-inicio .fonte{order:3}
+}
+@media (min-width:760px){.capa-foto img{object-position:50% 62%}main>.linha-protocolo{margin-top:calc(-1 * var(--e-5))}}
+/* rodada 4 da crítica (24/11) */
+@media (max-width:759px){.capa-foto figcaption{background:var(--papel);color:var(--tinta-suave)}.capa-foto figcaption a{color:var(--verde)}}
+@media (min-width:760px){main>.linha-protocolo{margin-top:0}main>.linha-protocolo:has(+ .capa-foto){margin-top:calc(-1 * var(--e-5))}}
+.mapa-inicio{--m0:#dce5de;--m-borda:#ffffff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .mapa-inicio{--m0:#dce5de;--m-borda:#ffffff}}
+:root[data-theme="dark"] .mapa-inicio{--m0:#dce5de;--m-borda:#ffffff}
+.mapa-mini svg{filter:drop-shadow(0 0 .6px #8fa397)}
+@media (max-width:759px){
+  .menu-cel nav{left:calc(-1 * var(--e-4));right:calc(-1 * var(--e-4));padding-inline:var(--e-4)}
+  .menu-cel[open]::before{content:"";position:fixed;inset:0;background:rgba(12,42,28,.45);z-index:29}
+}
+.placar span,.porta .prot{text-wrap:balance}
+ul.numeros-urgencia a{font-size:15px}
+@media (max-width:759px){.menu-cel summary{position:relative;z-index:31;background:var(--folha)}}
+/* rodada 5 da crítica (24/11) */
+@media (max-width:759px){.topo .marca,.topo .denunciar{position:relative;z-index:31}}
+@media (min-width:900px){ul.numeros-urgencia{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.outro.urgente{margin-bottom:var(--e-5)}
+.nw{white-space:nowrap}
+main h1{line-height:1.02}
+@media (max-width:759px){.topo-in{position:relative;z-index:31;background:var(--papel)}}
+/* menu aberto: escurece só o que está abaixo do topo (sombra recortada), o topo fica limpo */
+@media (max-width:759px){.menu-cel[open]::before{content:none}.menu-cel nav{box-shadow:0 0 0 100vmax rgba(12,42,28,.45);clip-path:inset(0 -100vmax -100vmax -100vmax)}}
+/* rodada 6 da crítica (24/11) */
+@media (max-width:759px){.sep{display:none}.prot .nw,.mais .nw{display:block}.capa-foto figcaption{left:16px;font-size:11px}}
+/* rodada 7 da crítica (24/11) */
+.cat:has(+ h2),.cat:has(+ h3){display:inline-flex}
+.opcional{white-space:nowrap}
