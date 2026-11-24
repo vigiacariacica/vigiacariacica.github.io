@@ -584,3 +584,120 @@ main>.ouvir-topo{order:1;margin-top:calc(-1 * var(--e-5))}
 .emergencia-linha a{display:inline-flex;align-items:center;min-height:44px;padding-inline:var(--e-1);font-family:var(--display);font-weight:900;font-size:26px;color:var(--alerta);text-decoration:none}
 .emergencia-linha a.ver-todos{font-family:var(--texto);font-weight:700;font-size:var(--t-2);color:var(--verde);text-decoration:underline}
 .placar.quatro b.texto{font-family:var(--texto);font-size:var(--t-4);line-height:1.2}
+
+/* ===== v5 · 24/11/2026 · visual profissional e acessível ======================================================
+   Estudo: GOV.UK, USWDS e gov.br (escala, espaço, foco, selos), Hallmark (superfícies, rótulos, uma cor de
+   destaque) e contraste WCAG conferido por conta. Uma família no texto (Atkinson Hyperlegible, feita para baixa
+   visão); a letra condensada fica só na marca e nos números grandes; nada em caixa alta fora da marca. */
+:root{
+  --papel:#f7f9f6; --folha:#ffffff; --poco:#eef3ef; --tinta:#0c2a1c; --tinta-suave:#42594c; --linha:#d5ded7;
+  --campo:#6f8b7b; --bandeira:#00923f; --verde:#00753a; --on-verde:#ffffff; --marca:#ff66b2; --on-marca:#0c2a1c;
+  --marca-forte:#d6338a; --foco:#ffdd00; --alerta:#b42318;
+  --bom:#005c2e; --bom-fundo:#e3f4ea; --ruim:#8f1d14; --ruim-fundo:#fdecea; --aviso:#6b4100; --aviso-fundo:#fff3d6;
+  --info:#1d5fa8; --info-fundo:#e8f0fb; --cinza-fundo:#eceff0;
+  --protocolo:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",Verdana,sans-serif;
+  --raio:8px; --raio-p:6px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#0f1c15; --folha:#172a20; --poco:#132219; --tinta:#e6eee8; --tinta-suave:#a8bdb0; --linha:#2a4234;
+  --campo:#5b7a68; --verde:#4cc985; --on-verde:#0c2a1c; --marca:#ff8cc6; --marca-forte:#ff8cc6; --alerta:#ff8a80;
+  --bom:#8fe0b0; --bom-fundo:#133d27; --ruim:#ffb4ab; --ruim-fundo:#4a1712; --aviso:#ffc94d; --aviso-fundo:#3d2e05;
+  --info:#9cc3f5; --info-fundo:#16283d; --cinza-fundo:#1d2f25}}
+:root[data-theme="dark"]{
+  --papel:#0f1c15; --folha:#172a20; --poco:#132219; --tinta:#e6eee8; --tinta-suave:#a8bdb0; --linha:#2a4234;
+  --campo:#5b7a68; --verde:#4cc985; --on-verde:#0c2a1c; --marca:#ff8cc6; --marca-forte:#ff8cc6; --alerta:#ff8a80;
+  --bom:#8fe0b0; --bom-fundo:#133d27; --ruim:#ffb4ab; --ruim-fundo:#4a1712; --aviso:#ffc94d; --aviso-fundo:#3d2e05;
+  --info:#9cc3f5; --info-fundo:#16283d; --cinza-fundo:#1d2f25}
+html{overflow-x:clip}
+body{overflow-x:clip;font-size:calc(18px * var(--escala));line-height:1.5;font-synthesis:none}
+/* nada em caixa alta nem espaçado, fora a marca do topo (GOV.UK: caixa alta "is quite hard to read") */
+main *,footer *,.menu-cel nav *,.menu-pc *{text-transform:none!important;letter-spacing:normal}
+/* títulos na letra do texto, em negrito, frase normal (escala GOV.UK, celular → computador) */
+h1,h2,h3{font-family:var(--texto);font-weight:700;letter-spacing:-.01em;text-wrap:balance}
+h1{font-size:clamp(32px,2.6vw + 22px,48px);line-height:1.15;max-width:22ch}
+h2{font-size:clamp(24px,1.4vw + 18px,32px);line-height:1.2;max-width:30ch}
+h3{font-size:clamp(20px,.6vw + 17px,24px);line-height:1.25}
+@media (max-width:759px){h1{font-size:clamp(30px,8vw,34px)}}
+p{text-wrap:pretty}
+.lead{font-size:clamp(19px,.6vw + 16px,22px);line-height:1.45;color:var(--tinta)}
+/* números grandes: a letra condensada da marca, sem caixa alta, com números do mesmo tamanho */
+.grande,.numero,.folha .valor,.placar b,.valor{font-family:var(--display);font-weight:900;font-variant-numeric:tabular-nums;line-height:1}
+.placar b.texto{font-family:var(--texto);font-weight:700}
+/* foco: amarelo com contorno escuro, bem visível em qualquer fundo (GOV.UK) */
+a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--foco);outline-offset:0;box-shadow:0 0 0 5px #0c2a1c}
+/* links */
+a{color:var(--verde);text-decoration-thickness:1px;text-underline-offset:.18em}
+a:hover{text-decoration-thickness:3px}
+/* botões: cantos levemente arredondados, verde de contraste certo (#00753a com branco: 5,8:1) */
+.btn{border-radius:var(--raio-p);border-width:2px;font-weight:700}
+.btn.cheio{background:var(--verde);border-color:var(--verde);color:var(--on-verde)}
+.btn.cheio:hover{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
+.btn.denunciar{background:var(--marca);border-color:var(--marca);color:var(--on-marca)}
+.btn.denunciar:hover{background:var(--tinta);border-color:var(--tinta);color:var(--papel)}
+/* superfícies: espaço, depois linha fina, depois área tingida, e cartão só para o que se toca (Hallmark) */
+.folha,.porta,.caminho,.cartao,.placar div,.problema-cartao,.recebido{background:var(--folha);border:1px solid var(--linha);border-radius:var(--raio)}
+.faixa,.achado{background:var(--poco);border:0;border-radius:var(--raio)}
+.outro{border:1px solid var(--linha);border-left:6px solid var(--verde);border-radius:var(--raio-p);background:var(--folha)}
+.outro.urgente{border-left-color:var(--alerta)}
+.caminho{border-width:1px;box-shadow:0 1px 2px rgba(12,42,28,.06)}
+.caminho:hover,.porta:hover{border-color:var(--verde)}
+.caminho.forte{background:var(--verde);border-color:var(--verde);color:var(--on-verde)}
+.caminho.forte span,.caminho.forte::after{color:var(--on-verde)}
+.caminho::after{font-family:var(--texto);font-weight:700;font-size:28px}
+.porta .seta{font-family:var(--texto);font-weight:700;font-size:32px}
+.porta b{font-family:var(--texto);font-weight:700;font-size:var(--t-5);line-height:1.2}
+/* campos de formulário: borda de 2 px com contraste de 3:1 */
+input[type=search],input[type=text],select,textarea{border:2px solid var(--campo);border-radius:var(--raio-p);background:var(--folha)}
+input[type=search]:focus-visible,input[type=text]:focus-visible,select:focus-visible,textarea:focus-visible{border-color:var(--tinta)}
+/* selos de situação: palavra + cor de fundo suave, nunca só a cor (GOV.UK tag 5.0, USWDS) */
+.selo{border:0;border-radius:4px;padding:2px 8px;font-weight:700;font-size:var(--t-2);background:var(--ruim-fundo);color:var(--ruim);line-height:1.4}
+.selo.ok{background:var(--bom-fundo);color:var(--bom)}
+.selo.neutro{background:var(--info-fundo);color:var(--info)}
+.selo.parcial{background:var(--aviso-fundo);color:var(--aviso)}
+.selo.apagado{background:var(--cinza-fundo);color:var(--tinta-suave)}
+.selo.cheio{background:var(--verde);color:var(--on-verde)}
+/* rosa em gráfico: o tom mais forte (3:1 contra o fundo); o rosa claro fica só como fundo de botão */
+.casas i.on,.cem i.on,.trilho i.eu{background:var(--marca-forte)}
+.mapa path.escolhido{stroke:var(--marca-forte)}
+.mapinha-tela path{fill:var(--marca-forte)}
+nav a[aria-current="page"]{border-bottom-color:var(--verde)}
+.menu-cel nav a[aria-current="page"]{border-left-color:var(--verde)}
+.destaque-conta,ol.postos li.atual{border-left-color:var(--marca-forte)}
+/* topo: 56 px no celular, faixa verde fina embaixo */
+.topo{border-bottom:4px solid var(--bandeira)}
+.marca .nome{letter-spacing:0}
+/* abertura do início: texto à esquerda e busca do bairro à direita no computador */
+.abertura{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--e-6);align-items:center}
+@media (min-width:900px){.abertura{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--e-7)}}
+.abertura .folha{padding:var(--e-5)}
+.marca-texto{display:inline-flex;align-items:center;gap:var(--e-2);font-size:var(--t-2);font-weight:700;color:var(--tinta-suave)}
+.marca-texto::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--bandeira);flex:0 0 12px}
+/* rodapé: área tingida, links em lista */
+footer.rodape{background:var(--poco);border-top:4px solid var(--bandeira);padding:var(--e-6) var(--e-5);border-radius:0 0 var(--raio) var(--raio);margin-top:var(--e-8)}
+footer .lema{font-family:var(--display);font-weight:900;font-size:clamp(26px,3vw,34px);text-transform:uppercase!important;line-height:1}
+/* tabelas: cabeçalho na letra do texto */
+table.tabela thead th{font-weight:700;color:var(--tinta-suave)}
+/* linha do tempo e listas de pedidos com mais respiro */
+.ped{padding:var(--e-4) 0}
+details.grupo{border-top:1px solid var(--linha)}
+details.grupo:last-child{border-bottom:1px solid var(--linha)}
+details.grupo summary{min-height:56px}
+details.grupo summary::after{font-family:var(--texto);font-weight:700}
+.marca-texto::before{content:none}
+.marca-texto{display:block}
+/* ajustes da revisão independente (24/11) */
+@media (min-width:521px){.dez-lin{grid-template-columns:11em minmax(0,1fr)}}
+.placar span{font-size:var(--t-2);color:var(--tinta)}
+.placar b.texto{font-size:var(--t-6);line-height:1.1}
+.filtro button{border-radius:var(--raio-p)}
+.mais-rot{padding-left:calc(var(--e-3) + 6px)}
+ol.passos b,details.grupo summary b,.crenca b,ol.indice b,ul.tarefas b,nav.vizinhos b,.ver-linha .nome,.seu-bairro b{font-family:var(--texto);font-weight:700}
+.marca-texto{color:var(--tinta);font-size:var(--t-3)}
+:root{--vazio:#b9c6bd}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--vazio:#3b5546}}
+:root[data-theme="dark"]{--vazio:#3b5546}
+.emergencia-linha{display:flex;flex-direction:column;gap:var(--e-2)}
+.emergencia-linha ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--e-2)}
+.emergencia-linha a{display:flex;flex-direction:column;align-items:flex-start;min-height:48px;padding:0;font-family:var(--texto);font-size:var(--t-1);font-weight:700;color:var(--tinta);text-decoration:none}
+.emergencia-linha a b{font-family:var(--display);font-weight:900;font-size:28px;color:var(--alerta);line-height:1}
+@media (min-width:900px){.emergencia-linha{display:none}}
