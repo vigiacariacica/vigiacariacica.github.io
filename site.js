@@ -3,28 +3,31 @@
   "use strict";
   var raiz = document.documentElement;
 
-  /* letra maior, lembrada neste aparelho */
-  var bLetra = document.getElementById("b-letra");
+  /* letra maior, lembrada neste aparelho (o botão aparece no menu do celular e no topo do computador) */
+  var bLetras = Array.prototype.slice.call(document.querySelectorAll("[data-letra]"));
   function letra(on) {
     raiz.classList.toggle("letra-maior", on);
-    if (bLetra) bLetra.setAttribute("aria-pressed", on ? "true" : "false");
+    bLetras.forEach(function (b) { b.setAttribute("aria-pressed", on ? "true" : "false"); });
   }
   try { letra(localStorage.getItem("vigia-letra") === "1"); } catch (e) {}
-  if (bLetra) bLetra.addEventListener("click", function () {
-    var on = bLetra.getAttribute("aria-pressed") !== "true";
-    letra(on);
-    try { localStorage.setItem("vigia-letra", on ? "1" : "0"); } catch (e) {}
+  bLetras.forEach(function (bLetra) {
+    bLetra.addEventListener("click", function () {
+      var on = bLetra.getAttribute("aria-pressed") !== "true";
+      letra(on);
+      try { localStorage.setItem("vigia-letra", on ? "1" : "0"); } catch (e) {}
+    });
   });
 
   /* ouvir a página com a voz do próprio celular (não gasta dados) */
-  var bOuvir = document.getElementById("b-ouvir");
+  var bOuvires = Array.prototype.slice.call(document.querySelectorAll("[data-ouvir]"));
   var temFala = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
-  if (bOuvir && !temFala) bOuvir.hidden = true;
+  if (!temFala) bOuvires.forEach(function (b) { b.hidden = true; });
   function parar() {
     if (temFala) speechSynthesis.cancel();
-    if (bOuvir) { bOuvir.setAttribute("aria-pressed", "false"); bOuvir.textContent = "Ouvir esta página"; }
+    bOuvires.forEach(function (b) { b.setAttribute("aria-pressed", "false"); b.textContent = b.dataset.rotulo || b.textContent; });
   }
-  if (bOuvir && temFala) bOuvir.addEventListener("click", function () {
+  bOuvires.forEach(function (b) { b.dataset.rotulo = b.textContent; });
+  if (temFala) bOuvires.forEach(function (bOuvir) { bOuvir.addEventListener("click", function () {
     if (bOuvir.getAttribute("aria-pressed") === "true") { parar(); return; }
     var main = document.querySelector("main");
     var vistos = {}, partes = [];
@@ -40,8 +43,8 @@
     if (voz) u.voice = voz;
     u.onend = parar; u.onerror = parar;
     speechSynthesis.cancel(); speechSynthesis.speak(u);
-    bOuvir.setAttribute("aria-pressed", "true"); bOuvir.textContent = "Parar de ouvir";
-  });
+    bOuvires.forEach(function (b) { b.setAttribute("aria-pressed", "true"); b.textContent = "Parar de ouvir"; });
+  }); });
 
   /* relógios do prazo de resposta */
   var agora = new Date(Date.now() - 3 * 3600 * 1000);
@@ -233,4 +236,66 @@
       if (navigator.clipboard) navigator.clipboard.writeText(url).then(ok, falhou); else falhou();
     });
   });
+
+  /* denúncia: manda para o formulário do Google sem sair da página. Sem script, o formulário vai direto para o
+     Google, que mostra a confirmação dele. Nada fica guardado neste aparelho (celular pode ser dividido com a
+     família): nem rascunho, nem código, só a contagem de envios desta aba, contra robô. */
+  var den = document.querySelector("[data-denuncia]");
+  if (den) {
+    var inicio = Date.now();
+    var relato = document.getElementById("d-relato"), avisoDado = document.getElementById("aviso-dado");
+    var erro = den.querySelector("[data-erro]"), botao = den.querySelector("button[type=submit]");
+    var isca = den.querySelector(".isca input"), feito = document.getElementById("recebido");
+    var cpf = /(^|\D)\d{3}\.?\d{3}\.?\d{3}[-.\s]?\d{2}(\D|$)/;
+    var tel = /(^|\D)(\(?\d{2}\)?[\s-]?)?9?\d{4}[\s-]?\d{4}(\D|$)/;
+    function dadoPessoal() {
+      var t = relato.value, msg = "";
+      if (cpf.test(t)) msg = "Parece que tem um CPF ou um celular no texto. Apague, por favor: a gente não precisa disso para conferir.";
+      else if (tel.test(t)) msg = "Parece que tem um telefone no texto. Se for de outra pessoa, apague, por favor.";
+      avisoDado.textContent = msg; avisoDado.hidden = !msg;
+      return !cpf.test(t);
+    }
+    function mostrarErro(msg) { erro.textContent = msg; erro.hidden = !msg; }
+    function codigo() {
+      var letras = "ACDEFGHJKMNPQRTUVWXY34679", n = new Uint32Array(6), s = "";
+      (window.crypto || window.msCrypto).getRandomValues(n);
+      for (var i = 0; i < 6; i++) s += letras[n[i] % letras.length];
+      return s;
+    }
+    relato.addEventListener("input", dadoPessoal);
+    den.addEventListener("submit", function (e) {
+      e.preventDefault();
+      mostrarErro("");
+      /* campo invisível preenchido: pode ser robô ou o preenchimento automático do celular. Manda assim mesmo, com
+         a marca ISCA, e a conferência separa: nenhuma denúncia de gente some calada. */
+      var robo = !!isca.value;
+      if (!den.checkValidity()) { den.reportValidity(); return; }
+      if (relato.value.trim().length < 20) { mostrarErro("Conte um pouco mais: o quê, onde e desde quando."); relato.focus(); return; }
+      if (!dadoPessoal()) { relato.focus(); return; }
+      var envios = 0;
+      try { envios = +(sessionStorage.getItem("vigia-envios") || 0); } catch (x) {}
+      if (envios >= 5) { mostrarErro("Você já mandou 5 denúncias agora. Obrigado! Para mandar mais, volte mais tarde."); return; }
+      if (!navigator.onLine) { mostrarErro("Parece que você está sem internet. Confira e tente de novo."); return; }
+      var cod = codigo(), seg = Math.round((Date.now() - inicio) / 1000);
+      isca.value = (robo ? "ISCA " : "") + "codigo=" + cod + " tempo=" + seg + "s";
+      var corpo = new URLSearchParams(new FormData(den));
+      isca.value = "";
+      botao.disabled = true; botao.textContent = "Mandando...";
+      fetch(den.action, { method: "POST", mode: "no-cors", credentials: "omit", body: corpo })
+        .then(function () {
+          try { sessionStorage.setItem("vigia-envios", String(envios + 1)); } catch (x) {}
+          den.reset(); den.hidden = true;
+          feito.querySelector("[data-codigo]").textContent = cod;
+          feito.hidden = false; feito.focus(); feito.scrollIntoView({ block: "start" });
+        })
+        .catch(function () {
+          mostrarErro("Não deu para mandar agora. Confira a internet e tente de novo. Se não der, use a versão do Google, no link logo abaixo.");
+        })
+        .then(function () { botao.disabled = false; botao.textContent = "Mandar a denúncia"; });
+    });
+    feito.querySelector("[data-outra]").addEventListener("click", function () {
+      feito.hidden = true; den.hidden = false; inicio = Date.now();
+      document.getElementById("d-assunto").focus();
+    });
+  }
 })();
