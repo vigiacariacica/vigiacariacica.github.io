@@ -154,7 +154,7 @@
   /* mapa: trocar a camada e tocar num bairro */
   var mapa = document.querySelector("[data-mapa]");
   if (mapa) {
-    var nomes = { pop: "Moradores", den: "Moradores por km²", esg: "Casas sem esgoto na rede", ren: "Metade ganha até" };
+    var nomes = { pop: "Moradores", den: "Moradores por km²", esg: "Casas sem esgoto na rede", ren: "Metade com renda ganha até" };
     var caixa = document.querySelector("[data-escolhido]");
     document.querySelectorAll("[data-camada]").forEach(function (b) {
       if (b.tagName !== "BUTTON") return;
